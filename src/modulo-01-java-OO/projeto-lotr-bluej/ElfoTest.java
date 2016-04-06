@@ -6,19 +6,19 @@ import org.junit.Test;
 public class ElfoTest
 {
     @Test
-    public void criarTesteNome(){
+    public void criarTesteAtribuirNome(){
         Elfo legolas = new Elfo("Legolas");
         assertEquals("Legolas",legolas.getNome());
     }
     
     @Test
-    public void criarTesteAtribuicaoFlechas(){
+    public void criarTesteAtribuirFlechas(){
         Elfo legolas = new Elfo("Legolas");
         assertEquals(42,legolas.getFlechas());
     }
     
     @Test
-    public void criarTestePerdeFlechas(){
+    public void criarTestePerderFlechas(){
         Elfo legolas = new Elfo("Legolas");
         Dwarf gimli = new Dwarf("gimli");
         legolas.atirarFlecha(gimli);
@@ -26,7 +26,7 @@ public class ElfoTest
     }
     
     @Test
-    public void criarTesteGanhaExperiencia(){
+    public void criarTesteGanharExperiencia(){
         Elfo legolas = new Elfo("Legolas");
         Dwarf gimli = new Dwarf("gimli");
         legolas.atirarFlecha(gimli);
@@ -39,5 +39,12 @@ public class ElfoTest
         Dwarf gimli = new Dwarf("gimli");
         legolas.atirarFlecha(gimli);
         assertEquals(100,gimli.getVida());
+    }
+    
+    @Test
+    public void criarTesteToString(){
+        Elfo legolas = new Elfo("Legolas");
+        String esperado = "Legolas possui 42 flechas e 0 níveis de experiência.";
+        assertEquals(esperado,legolas.toString());
     }
 }
