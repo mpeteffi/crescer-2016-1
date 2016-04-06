@@ -5,6 +5,31 @@ import org.junit.Test;
 
 public class ElfoTest
 {
+    
+    @Test
+    public void criarTesteAtribuirNomeEFlechas(){
+        Elfo legolas = new Elfo("Legolas",30);
+        assertEquals("Legolas",legolas.getNome());
+        assertEquals(30,legolas.getFlechas());
+    }
+    
+    @Test
+    public void criarTesteAtribuirNomeVazioE120Flechas(){
+        Elfo legolas = new Elfo("",120);
+        assertEquals("",legolas.getNome());
+        assertEquals(120,legolas.getFlechas());
+    }
+    
+    @Test
+    public void criarTesteAtribuirNomeVazio120FlechasEAtira(){
+        Elfo legolas = new Elfo("",120);
+        Dwarf d1 = new Dwarf("gimli");
+        legolas.atirarFlecha(d1);
+        assertEquals("",legolas.getNome());
+        assertEquals(119,legolas.getFlechas());
+        assertEquals(1,legolas.getExperiencia());
+    }
+    
     @Test
     public void criarTesteAtribuirNome(){
         Elfo legolas = new Elfo("Legolas");
