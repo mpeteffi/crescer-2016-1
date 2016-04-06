@@ -6,8 +6,8 @@ public class CestoDeLembas {
     } 
     
     public boolean podeDividirEmPares(){
-        if(this.lembas%2==0 && this.lembas>=1 && this.lembas<=100){
-           return true;
-        } else { return false;}
+        return lembas%2==0 && lembas>=3 && lembas<=100;
+        //boolean podeDividir = lembas%2==0 && lembas>=3 && lembas<=100;
+        //return podeDividir ? true : false;
     }
 }
