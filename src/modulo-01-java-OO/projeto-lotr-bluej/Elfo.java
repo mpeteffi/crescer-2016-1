@@ -7,10 +7,12 @@ public class Elfo{
     }
     
     public void atirarFlecha(){
-        boolean acertar = true;
             flechas--;
-            if(acertar){
-                exp++;
+            experiencia++;
             } 
+        
+    public void atirarFlechaEmDwarf(Dwarf anao){
+        anao.perdeVida();
     }
+    
 }
