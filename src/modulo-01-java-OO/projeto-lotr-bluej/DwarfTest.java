@@ -23,4 +23,32 @@ public class DwarfTest
         d1.perderVida();
         assertEquals(100,d1.getVida());
     }
+    
+    @Test
+    public void testeDwarfNasceVivo(){
+        Dwarf d1 = new Dwarf("Joao");
+        assertEquals(Status.VIVO,d1.getStatus());
+    }
+    
+    @Test
+    public void testeDwarfComVida0Morre(){
+        Dwarf d1 = new Dwarf("Joao");
+        for(int i=1;i<=11;i++){d1.perderVida();}
+        assertEquals(Status.MORTO,d1.getStatus());
+    }
+    
+    @Test
+    public void testeDwarfVidaNuncaNegativa(){
+        Dwarf d1 = new Dwarf("Joao");
+        for(int i=1;i<=15;i++){d1.perderVida();}
+        assertEquals(0,d1.getVida());
+    }
+    
+    @Test
+    public void testeDwarfMortoSempreComVida0(){
+        Dwarf d1 = new Dwarf("Joao");
+        for(int i=1;i<=15;i++){d1.perderVida();}
+        assertEquals(0,d1.getVida());
+        assertEquals(Status.MORTO,d1.getStatus());
+    }
 }
