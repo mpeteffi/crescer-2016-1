@@ -2,29 +2,33 @@ import java.util.ArrayList;
 
 public class Inventario
 {
-    private ArrayList<String> inventario = new ArrayList<>();
-    private String item;
+    private ArrayList<Item> inventario = new ArrayList<>();
 
     public Inventario(){
         
     }
 
-    public void adicionarItem(String item){
+    public void adicionarItem(Item item){
         this.inventario.add(item);
     }
     
-    public void removerItem(String item){
+    public void removerItem(Item item){
         this.inventario.remove(item);
     }
     
-   // public int getItem(String item){
-    //int a;
+    public int procurarItemNaLista(Item item){
+        int index = inventario.indexOf(item);
+        return index;
+    }
     
-     //  for (int i=0;i<=9;i++){
-     //      if (this.inventario[i]==item)
-     //  }
-        
-     //  return this.inventario(item);
-   // }
+    public Item getItem(Item item){
+        int index = procurarItemNaLista(item);
+        return inventario.get(index);
+    }
+    
+    public String getItemDescricao(Item item){
+        int index = inventario.indexOf(item);
+        return inventario.get(index).getDescricao();
+    }
     
 }
