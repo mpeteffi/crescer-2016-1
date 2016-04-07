@@ -22,6 +22,7 @@ public class DataTerceiraEra
     }
     
     public boolean ehBissexto(){
-        return this.ano%4==0;
+        boolean quatrocentos = this.ano%400==0;
+        return quatrocentos ? quatrocentos : this.ano%4==0 && this.ano%100!=0;
     }
 }

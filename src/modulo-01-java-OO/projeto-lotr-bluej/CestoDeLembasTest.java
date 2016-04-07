@@ -6,25 +6,25 @@ import org.junit.Test;
 public class CestoDeLembasTest
 {
     @Test
-    public void criarCestoCom2Lembas(){
+    public void testeCriarCestoCom2Lembas(){
         CestoDeLembas cesto = new CestoDeLembas(2);
         assertEquals(false,cesto.podeDividirEmPares());
     }
     
     @Test
-    public void criarCestoCom4Lembas(){
+    public void testeCriarCestoCom4Lembas(){
         CestoDeLembas cesto = new CestoDeLembas(4);
         assertEquals(true,cesto.podeDividirEmPares());
     }
 
     @Test
-    public void criarCestoMenos1Lembas(){
+    public void testeCriarCestoMenos1Lembas(){
         CestoDeLembas cesto = new CestoDeLembas(-1);        
         assertEquals(false,cesto.podeDividirEmPares());
     }
     
     @Test
-    public void criarCestoCom101Lembas(){
+    public void testeCriarCestoCom101Lembas(){
         CestoDeLembas cesto = new CestoDeLembas(101);
         assertEquals(false,cesto.podeDividirEmPares());
     }
