@@ -16,30 +16,30 @@ public class DataTerceiraEraTest
     @Test
     public void teste2015NaoEhBissexto(){
         DataTerceiraEra data = new DataTerceiraEra(01,01,2015);
-        assertEquals(false,data.ehBissexto());
+        assertFalse(data.ehBissexto());
     }
     
     @Test
     public void teste2016EhBissexto(){
         DataTerceiraEra data = new DataTerceiraEra(01,01,2016);
-        assertEquals(true,data.ehBissexto());
+        assertTrue(data.ehBissexto());
     }
 
     @Test
     public void teste2017NaoEhBissexto(){
         DataTerceiraEra data = new DataTerceiraEra(01,01,2017);
-        assertEquals(false,data.ehBissexto());
+        assertFalse(data.ehBissexto());
+    }
+
+    @Test
+    public void teste4000EhBissexto(){
+        DataTerceiraEra data = new DataTerceiraEra(01,01,4000);
+        assertTrue(data.ehBissexto());
     }
     
     @Test
-    public void teste400EhBissexto(){
-        DataTerceiraEra data = new DataTerceiraEra(01,01,400);
-        assertEquals(true,data.ehBissexto());
-    }
-    
-    @Test
-    public void teste500NaoEhBissexto(){
-        DataTerceiraEra data = new DataTerceiraEra(01,01,500);
-        assertEquals(false,data.ehBissexto());
+    public void teste3500NaoEhBissexto(){
+        DataTerceiraEra data = new DataTerceiraEra(01,01,3500);
+        assertFalse(data.ehBissexto());
     }
 }
