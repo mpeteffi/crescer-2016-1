@@ -57,7 +57,7 @@ public class DwarfTest
         Dwarf d1 = new Dwarf("João");
         Item i1 = new Item(1,"Martelo");
         d1.adicionarItem(i1);
-        assertEquals(0,d1.getInventario().procurarItemNaLista(i1));
+        assertEquals(i1,d1.getInventario().getItem().get(0));
     }
     
     @Test
@@ -65,9 +65,9 @@ public class DwarfTest
         Dwarf d1 = new Dwarf("João");
         Item i1 = new Item(1,"Martelo");
         d1.adicionarItem(i1);
-        assertEquals(0,d1.getInventario().procurarItemNaLista(i1));
+        assertEquals(i1,d1.getInventario().getItem().get(0));
         d1.perderItem(i1);
-        assertEquals(-1,d1.getInventario().procurarItemNaLista(i1));
+        assertEquals(0,d1.getInventario().getItem().size());
     }
     
     @Test
@@ -153,4 +153,5 @@ public class DwarfTest
         assertEquals(90,d1.getVida());
         assertEquals(2,d1.getExperiencia());
     }
+      
 }

@@ -21,14 +21,8 @@ public class Inventario
         return index;
     }
     
-    public Item getItem(Item item){
-        int index = procurarItemNaLista(item);
-        return inventario.get(index);
-    }
-    
-    public String getItemDescricao(Item item){
-        int index = inventario.indexOf(item);
-        return inventario.get(index).getDescricao();
+    public ArrayList<Item> getItem(){
+        return this.inventario;
     }
     
 }
