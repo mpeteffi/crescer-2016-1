@@ -25,11 +25,29 @@ public class Inventario
         return this.inventario;
     }
     
+    public Item itemMaisPopular(){
+        int max = 0;
+        Item i1 = new Item(0,"Sem Itens");
+        
+        for(int i=0; i<inventario.size(); i++){
+           if (this.inventario.get(i).getQuantidade() > max){
+               max = this.inventario.get(i).getQuantidade();
+               i1 = this.inventario.get(i);
+            }
+        }
+        
+        return i1;
+    }
+    
     public String getDescricoesItens(){
         String frase = "";
         for(int i=0; i<inventario.size(); i++){
            frase = frase + this.inventario.get(i).getDescricao() + ",";
         }
+        
+        //for (Item item : this.inventario){
+        //  frase += item.getDescricao() + ","; 
+        //}
         
         return !this.inventario.isEmpty() ? 
         frase.substring(0, frase.length() - 1) :

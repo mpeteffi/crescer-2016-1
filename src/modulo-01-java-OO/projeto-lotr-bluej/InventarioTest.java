@@ -40,4 +40,18 @@ public class InventarioTest
         assertEquals("Martelo,Machado,Escudo",d1.getInventario().getDescricoesItens());
     }
     
+    @Test
+    public void retornaItemMaisPopularMaca(){
+        Dwarf d1 = new Dwarf("Legolas");
+        Item i1 = new Item(2,"Martelo");
+        Item i2 = new Item(18,"Machado");
+        Item i3 = new Item(12,"Escudo");
+        Item i4 = new Item(333,"Maças");
+        d1.adicionarItem(i1);
+        d1.adicionarItem(i2);
+        d1.adicionarItem(i3);
+        d1.adicionarItem(i4);
+        assertEquals(d1.getInventario().itemMaisPopular(),i4);
+        
+    }
 }
