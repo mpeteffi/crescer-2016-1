@@ -57,7 +57,7 @@ public class DwarfTest
         Dwarf d1 = new Dwarf("João");
         Item i1 = new Item(1,"Martelo");
         d1.adicionarItem(i1);
-        assertEquals(0,d1.bolsa.procurarItemNaLista(i1));
+        assertEquals(0,d1.getInventario().procurarItemNaLista(i1));
     }
     
     @Test
@@ -65,9 +65,9 @@ public class DwarfTest
         Dwarf d1 = new Dwarf("João");
         Item i1 = new Item(1,"Martelo");
         d1.adicionarItem(i1);
-        assertEquals(0,d1.bolsa.procurarItemNaLista(i1));
+        assertEquals(0,d1.getInventario().procurarItemNaLista(i1));
         d1.perderItem(i1);
-        assertEquals(-1,d1.bolsa.procurarItemNaLista(i1));
+        assertEquals(-1,d1.getInventario().procurarItemNaLista(i1));
     }
     
     @Test
@@ -121,5 +121,36 @@ public class DwarfTest
         DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
         Dwarf d1 = new Dwarf("Meireles",data);
         assertTrue(d1.getNumeroSorte()==33.0);
+    }
+    
+    @Test
+    public void testeDwarfSorteNaoPerdeVidaNaoGanhaExp(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
+        Dwarf d1 = new Dwarf("Seixas",data);
+        //Sorte entre 0 e 100
+        d1.perderVida();
+        assertEquals(110,d1.getVida());
+        assertEquals(0,d1.getExperiencia());
+    }
+    
+    @Test
+    public void testeDwarfSortePerdeVidaNaoGanhaExp(){
+        Dwarf d1 = new Dwarf("João");
+        //Sorte maior que 100
+        d1.perderVida();
+        assertEquals(100,d1.getVida());
+        assertEquals(0,d1.getExperiencia());
+    }
+    
+    @Test
+    public void testeDwarfSorteNaoPerdeVidaGanha2Exp(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
+        Dwarf d1 = new Dwarf("João",data);
+        d1.perderVida();
+        d1.perderVida();
+        //Sorte menor que 0
+        d1.perderVida();
+        assertEquals(90,d1.getVida());
+        assertEquals(2,d1.getExperiencia());
     }
 }
