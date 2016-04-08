@@ -153,5 +153,37 @@ public class DwarfTest
         assertEquals(90,d1.getVida());
         assertEquals(2,d1.getExperiencia());
     }
+    
+    @Test
+    public void testeDwarfSorteGanharMilItens(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
+        Dwarf d1 = new Dwarf("João",data);
+        d1.perderVida();
+        d1.perderVida();
+        //Sorte menor que 0
+        Item i1 = new Item(1,"Poção");
+        d1.adicionarItem(i1);
+        assertEquals(1,d1.getInventario().getItem().get(0).getQuantidade());
+        d1.tentarSorte();
+        assertEquals(1001,d1.getInventario().getItem().get(0).getQuantidade());
+    }
+    
+    @Test
+    public void testeDwarfSorteGanharMilItensDeCada(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
+        Dwarf d1 = new Dwarf("João",data);
+        d1.perderVida();
+        d1.perderVida();
+        //Sorte menor que 0
+        Item i1 = new Item(1,"Poção");
+        Item i2 = new Item(3,"Cervejas");
+        d1.adicionarItem(i1);
+        d1.adicionarItem(i2);
+        assertEquals(1,d1.getInventario().getItem().get(0).getQuantidade());
+        assertEquals(3,d1.getInventario().getItem().get(1).getQuantidade());
+        d1.tentarSorte();
+        assertEquals(1001,d1.getInventario().getItem().get(0).getQuantidade());
+        assertEquals(1003,d1.getInventario().getItem().get(1).getQuantidade());
+    }
       
 }

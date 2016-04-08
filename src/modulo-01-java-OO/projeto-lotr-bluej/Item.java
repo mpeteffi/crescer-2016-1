@@ -16,4 +16,7 @@ public class Item
         return this.descricao;
     }
     
+    public void setQuantidade(int quantidade){
+        this.quantidade=quantidade;
+    }
 }

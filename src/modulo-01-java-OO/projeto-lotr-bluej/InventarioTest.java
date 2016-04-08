@@ -28,4 +28,16 @@ public class InventarioTest
         assertTrue(bolsa.getItem().size()==0);
     }
     
+    @Test
+    public void ImprimirTodasDescricoesDeItens(){
+        Dwarf d1 = new Dwarf("Legolas");
+        Item i1 = new Item(1,"Martelo");
+        Item i2 = new Item(1,"Machado");
+        Item i3 = new Item(1,"Escudo");
+        d1.adicionarItem(i1);
+        d1.adicionarItem(i2);
+        d1.adicionarItem(i3);
+        assertEquals("Martelo,Machado,Escudo",d1.getInventario().getDescricoesItens());
+    }
+    
 }

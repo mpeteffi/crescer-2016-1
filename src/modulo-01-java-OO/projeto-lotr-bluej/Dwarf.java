@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Dwarf {
     private String nome;
     private int vida=110, experiencia=0;
@@ -11,7 +13,7 @@ public class Dwarf {
     }
     
     public Dwarf(String nome, DataTerceiraEra data){ 
-        this.nome = nome;
+        this(nome);
         this.dataNascimento = data;
     }
     
@@ -57,11 +59,20 @@ public class Dwarf {
         
         boolean verificaNome = this.nome=="Seixas" || this.nome=="Meireles";    
         if (this.dataNascimento.ehBissexto()==false && verificaNome){
-            n=n*33;
-            n=n%100;
+            n=n*33%100;
         }
         
         return n;
+    }
+    
+    public void tentarSorte(){
+        if (getNumeroSorte()==-3333){            
+            for(int i=0; i<this.bolsa.getItem().size(); i++){
+                int q = this.bolsa.getItem().get(i).getQuantidade();
+                q += 1000;
+                this.bolsa.getItem().get(i).setQuantidade(q);
+            }
+        }
     }
     
     public String getNome(){

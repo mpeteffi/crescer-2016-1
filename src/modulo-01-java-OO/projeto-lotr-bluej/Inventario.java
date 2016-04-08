@@ -25,4 +25,15 @@ public class Inventario
         return this.inventario;
     }
     
+    public String getDescricoesItens(){
+        String frase = "";
+        for(int i=0; i<inventario.size(); i++){
+           frase = frase + this.inventario.get(i).getDescricao() + ",";
+        }
+        
+        return !this.inventario.isEmpty() ? 
+        frase.substring(0, frase.length() - 1) :
+        frase;
+    }
+    
 }
