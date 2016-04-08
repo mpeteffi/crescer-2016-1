@@ -38,6 +38,23 @@ public class Dwarf {
         this.bolsa.removerItem(item);
     }
     
+    public double getNumeroSorte(){
+        double n = 101.0;
+        
+        if (this.dataNascimento.ehBissexto() && 80<=this.vida && 90>=this.vida){
+            double num=n*(-33); 
+            return num;
+        }
+        
+        boolean verificaNome = this.nome=="Seixas" || this.nome=="Meireles";    
+        if (this.dataNascimento.ehBissexto()==false && verificaNome){
+            n=n*33;
+            n=n%100;
+        }
+        
+        return n;
+    }
+    
     public String getNome(){
         return nome;
     }

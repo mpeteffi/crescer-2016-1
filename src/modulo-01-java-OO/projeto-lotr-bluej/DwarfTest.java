@@ -86,4 +86,40 @@ public class DwarfTest
         assertEquals(4,d1.getNascimento().getMes());
         assertEquals(3200,d1.getNascimento().getAno());
     }
+    
+    @Test
+    public void testeDwarfNumeroSorte101(){
+        Dwarf d1 = new Dwarf("João");
+        assertTrue(d1.getNumeroSorte()==101.0);
+    }
+    
+    @Test
+    public void testeDwarfNumeroSorteBissexto(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
+        Dwarf d1 = new Dwarf("João",data);
+        d1.perderVida();
+        d1.perderVida();
+        assertTrue(d1.getNumeroSorte()==-3333.0);
+    }
+    
+    @Test
+    public void testeDwarfNumeroSorteNaoBissextoJoao(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
+        Dwarf d1 = new Dwarf("João",data);
+        assertTrue(d1.getNumeroSorte()!=33.0);
+    }
+    
+    @Test
+    public void testeDwarfNumeroSorteNaoBissextoSeixas(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
+        Dwarf d1 = new Dwarf("Seixas",data);
+        assertTrue(d1.getNumeroSorte()==33.0);
+    }
+    
+    @Test
+    public void testeDwarfNumeroSorteNaoBissextoMeireles(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
+        Dwarf d1 = new Dwarf("Meireles",data);
+        assertTrue(d1.getNumeroSorte()==33.0);
+    }
 }
