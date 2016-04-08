@@ -39,6 +39,22 @@ public class Inventario
         return i1;
     }
     
+    public void ordenarItens(){
+        int quantidadeTemp;
+        
+        for(int j=0; j<this.inventario.size(); j++){
+            for(int i=0; i<(this.inventario.size()-1); i++){
+                
+                if(this.inventario.get(i+1).getQuantidade()<this.inventario.get(i).getQuantidade()){
+                    quantidadeTemp = this.inventario.get(i+1).getQuantidade();
+                    this.inventario.get(i+1).setQuantidade(this.inventario.get(i).getQuantidade());
+                    this.inventario.get(i).setQuantidade(quantidadeTemp);
+                }
+                
+            }
+        }
+    }
+    
     public String getDescricoesItens(){
         String frase = "";
         for(int i=0; i<inventario.size(); i++){
