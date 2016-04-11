@@ -1,6 +1,7 @@
 public class Elfo{
     private String nome;
     private int experiencia, flechas=42;
+    protected Inventario bolsa = new Inventario();
     
     public Elfo(String nome){
         this.nome = nome;
@@ -40,5 +41,17 @@ public class Elfo{
             flechaNoSingular ? "flecha" : "flechas",
             this.experiencia,
             experienciaNoSingular ? "nível" : "níveis");
+    }
+    
+    public void adicionarItem(Item item){
+        this.bolsa.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item){
+        this.bolsa.removerItem(item);
+    }
+    
+    public Inventario getInventario(){
+        return this.bolsa;
     }
 }
