@@ -40,7 +40,12 @@ public class HobbitContadorTest
    public void retornarMultiplosDeTresAte(){
        HobbitContador bolseiro = new HobbitContador();
        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0));
-       esperado.add(3);esperado.add(6);esperado.add(9);
+       esperado.add(3);
+       esperado.add(6);
+       esperado.add(9);
        assertEquals(bolseiro.obterMultiplosDeTresAte(10),esperado);
+       esperado.add(12);
+       esperado.add(15);
+       assertEquals(bolseiro.obterMultiplosDeTresAte(17),esperado);
     }
 }
