@@ -29,9 +29,10 @@ public class HobbitContador
     public int obterMaiorMultiploDeTresAte(int numero) {
         int maiorMultiplo=0; //varável de retorno não estava inicializada.
                            //array não necessário
-        for (int i=1; i<=numero; i++) { //o limite é o numero dado em parâmetro.
+        for (int i=numero; i>0; i--) { //o limite é o numero dado em parâmetro.
             if (i % 3 == 0) {
                 maiorMultiplo=i;
+                break;
                 //continue não necessário
             }
         }
