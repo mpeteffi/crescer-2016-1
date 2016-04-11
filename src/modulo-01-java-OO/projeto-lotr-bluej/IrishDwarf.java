@@ -67,12 +67,12 @@ public class IrishDwarf {
     
     public void tentarSorte(){
         if (getNumeroSorte()==-3333){            
-            for(int i=0; i<this.bolsa.getItem().size(); i++){
-                int q = this.bolsa.getItem().get(i).getQuantidade();
+            for(int i=0; i<this.bolsa.getLista().size(); i++){
+                int q = this.bolsa.getLista().get(i).getQuantidade();
                 int soma = 0;
                 for(int j=0;j<=q;j++){soma+=j;}
                 q += soma*1000;
-                this.bolsa.getItem().get(i).setQuantidade(q);
+                this.bolsa.getLista().get(i).setQuantidade(q);
             }
         }
     }

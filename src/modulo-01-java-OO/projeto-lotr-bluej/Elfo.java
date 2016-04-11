@@ -6,9 +6,9 @@ public class Elfo{
         this.nome = nome;
     }
     
-    public Elfo(String nome, int f){
-        this.nome = nome;
-        this.flechas = f;
+    public Elfo(String nome, int flechas){
+        this(nome);
+        this.flechas = flechas;
     }
     
     public void atirarFlecha(Dwarf gimli){

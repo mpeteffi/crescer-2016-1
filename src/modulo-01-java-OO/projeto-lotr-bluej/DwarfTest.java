@@ -57,7 +57,7 @@ public class DwarfTest
         Dwarf d1 = new Dwarf("João");
         Item i1 = new Item(1,"Martelo");
         d1.adicionarItem(i1);
-        assertEquals(i1,d1.getInventario().getItem().get(0));
+        assertEquals(i1,d1.getInventario().getLista().get(0));
     }
     
     @Test
@@ -65,9 +65,9 @@ public class DwarfTest
         Dwarf d1 = new Dwarf("João");
         Item i1 = new Item(1,"Martelo");
         d1.adicionarItem(i1);
-        assertEquals(i1,d1.getInventario().getItem().get(0));
+        assertEquals(i1,d1.getInventario().getLista().get(0));
         d1.perderItem(i1);
-        assertEquals(0,d1.getInventario().getItem().size());
+        assertEquals(0,d1.getInventario().getLista().size());
     }
     
     @Test
@@ -163,9 +163,9 @@ public class DwarfTest
         //Sorte menor que 0
         Item i1 = new Item(1,"Poção");
         d1.adicionarItem(i1);
-        assertEquals(1,d1.getInventario().getItem().get(0).getQuantidade());
+        assertEquals(1,d1.getInventario().getLista().get(0).getQuantidade());
         d1.tentarSorte();
-        assertEquals(1001,d1.getInventario().getItem().get(0).getQuantidade());
+        assertEquals(1001,d1.getInventario().getLista().get(0).getQuantidade());
     }
     
     @Test
@@ -179,11 +179,11 @@ public class DwarfTest
         Item i2 = new Item(3,"Cervejas");
         d1.adicionarItem(i1);
         d1.adicionarItem(i2);
-        assertEquals(1,d1.getInventario().getItem().get(0).getQuantidade());
-        assertEquals(3,d1.getInventario().getItem().get(1).getQuantidade());
+        assertEquals(1,d1.getInventario().getLista().get(0).getQuantidade());
+        assertEquals(3,d1.getInventario().getLista().get(1).getQuantidade());
         d1.tentarSorte();
-        assertEquals(1001,d1.getInventario().getItem().get(0).getQuantidade());
-        assertEquals(1003,d1.getInventario().getItem().get(1).getQuantidade());
+        assertEquals(1001,d1.getInventario().getLista().get(0).getQuantidade());
+        assertEquals(1003,d1.getInventario().getLista().get(1).getQuantidade());
     }
       
 }

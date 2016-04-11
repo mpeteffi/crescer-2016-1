@@ -15,7 +15,7 @@ public class InventarioTest
         Item i1 = new Item(1,"Martelo");
         Inventario bolsa = new Inventario();
         bolsa.adicionarItem(i1);
-        assertEquals(i1,bolsa.getItem().get(0));
+        assertEquals(i1,bolsa.getLista().get(0));
     }
     
     @Test
@@ -23,9 +23,9 @@ public class InventarioTest
         Item i1 = new Item(1,"Martelo");
         Inventario bolsa = new Inventario();
         bolsa.adicionarItem(i1);
-        assertTrue(bolsa.getItem().get(0)==i1);
+        assertTrue(bolsa.getLista().get(0)==i1);
         bolsa.removerItem(i1);
-        assertTrue(bolsa.getItem().size()==0);
+        assertTrue(bolsa.getLista().size()==0);
     }
     
     @Test
@@ -66,10 +66,10 @@ public class InventarioTest
         d1.adicionarItem(i3);
         d1.adicionarItem(i4);
         d1.getInventario().ordenarItens();
-        assertTrue(d1.getInventario().getItem().get(0).getQuantidade()==1);
-        assertTrue(d1.getInventario().getItem().get(1).getQuantidade()==2);
-        assertTrue(d1.getInventario().getItem().get(2).getQuantidade()==12);
-        assertTrue(d1.getInventario().getItem().get(3).getQuantidade()==18);
+        assertTrue(d1.getInventario().getLista().get(0).getQuantidade()==1);
+        assertTrue(d1.getInventario().getLista().get(1).getQuantidade()==2);
+        assertTrue(d1.getInventario().getLista().get(2).getQuantidade()==12);
+        assertTrue(d1.getInventario().getLista().get(3).getQuantidade()==18);
     }
     
     @Test
@@ -86,11 +86,11 @@ public class InventarioTest
         d1.adicionarItem(i4);
         d1.adicionarItem(i5);
         d1.getInventario().ordenarItens();
-        assertTrue(d1.getInventario().getItem().get(0).getQuantidade()==5);
-        assertTrue(d1.getInventario().getItem().get(1).getQuantidade()==8);
-        assertTrue(d1.getInventario().getItem().get(2).getQuantidade()==12);
-        assertTrue(d1.getInventario().getItem().get(3).getQuantidade()==13);
-        assertTrue(d1.getInventario().getItem().get(4).getQuantidade()==90);
+        assertTrue(d1.getInventario().getLista().get(0).getQuantidade()==5);
+        assertTrue(d1.getInventario().getLista().get(1).getQuantidade()==8);
+        assertTrue(d1.getInventario().getLista().get(2).getQuantidade()==12);
+        assertTrue(d1.getInventario().getLista().get(3).getQuantidade()==13);
+        assertTrue(d1.getInventario().getLista().get(4).getQuantidade()==90);
         
     }
 }

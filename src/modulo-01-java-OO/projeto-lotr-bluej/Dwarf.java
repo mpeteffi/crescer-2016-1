@@ -19,13 +19,10 @@ public class Dwarf {
     
     public void perderVida(){
         double sorte = getNumeroSorte();
-        
         if (sorte < 0){
             this.experiencia += 2;
         }
-        
         if (sorte>100){
-        
             if (this.vida > 0){
                 this.vida -= 10;
             } 
@@ -33,7 +30,6 @@ public class Dwarf {
                 this.vida=0;
                 this.status = Status.MORTO;
             }
-        
         }
     }
     
@@ -50,27 +46,24 @@ public class Dwarf {
     }
     
     public double getNumeroSorte(){
-        double n = 101.0;
-        
+        double n = 101.0;  
         if (this.dataNascimento.ehBissexto() && 80<=this.vida && 90>=this.vida){
             double num=n*(-33); 
             return num;
         }
-        
         boolean verificaNome = this.nome=="Seixas" || this.nome=="Meireles";    
         if (this.dataNascimento.ehBissexto()==false && verificaNome){
             n=n*33%100;
         }
-        
         return n;
     }
     
     public void tentarSorte(){
         if (getNumeroSorte()==-3333){            
-            for(int i=0; i<this.bolsa.getItem().size(); i++){
-                int q = this.bolsa.getItem().get(i).getQuantidade();
+            for(int i=0; i<this.bolsa.getLista().size(); i++){
+                int q = this.bolsa.getLista().get(i).getQuantidade();
                 q += 1000;
-                this.bolsa.getItem().get(i).setQuantidade(q);
+                this.bolsa.getLista().get(i).setQuantidade(q);
             }
         }
     }

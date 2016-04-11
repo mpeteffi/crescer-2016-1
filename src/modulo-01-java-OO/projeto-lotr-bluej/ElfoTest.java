@@ -5,23 +5,28 @@ import org.junit.Test;
 
 public class ElfoTest
 {
+    @Test
+    public void atribuirApenasNome(){
+        Elfo legolas = new Elfo("Legolas");
+        assertEquals("Legolas",legolas.getNome());
+    }
     
     @Test
-    public void testeAtribuirNomeEFlechas(){
+    public void atribuirNomeEFlechasCorretamente(){
         Elfo legolas = new Elfo("Legolas",30);
         assertEquals("Legolas",legolas.getNome());
         assertEquals(30,legolas.getFlechas());
     }
     
     @Test
-    public void testeAtribuirNomeVazioE120Flechas(){
+    public void atribuirNomeVazioE120Flechas(){
         Elfo legolas = new Elfo("",120);
         assertEquals("",legolas.getNome());
         assertEquals(120,legolas.getFlechas());
     }
     
     @Test
-    public void testeAtribuirNomeVazio120FlechasEAtira(){
+    public void atribuirNomeVazio120FlechasEAtirar(){
         Elfo legolas = new Elfo("",120);
         Dwarf d1 = new Dwarf("gimli");
         legolas.atirarFlecha(d1);
@@ -31,19 +36,13 @@ public class ElfoTest
     }
     
     @Test
-    public void testeAtribuirNome(){
-        Elfo legolas = new Elfo("Legolas");
-        assertEquals("Legolas",legolas.getNome());
-    }
-    
-    @Test
-    public void testeAtribuirFlechas(){
+    public void atribuir42FlechasPorPadrao(){
         Elfo legolas = new Elfo("Legolas");
         assertEquals(42,legolas.getFlechas());
     }
     
     @Test
-    public void testePerderFlechas(){
+    public void perderFlechasAoAtirar(){
         Elfo legolas = new Elfo("Legolas");
         Dwarf gimli = new Dwarf("gimli");
         legolas.atirarFlecha(gimli);
@@ -51,37 +50,41 @@ public class ElfoTest
     }
     
     @Test
-    public void testeGanharExperiencia(){
+    public void ganharExperienciaAoAtirar(){
         Elfo legolas = new Elfo("Legolas");
         Dwarf gimli = new Dwarf("gimli");
         legolas.atirarFlecha(gimli);
         assertEquals(1,legolas.getExperiencia());
+        legolas.atirarFlecha(gimli);
+        assertEquals(2,legolas.getExperiencia());
     }
     
     @Test
-    public void testeTirarVidaDwarf(){
+    public void tirarVidaDwarfAoAtirar(){
         Elfo legolas = new Elfo("Legolas");
         Dwarf gimli = new Dwarf("gimli");
         legolas.atirarFlecha(gimli);
         assertEquals(100,gimli.getVida());
+        legolas.atirarFlecha(gimli);
+        assertEquals(90,gimli.getVida());
     }
     
     @Test
-    public void testeCriacaoToString(){
+    public void criacaoToStringConformeDados(){
         Elfo legolas = new Elfo("Legolas");
         String esperado = "Legolas possui 42 flechas e 0 níveis de experiência.";
         assertEquals(esperado,legolas.toString());
     }
     
     @Test
-    public void testeCriacaoElfoLegolasCom1Flecha(){
+    public void toStringParaElfoLegolasCom1Flecha(){
         Elfo legolas = new Elfo("Legolas",1);
         String esperado = "Legolas possui 1 flecha e 0 níveis de experiência.";
         assertEquals(esperado,legolas.toString());
     }
     
     @Test
-    public void testeElfoLegolasCom10FlechasEAtiraUma(){
+    public void toStringElfoLegolasCom10FlechasEAtiraUma(){
         Elfo legolas = new Elfo("Legolas",10);
         legolas.atirarFlecha(new Dwarf("gimli"));
         String esperado = "Legolas possui 9 flechas e 1 nível de experiência.";
