@@ -27,4 +27,13 @@ public class HobbitContadorTest
        hobbit.calcularDiferenca(arrayDePares);
        assertEquals(840,hobbit.calcularDiferenca(arrayDePares));
    }
+   
+   @Test
+   public void retornarMaiorMultiloDeTres(){
+       HobbitContador bolseiro = new HobbitContador();
+       assertEquals(bolseiro.obterMaiorMultiploDeTresAte(10),9);
+       assertEquals(bolseiro.obterMaiorMultiploDeTresAte(100),99);
+       assertEquals(bolseiro.obterMaiorMultiploDeTresAte(29),27);
+       
+    }
 }

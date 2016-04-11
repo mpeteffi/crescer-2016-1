@@ -26,4 +26,15 @@ public class HobbitContador
         return diferenca;
     }
 
+    public int obterMaiorMultiploDeTresAte(int numero) {
+        int maiorMultiplo=0; //varável de retorno não estava inicializada.
+                           //array não necessário
+        for (int i=1; i<=numero; i++) { //o limite é o numero dado em parâmetro.
+            if (i % 3 == 0) {
+                maiorMultiplo=i;
+            }
+        }
+
+      return maiorMultiplo; //multiplos não é int. 
+    }
 }
