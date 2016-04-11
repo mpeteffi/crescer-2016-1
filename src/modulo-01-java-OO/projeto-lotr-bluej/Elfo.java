@@ -1,10 +1,8 @@
-public class Elfo{
-    private String nome;
-    private int experiencia, flechas=42;
-    protected Inventario bolsa = new Inventario();
+public class Elfo extends Personagem{
+    private int flechas=42;
     
     public Elfo(String nome){
-        this.nome = nome;
+        super(nome);
     }
     
     public Elfo(String nome, int flechas){
@@ -17,14 +15,6 @@ public class Elfo{
             experiencia++;
             gimli.perderVida();
             } 
-    
-    public String getNome(){
-        return this.nome;
-    }
-    
-    public int getExperiencia(){
-        return this.experiencia;
-    }
     
     public int getFlechas(){
         return this.flechas;
@@ -43,15 +33,5 @@ public class Elfo{
             experienciaNoSingular ? "nível" : "níveis");
     }
     
-    public void adicionarItem(Item item){
-        this.bolsa.adicionarItem(item);
-    }
     
-    public void perderItem(Item item){
-        this.bolsa.removerItem(item);
-    }
-    
-    public Inventario getInventario(){
-        return this.bolsa;
-    }
 }

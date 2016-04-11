@@ -1,14 +1,12 @@
 import java.util.ArrayList;
 
-public class Dwarf {
-    private String nome;
-    private int vida=110, experiencia=0;
-    private Status status = Status.VIVO;
-    protected Inventario bolsa = new Inventario();
+public class Dwarf extends Personagem{
+    private int vida=110;
     private DataTerceiraEra dataNascimento;
+    private Status status = Status.VIVO;
     
     public Dwarf(String nome){ 
-        this.nome = nome;
+        super(nome);
         this.dataNascimento = new DataTerceiraEra(1,1,1);
     }
     
@@ -32,19 +30,7 @@ public class Dwarf {
             }
         }
     }
-    
-    public void setNome(String nome){
-        this.nome=nome;
-    }
-    
-    public void adicionarItem(Item item){
-        this.bolsa.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item){
-        this.bolsa.removerItem(item);
-    }
-    
+        
     public double getNumeroSorte(){
         double n = 101.0;  
         if (this.dataNascimento.ehBissexto() && 80<=this.vida && 90>=this.vida){
@@ -68,24 +54,13 @@ public class Dwarf {
         }
     }
     
-    public String getNome(){
-        return nome;
-    }
     
-    public int getExperiencia(){
-        return this.experiencia;
+    public Status getStatus(){
+        return this.status;
     }
     
     public int getVida(){
         return this.vida;
-    }
-    
-    public Inventario getInventario(){
-        return this.bolsa;
-    }
-    
-    public Status getStatus(){
-        return this.status;
     }
     
     public DataTerceiraEra getNascimento(){
