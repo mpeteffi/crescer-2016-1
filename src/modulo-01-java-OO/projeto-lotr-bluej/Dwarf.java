@@ -4,7 +4,7 @@ public class Dwarf {
     private String nome;
     private int vida=110, experiencia=0;
     private Status status = Status.VIVO;
-    private Inventario bolsa = new Inventario();
+    protected Inventario bolsa = new Inventario();
     private DataTerceiraEra dataNascimento;
     
     public Dwarf(String nome){ 
