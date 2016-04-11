@@ -37,4 +37,16 @@ public class ElfoVerdeTest
         assertEquals(verde.getInventario().getLista().get(0),i2);
         assertEquals(verde.getInventario().getLista().get(1),i4);
     }
+    
+    @Test 
+    public void elfoVerdeNasceCom100DeVida(){
+        Elfo verde = new ElfoVerde("Legolas");
+        assertEquals(verde.getVida(),100);
+    }
+    
+    @Test 
+    public void elfoVerdeNasceComVivo(){
+        Elfo verde = new ElfoVerde("Legolas");
+        assertEquals(verde.getStatus(),Status.VIVO);
+    }
 }

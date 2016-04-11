@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 
 public class Dwarf extends Personagem{
-    private int vida=110;
     private DataTerceiraEra dataNascimento;
-    private Status status = Status.VIVO;
     
     public Dwarf(String nome){ 
         super(nome);
+        this.vida=110;
         this.dataNascimento = new DataTerceiraEra(1,1,1);
     }
     
@@ -52,15 +51,6 @@ public class Dwarf extends Personagem{
                 this.bolsa.getLista().get(i).setQuantidade(q);
             }
         }
-    }
-    
-    
-    public Status getStatus(){
-        return this.status;
-    }
-    
-    public int getVida(){
-        return this.vida;
     }
     
     public DataTerceiraEra getNascimento(){

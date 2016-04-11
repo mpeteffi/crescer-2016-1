@@ -11,6 +11,18 @@ public class ElfoTest
         assertEquals("Legolas",legolas.getNome());
     }
     
+    @Test 
+    public void elfoNasceCom100DeVida(){
+        Elfo legolas = new Elfo("Legolas");
+        assertEquals(legolas.getVida(),100);
+    }
+    
+    @Test 
+    public void elfoNasceComVivo(){
+        Elfo legolas = new Elfo("Legolas");
+        assertEquals(legolas.getStatus(),Status.VIVO);
+    }
+    
     @Test
     public void atribuirNomeEFlechasCorretamente(){
         Elfo legolas = new Elfo("Legolas",30);
