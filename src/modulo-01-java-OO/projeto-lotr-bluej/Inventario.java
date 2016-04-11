@@ -43,6 +43,11 @@ public class Inventario
                 }
             }
         }
+        
+        /* Collections.sort(this.inventario, new Comparator<Item>(){
+              public int compare(Item item1, Item item2){
+                 return Integer.compare(item1.getQuantidade(), item2getQuantidade());
+                      }}; */
     }
     
     public String getDescricoesItens(){
