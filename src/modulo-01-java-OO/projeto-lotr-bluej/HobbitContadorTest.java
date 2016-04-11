@@ -29,11 +29,18 @@ public class HobbitContadorTest
    }
    
    @Test
-   public void retornarMaiorMultiloDeTres(){
+   public void retornarMaiorMultiploDeTres(){
        HobbitContador bolseiro = new HobbitContador();
        assertEquals(bolseiro.obterMaiorMultiploDeTresAte(10),9);
        assertEquals(bolseiro.obterMaiorMultiploDeTresAte(100),99);
        assertEquals(bolseiro.obterMaiorMultiploDeTresAte(29),27);
-       
+   }
+    
+    @Test
+   public void retornarMultiplosDeTresAte(){
+       HobbitContador bolseiro = new HobbitContador();
+       ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0));
+       esperado.add(3);esperado.add(6);esperado.add(9);
+       assertEquals(bolseiro.obterMultiplosDeTresAte(10),esperado);
     }
 }

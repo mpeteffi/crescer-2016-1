@@ -32,9 +32,22 @@ public class HobbitContador
         for (int i=1; i<=numero; i++) { //o limite é o numero dado em parâmetro.
             if (i % 3 == 0) {
                 maiorMultiplo=i;
+                //continue não necessário
             }
         }
 
-      return maiorMultiplo; //multiplos não é int. 
+        return maiorMultiplo; //multiplos não é int. 
+    }
+    
+    public ArrayList<Integer> obterMultiplosDeTresAte(int numero){
+        ArrayList<Integer> multiplos = new ArrayList<>(Arrays.asList(0));
+        
+        for (int i = 1; i <=numero; i++) {  //o limite é o parametro numero
+            if (i % 3 == 0){                //break sem sentido aparente
+                multiplos.add(i);
+            }
+        }
+
+        return multiplos;
     }
 }
