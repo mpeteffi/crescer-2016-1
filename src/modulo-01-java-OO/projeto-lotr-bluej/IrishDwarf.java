@@ -70,7 +70,7 @@ public class IrishDwarf {
             for(int i=0; i<this.bolsa.getLista().size(); i++){
                 int q = this.bolsa.getLista().get(i).getQuantidade();
                 int soma = 0;
-                for(int j=0;j<=q;j++){soma+=j;}
+                soma=(q*(q+1))/2;
                 q += soma*1000;
                 this.bolsa.getLista().get(i).setQuantidade(q);
             }
