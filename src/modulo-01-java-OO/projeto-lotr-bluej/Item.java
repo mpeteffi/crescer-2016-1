@@ -19,4 +19,12 @@ public class Item
     public void setQuantidade(int quantidade){
         this.quantidade=quantidade;
     }
+    
+    public boolean equals(Object obj){
+        if(this.quantidade==((Item)obj).getQuantidade() &&
+        this.descricao==((Item)obj).getDescricao()){
+            return true;
+        }
+        return false;
+    }
 }
