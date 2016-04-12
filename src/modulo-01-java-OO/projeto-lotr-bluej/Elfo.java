@@ -11,7 +11,6 @@ public class Elfo extends Personagem{
     public Elfo(String nome, int flechas){
         this(nome);
         this.flechas = flechas;
-        this.quantidadeElfos+=1;
     }
     
     public void atirarFlecha(Dwarf gimli){
