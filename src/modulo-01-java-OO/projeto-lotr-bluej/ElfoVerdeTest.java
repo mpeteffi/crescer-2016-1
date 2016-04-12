@@ -41,7 +41,7 @@ public class ElfoVerdeTest
     @Test 
     public void elfoVerdeNasceCom100DeVida(){
         Elfo verde = new ElfoVerde("Legolas");
-        assertEquals(verde.getVida(),100);
+        assertEquals(verde.getVida(),100,0.001);
     }
     
     @Test 

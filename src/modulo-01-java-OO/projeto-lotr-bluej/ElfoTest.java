@@ -14,7 +14,7 @@ public class ElfoTest
     @Test 
     public void elfoNasceCom100DeVida(){
         Elfo legolas = new Elfo("Legolas");
-        assertEquals(legolas.getVida(),100);
+        assertTrue(legolas.getVida()==100);
     }
     
     @Test 
@@ -76,9 +76,9 @@ public class ElfoTest
         Elfo legolas = new Elfo("Legolas");
         Dwarf gimli = new Dwarf("gimli");
         legolas.atirarFlecha(gimli);
-        assertEquals(100,gimli.getVida());
+        assertEquals(gimli.getVida(), 100 , 0.001);
         legolas.atirarFlecha(gimli);
-        assertEquals(90,gimli.getVida());
+        assertEquals(90,gimli.getVida(),0.001);
     }
     
     @Test

@@ -14,14 +14,14 @@ public class DwarfTest
     @Test
     public void testeAtribuicaoVida(){
         Dwarf d1 = new Dwarf("Joao");
-        assertEquals(110,d1.getVida());
+        assertEquals(110,d1.getVida(),0.001);
     }
     
     @Test
     public void testeDawrfPerdeVida(){
         Dwarf d1 = new Dwarf("Joao");
         d1.perderVida();
-        assertEquals(100,d1.getVida());
+        assertEquals(100,d1.getVida(),0.001);
     }
     
     @Test
@@ -41,14 +41,14 @@ public class DwarfTest
     public void testeDwarfVidaNuncaNegativa(){
         Dwarf d1 = new Dwarf("Joao");
         for(int i=1;i<=15;i++){d1.perderVida();}
-        assertEquals(0,d1.getVida());
+        assertEquals(0,d1.getVida(),0.001);
     }
     
     @Test
     public void testeDwarfMortoSempreComVida0(){
         Dwarf d1 = new Dwarf("Joao");
         for(int i=1;i<=15;i++){d1.perderVida();}
-        assertEquals(0,d1.getVida());
+        assertEquals(0,d1.getVida(),0.001);
         assertEquals(Status.MORTO,d1.getStatus());
     }
     
@@ -129,7 +129,7 @@ public class DwarfTest
         Dwarf d1 = new Dwarf("Seixas",data);
         //Sorte entre 0 e 100
         d1.perderVida();
-        assertEquals(110,d1.getVida());
+        assertEquals(110,d1.getVida(),0.001);
         assertEquals(0,d1.getExperiencia());
     }
     
@@ -138,7 +138,7 @@ public class DwarfTest
         Dwarf d1 = new Dwarf("João");
         //Sorte maior que 100
         d1.perderVida();
-        assertEquals(100,d1.getVida());
+        assertEquals(100,d1.getVida(),0.001);
         assertEquals(0,d1.getExperiencia());
     }
     
@@ -150,7 +150,7 @@ public class DwarfTest
         d1.perderVida();
         //Sorte menor que 0
         d1.perderVida();
-        assertEquals(90,d1.getVida());
+        assertEquals(90,d1.getVida(),0.001);
         assertEquals(2,d1.getExperiencia());
     }
     

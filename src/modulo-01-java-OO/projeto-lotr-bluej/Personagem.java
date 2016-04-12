@@ -1,7 +1,8 @@
 public class Personagem
 {
     protected String nome;
-    protected int experiencia=0, vida;
+    protected int experiencia=0; 
+    protected double vida;
     protected Inventario bolsa = new Inventario();
     protected Status status = Status.VIVO;
 
@@ -38,7 +39,7 @@ public class Personagem
         this.status=status;
     }
     
-    public int getVida(){
+    public double getVida(){
         return this.vida;
     }
 }
