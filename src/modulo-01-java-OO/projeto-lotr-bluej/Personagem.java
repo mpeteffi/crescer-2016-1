@@ -35,10 +35,6 @@ public class Personagem
         return this.status;
     }
     
-    protected void setStatus(Status status){
-        this.status=status;
-    }
-    
     public double getVida(){
         return this.vida;
     }

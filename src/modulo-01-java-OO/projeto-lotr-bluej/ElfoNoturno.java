@@ -11,12 +11,11 @@ public class ElfoNoturno extends Elfo {
     }
     
     public void atirarFlecha(Dwarf gimli){
-            this.flechas--;
-            experiencia=experiencia+3;
-            gimli.perderVida();
+            super.atirarFlecha(gimli);
+            experiencia=experiencia+2;
             this.vida = this.vida*0.95; 
             if((int)this.vida<=0){
-                setStatus(Status.MORTO);
+                this.status=Status.MORTO;
             }
              
             /*A partir da pergunta da questão 7.2, cabe ressaltar que calcular
