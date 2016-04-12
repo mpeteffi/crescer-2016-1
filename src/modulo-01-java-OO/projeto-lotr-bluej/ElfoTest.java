@@ -6,6 +6,17 @@ import org.junit.Test;
 public class ElfoTest
 {
     @Test
+    public void elfoContadorAumentaACadaNewElfo(){
+        int esperado = Personagem.quantidadeElfos;
+        Elfo l1 = new Elfo("L1");
+        assertEquals(esperado+1, Personagem.quantidadeElfos);
+        Elfo l2 = new ElfoVerde("verde");
+        assertEquals(esperado+2, Personagem.quantidadeElfos);
+        Elfo l3 = new ElfoNoturno("noturno");
+        assertEquals(esperado+3, Personagem.quantidadeElfos);
+    }
+    
+    @Test
     public void atribuirApenasNome(){
         Elfo legolas = new Elfo("Legolas");
         assertEquals("Legolas",legolas.getNome());
@@ -120,4 +131,6 @@ public class ElfoTest
         d1.perderItem(i1);
         assertEquals(0,d1.getInventario().getLista().size());
     }
+    
+   
 }
