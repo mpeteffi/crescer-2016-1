@@ -11,10 +11,9 @@ public class ElfoVerde extends Elfo {
     }
     
     public void atirarFlecha(Dwarf gimli){
-            this.flechas--;
-            experiencia=experiencia+2;
-            gimli.perderVida();
-            } 
+            super.atirarFlecha(gimli);
+            this.experiencia++;
+    } 
     
     public void adicionarItem(Item item){
         if (item.getDescricao()=="Espada de aço valiriano" ||
