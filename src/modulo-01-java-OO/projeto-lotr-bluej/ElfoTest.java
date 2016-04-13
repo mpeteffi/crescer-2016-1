@@ -5,6 +5,11 @@ import org.junit.Test;
 
 public class ElfoTest
 {
+    @After
+    public void tearDown() {
+        System.gc();
+    }
+    
     @Test
     public void elfoContadorAumentaACadaNewElfo(){
         int esperado = Personagem.quantidadeElfos;
@@ -14,6 +19,17 @@ public class ElfoTest
         assertEquals(esperado+2, Personagem.quantidadeElfos);
         Elfo l3 = new ElfoNoturno("noturno");
         assertEquals(esperado+3, Personagem.quantidadeElfos);
+    }
+    
+    @Test
+    public void elfoContadorAumentaACadaNewElfoComFinalize(){
+        assertEquals(0, Personagem.quantidadeElfos);
+        Elfo l1 = new Elfo("L1");
+        assertEquals(1, Personagem.quantidadeElfos);
+        Elfo l2 = new ElfoVerde("verde");
+        assertEquals(2, Personagem.quantidadeElfos);
+        Elfo l3 = new ElfoNoturno("noturno");
+        assertEquals(3, Personagem.quantidadeElfos);
     }
     
     @Test
