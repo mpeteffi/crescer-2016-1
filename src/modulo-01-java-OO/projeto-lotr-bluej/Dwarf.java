@@ -31,24 +31,25 @@ public class Dwarf extends Personagem{
     }
         
     public double getNumeroSorte(){
-        double n = 101.0;  
+        double numero = 101.0;  
         if (this.dataNascimento.ehBissexto() && 80<=this.vida && 90>=this.vida){
-            double num=n*(-33); 
-            return num;
+            numero=numero*(-33); 
+            return numero;
         }
         boolean verificaNome = this.nome=="Seixas" || this.nome=="Meireles";    
         if (this.dataNascimento.ehBissexto()==false && verificaNome){
-            n=n*33%100;
+            numero=numero*33%100;
+            return numero;
         }
-        return n;
+        return numero;
     }
     
     public void tentarSorte(){
         if (getNumeroSorte()==-3333){            
             for(int i=0; i<this.bolsa.getLista().size(); i++){
-                int q = this.bolsa.getLista().get(i).getQuantidade();
-                q += 1000;
-                this.bolsa.getLista().get(i).setQuantidade(q);
+                int quantidade = this.bolsa.getLista().get(i).getQuantidade();
+                quantidade += 1000;
+                this.bolsa.getLista().get(i).setQuantidade(quantidade);
             }
         }
     }

@@ -1,5 +1,4 @@
-public class Item
-{
+public class Item{
     private int quantidade;
     private String descricao;
 

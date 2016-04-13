@@ -1,12 +1,9 @@
 import java.util.ArrayList;
 
-public class Inventario
-{
+public class Inventario{
     private ArrayList<Item> inventario = new ArrayList<>();
 
-    public Inventario(){
-        
-    }
+    public Inventario(){}
 
     public void adicionarItem(Item item){
         this.inventario.add(item);
@@ -16,20 +13,16 @@ public class Inventario
         this.inventario.remove(item);
     }
     
-    public ArrayList<Item> getLista(){
-        return this.inventario;
-    }
-    
     public Item itemMaisPopular(){
-        int max = 0;
-        Item i1 = new Item(0,"Sem Itens");
+        int maiorQuantidade = 0;
+        Item item = new Item(0,"Sem Itens");
         for(int i=0; i<inventario.size(); i++){
-           if (this.inventario.get(i).getQuantidade() > max){
-               max = this.inventario.get(i).getQuantidade();
-               i1 = this.inventario.get(i);
+            if (this.inventario.get(i).getQuantidade() > maiorQuantidade){
+                maiorQuantidade = this.inventario.get(i).getQuantidade();
+                item = this.inventario.get(i);
             }
         }
-        return i1;
+        return item;
     }
     
     public void ordenarItens(){
@@ -43,11 +36,12 @@ public class Inventario
                 }
             }
         }
-        
-        /* Collections.sort(this.inventario, new Comparator<Item>(){
-              public int compare(Item item1, Item item2){
+        /*Collections.sort(this.inventario, new Comparator<Item>()
+        {
+            public int compare(Item item1, Item item2){
                  return Integer.compare(item1.getQuantidade(), item2getQuantidade());
-                      }}; */
+            }
+        });*/                     
     }
     
     public String getDescricoesItens(){
@@ -61,5 +55,9 @@ public class Inventario
         return !this.inventario.isEmpty() ? 
         frase.substring(0, frase.length() - 1) :
         frase;
+    }
+    
+    public ArrayList<Item> getLista(){
+        return this.inventario;
     }
 }

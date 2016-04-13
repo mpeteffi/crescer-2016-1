@@ -1,9 +1,7 @@
-public class DataTerceiraEra
-{
+public class DataTerceiraEra{
     private int dia, mes, ano;
     
-    public DataTerceiraEra(int dia, int mes, int ano)
-    {
+    public DataTerceiraEra(int dia, int mes, int ano){
         this.dia=dia;
         this.mes=mes;
         this.ano=ano;

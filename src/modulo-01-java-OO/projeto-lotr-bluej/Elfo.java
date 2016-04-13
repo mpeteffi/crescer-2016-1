@@ -17,11 +17,7 @@ public class Elfo extends Personagem{
             this.flechas--;
             this.experiencia++;
             gimli.perderVida();
-            } 
-    
-    public int getFlechas(){
-        return this.flechas;
-    }
+    } 
     
     public String toString(){
         
@@ -36,5 +32,7 @@ public class Elfo extends Personagem{
             experienciaNoSingular ? "nível" : "níveis");
     }
     
-    
+    public int getFlechas(){
+        return this.flechas;
+    }
 }

@@ -31,7 +31,7 @@ public class ElfoNoturno extends Elfo {
               após atirar uma flecha, é o uso do valor de (int)this.vida para "arredondar"
               de double para int. Dessa forma, é possível que o elfo morra em algum momento
               ((int)this.vida<=0).*/
-            } 
+    } 
     
 }
 

@@ -19,7 +19,7 @@ public class ElfoVerde extends Elfo {
         if (item.getDescricao()=="Espada de aço valiriano" ||
             item.getDescricao()=="Arco e Flecha de Vidro"){
                 super.adicionarItem(item);
-            }
+        }
     }
 }
 

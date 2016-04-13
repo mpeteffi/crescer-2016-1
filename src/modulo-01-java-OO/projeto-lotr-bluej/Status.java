@@ -1,4 +1,3 @@
-public enum Status
-{
+public enum Status{
     VIVO, INCONSCIENTE, MORTO; 
 }

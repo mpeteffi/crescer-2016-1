@@ -12,20 +12,20 @@ public abstract class Personagem
         this.nome=nome;
     }
     
-    public String getNome(){
-        return this.nome;
-    }
-    
-    public int getExperiencia(){
-        return this.experiencia;
-    }
-    
     public void adicionarItem(Item item){
         this.bolsa.adicionarItem(item);
     }
     
     public void perderItem(Item item){
         this.bolsa.removerItem(item);
+    }
+    
+    public String getNome(){
+        return this.nome;
+    }
+    
+    public int getExperiencia(){
+        return this.experiencia;
     }
     
     public Inventario getInventario(){
