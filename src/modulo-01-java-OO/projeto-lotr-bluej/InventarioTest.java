@@ -5,6 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.*;
+import java.util.ArrayList;
 
 
 public class InventarioTest
@@ -92,5 +93,20 @@ public class InventarioTest
         assertTrue(d1.getInventario().getLista().get(3).getQuantidade()==13);
         assertTrue(d1.getInventario().getLista().get(4).getQuantidade()==90);
         
+    }
+    
+    @Test
+    public void equalsInventariosMesmosItensEPosicoesIguais(){
+        Inventario bolsa1 = new Inventario();
+        Inventario bolsa2 = new Inventario();
+        Item i1 = new Item(2,"Martelo");
+        Item i2 = new Item(2,"Martelo");
+        Item i3 = new Item(1,"Machado");
+        Item i4 = new Item(1,"Machado");
+        bolsa1.adicionarItem(i1);
+        bolsa2.adicionarItem(i2);
+        bolsa1.adicionarItem(i3);
+        bolsa2.adicionarItem(i4);
+        assertTrue(bolsa1.equals(bolsa2));
     }
 }

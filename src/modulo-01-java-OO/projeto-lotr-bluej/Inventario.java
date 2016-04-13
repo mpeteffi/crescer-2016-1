@@ -44,6 +44,19 @@ public class Inventario{
         });*/                     
     }
     
+    public boolean equals(Object obj){
+        Inventario outro = (Inventario)obj;
+        boolean iguais = false;
+        if(this.inventario != null && outro != null){
+            for(int i=0;i<this.inventario.size();i++){
+                iguais = this.inventario.get(i).equals(outro.getLista().get(i));            
+            }     
+        } else {
+            iguais = false;
+        }
+        return iguais;
+    }
+    
     public String getDescricoesItens(){
         String frase = "";
         for(int i=0; i<inventario.size(); i++){
