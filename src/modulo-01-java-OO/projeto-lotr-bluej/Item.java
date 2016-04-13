@@ -20,10 +20,9 @@ public class Item{
     }
     
     public boolean equals(Object obj){
-        if(this.quantidade==((Item)obj).getQuantidade() &&
-        this.descricao==((Item)obj).getDescricao()){
-            return true;
-        }
-        return false;
+        return this.quantidade==((Item)obj).getQuantidade() &&
+            this.descricao != null &&
+            ((Item)obj) != null &&
+            this.descricao==((Item)obj).getDescricao();
     }
 }
