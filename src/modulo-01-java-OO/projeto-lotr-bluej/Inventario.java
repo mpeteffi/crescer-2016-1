@@ -47,10 +47,16 @@ public class Inventario{
     public boolean equals(Object obj){
         Inventario outro = (Inventario)obj;
         boolean iguais = false;
-        if(this.inventario != null && outro != null){
+        if(this.inventario != null && outro != null
+            && this.inventario.size()==outro.getLista().size()){
             for(int i=0;i<this.inventario.size();i++){
-                iguais = this.inventario.get(i).equals(outro.getLista().get(i));            
-            }     
+                Item outroItem = this.inventario.get(i);
+                iguais = outro.getLista().contains(outroItem); 
+            }
+            for(int i=0;i<outro.getLista().size();i++){
+                Item outroItem = outro.getLista().get(i);
+                iguais = this.inventario.contains(outroItem); 
+            } 
         } else {
             iguais = false;
         }

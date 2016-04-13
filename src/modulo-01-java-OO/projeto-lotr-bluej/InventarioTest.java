@@ -109,4 +109,37 @@ public class InventarioTest
         bolsa2.adicionarItem(i4);
         assertTrue(bolsa1.equals(bolsa2));
     }
+    
+    @Test
+    public void equalsInventariosMesmosItensEPosicoesDiferentes(){
+        Inventario bolsa1 = new Inventario();
+        Inventario bolsa2 = new Inventario();
+        Item i1 = new Item(2,"Martelo");
+        Item i2 = new Item(2,"Martelo");
+        Item i3 = new Item(1,"Machado");
+        Item i4 = new Item(1,"Machado");
+        bolsa1.adicionarItem(i1);
+        bolsa1.adicionarItem(i3);
+        bolsa2.adicionarItem(i4);
+        bolsa2.adicionarItem(i2);
+        assertTrue(bolsa1.equals(bolsa2));
+    }
+    
+    @Test
+    public void equalsInventariosItensDiferenteseRepetidos(){
+        Inventario bolsa1 = new Inventario();
+        Inventario bolsa2 = new Inventario();
+        Item i1 = new Item(2,"Martelo");
+        Item i2 = new Item(1,"Machado");
+        Item i3 = new Item(1,"Machado");
+        Item i4 = new Item(1,"Machado");
+        bolsa1.adicionarItem(i2);
+        bolsa1.adicionarItem(i3);
+        bolsa2.adicionarItem(i4);
+        bolsa2.adicionarItem(i1);
+        assertFalse(bolsa1.equals(bolsa2));
+        bolsa1.adicionarItem(i1);
+        bolsa2.adicionarItem(i2);
+        assertTrue(bolsa1.equals(bolsa2));
+    }
 }
