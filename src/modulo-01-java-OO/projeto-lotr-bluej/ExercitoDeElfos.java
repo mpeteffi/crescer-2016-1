@@ -28,6 +28,7 @@ public class ExercitoDeElfos
     } 
     
     public void agruparPorStatus(){
+        elfosDivididos.clear();
         for (String chaveNomeElfo : exercito.keySet()){
             Elfo oElfo = exercito.get(chaveNomeElfo);
             Status statusDoElfo = oElfo.getStatus();
