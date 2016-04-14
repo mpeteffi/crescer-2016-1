@@ -15,7 +15,6 @@ public class SindarinParaInglesTest
     
     @Test
     public void traduzirNullParaIngles(){
-        //naur
         TradutorSindarin tradutorPortugues = new SindarinParaPortugues();
         assertNull(tradutorPortugues.traduzir(null));
     }

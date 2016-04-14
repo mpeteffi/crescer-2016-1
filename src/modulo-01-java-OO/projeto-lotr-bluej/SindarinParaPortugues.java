@@ -13,6 +13,7 @@ public class SindarinParaPortugues implements TradutorSindarin{
     };
     
     public String traduzir(String palavraEmSindarin){
+        if(palavraEmSindarin==null){return null;}
         return dicionario.get(palavraEmSindarin.toLowerCase());
     }
 }
