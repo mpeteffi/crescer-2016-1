@@ -39,4 +39,8 @@ public class Elfo extends Personagem{
     public int getFlechas(){
         return this.flechas;
     }
+    
+    public void tentarSorte(){
+        System.out.println("Elfo tentou a sorte!");
+    }
 }
