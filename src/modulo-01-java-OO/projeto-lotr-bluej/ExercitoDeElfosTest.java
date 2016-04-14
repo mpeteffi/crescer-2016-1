@@ -66,11 +66,11 @@ public class ExercitoDeElfosTest
         //agrupar por status.
         exercito.agruparPorStatus();
         //testar contains nas chaves VIVO e MORTO.
-        assertTrue(exercito.procurarElfoAgrupado(Status.VIVO,ev1));
-        assertTrue(exercito.procurarElfoAgrupado(Status.VIVO,ev2));
-        assertTrue(exercito.procurarElfoAgrupado(Status.VIVO,ev3));
-        assertTrue(exercito.procurarElfoAgrupado(Status.VIVO,en3));
-        assertTrue(exercito.procurarElfoAgrupado(Status.MORTO,en1));
-        assertTrue(exercito.procurarElfoAgrupado(Status.MORTO,en2));
+        assertTrue(exercito.buscarListaAgrupados(Status.VIVO).contains(ev1));
+        assertTrue(exercito.buscarListaAgrupados(Status.VIVO).contains(ev2));
+        assertTrue(exercito.buscarListaAgrupados(Status.VIVO).contains(ev3));
+        assertTrue(exercito.buscarListaAgrupados(Status.VIVO).contains(en3));
+        assertTrue(exercito.buscarListaAgrupados(Status.MORTO).contains(en1));
+        assertTrue(exercito.buscarListaAgrupados(Status.MORTO).contains(en2));
     }
 }
