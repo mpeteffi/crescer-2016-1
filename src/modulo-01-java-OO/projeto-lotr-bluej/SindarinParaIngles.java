@@ -13,6 +13,6 @@ public class SindarinParaIngles implements TradutorSindarin{
     };
     
     public String traduzir(String palavraEmSindarin){
-        return dicionario.get(palavraEmSindarin);
+        return dicionario.get(palavraEmSindarin.toLowerCase());
     }
 }
