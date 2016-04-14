@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.*;
 
 
 public class ExercitoDeElfosTest
@@ -38,5 +39,38 @@ public class ExercitoDeElfosTest
         exercito.alistarUmElfo(l3);
         assertEquals(l2,exercito.buscarUmElfo("Legolas2"));
         assertEquals(l3,exercito.buscarUmElfo("Legolas3"));
+    }
+    
+    @Test
+    public void agrupaPorStatusCorretamente(){
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        Elfo ev1 = new ElfoVerde("verde1");
+        Elfo ev2 = new ElfoVerde("verde2");
+        Elfo ev3 = new ElfoVerde("verde3");
+        Elfo en1 = new ElfoNoturno("noturno1");
+        Elfo en2 = new ElfoNoturno("noturno2");
+        Elfo en3 = new ElfoNoturno("noturno3");
+        //matar elfos en1 e en2.
+        for (int i=0;i<92;i++){
+            ev1.atirarFlecha(new Dwarf("gimli"));
+            en1.atirarFlecha(new Dwarf("gimli"));
+            en2.atirarFlecha(new Dwarf("gimli"));
+        }
+        //alistar elfos mortos e vivos no exercito.
+        exercito.alistarUmElfo(ev1);
+        exercito.alistarUmElfo(ev2);
+        exercito.alistarUmElfo(ev3);
+        exercito.alistarUmElfo(en1);
+        exercito.alistarUmElfo(en2);
+        exercito.alistarUmElfo(en3);
+        //agrupar por status.
+        exercito.agruparPorStatus();
+        //testar contains nas chaves VIVO e MORTO.
+        assertTrue(exercito.procurarElfoAgrupado(Status.VIVO,ev1));
+        assertTrue(exercito.procurarElfoAgrupado(Status.VIVO,ev2));
+        assertTrue(exercito.procurarElfoAgrupado(Status.VIVO,ev3));
+        assertTrue(exercito.procurarElfoAgrupado(Status.VIVO,en3));
+        assertTrue(exercito.procurarElfoAgrupado(Status.MORTO,en1));
+        assertTrue(exercito.procurarElfoAgrupado(Status.MORTO,en2));
     }
 }
