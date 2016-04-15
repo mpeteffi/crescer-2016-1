@@ -8,7 +8,7 @@ import java.util.*;
 public class AtaqueIntercaladoTest
 {
     @Test
-    public void atacarHordaAtaqueIintercaladoTodosVivos(){
+    public void atacarHordaAtaqueIintercalado2anoes3verdes3noturnos(){
         //criar exercito com 3 ElfosVerdes e 3 ElfosNoturnos
         ExercitoDeElfos e1 = criarExercitoDeElfos(3, 3);
         
@@ -33,6 +33,53 @@ public class AtaqueIntercaladoTest
             ordemAtaque.get(6)instanceof ElfoNoturno &&
             ordemAtaque.get(8)instanceof ElfoVerde);
 
+    }
+    
+    @Test
+    public void atacarHordaAtaqueIintercalado3anoes2verdes2noturnos(){
+        ExercitoDeElfos e1 = criarExercitoDeElfos(2, 2);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(3);
+        
+        EstrategiaDeAtaque estrategia = new AtaqueIntercalado(e1.getExercito());
+        ArrayList<Elfo> ordemAtaque = estrategia.atacarHorda(hordaDeAnoes);
+        
+        //comparar ordem de ataque com o esperado
+        assertTrue(ordemAtaque.get(0)instanceof ElfoVerde && 
+            ordemAtaque.get(3)instanceof ElfoNoturno || 
+            ordemAtaque.get(0)instanceof ElfoNoturno &&
+            ordemAtaque.get(3)instanceof ElfoVerde);
+        assertTrue(ordemAtaque.get(3)instanceof ElfoVerde && 
+            ordemAtaque.get(6)instanceof ElfoNoturno || 
+            ordemAtaque.get(3)instanceof ElfoNoturno &&
+            ordemAtaque.get(6)instanceof ElfoVerde);
+    }
+    
+    @Test
+    public void verificar5050com3e3(){
+        ExercitoDeElfos e1 = criarExercitoDeElfos(3, 3);
+        AtaqueIntercalado estrategia = new AtaqueIntercalado(e1.getExercito());
+        assertTrue(estrategia.verificar5050());
+    }
+    
+    @Test
+    public void verificar5050com3e4(){
+        ExercitoDeElfos e1 = criarExercitoDeElfos(3, 4);
+        AtaqueIntercalado estrategia = new AtaqueIntercalado(e1.getExercito());
+        assertFalse(estrategia.verificar5050());
+    }
+    
+    @Test
+    public void verificar5050com7e0(){
+        ExercitoDeElfos e1 = criarExercitoDeElfos(7, 0);
+        AtaqueIntercalado estrategia = new AtaqueIntercalado(e1.getExercito());
+        assertFalse(estrategia.verificar5050());
+    }
+    
+    @Test
+    public void verificar5050com0e0(){
+        ExercitoDeElfos e1 = criarExercitoDeElfos(0, 0);
+        AtaqueIntercalado estrategia = new AtaqueIntercalado(e1.getExercito());
+        assertTrue(estrategia.verificar5050());
     }
     
     public ExercitoDeElfos criarExercitoDeElfos(int verdes, int noturnos){
