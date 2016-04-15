@@ -10,9 +10,11 @@ public class NoturnosPorUltimo implements EstrategiaDeAtaque{
     
     public ArrayList<Elfo> atacarHorda(ArrayList<Dwarf> osAnoes){
         ordemDoAtaque = new ArrayList<>();
+        
         for(String chaveNomeElfo : exercito.keySet()){
             Elfo oElfo=this.exercito.get(chaveNomeElfo);
-            if(oElfo.getStatus() == Status.VIVO && oElfo instanceof ElfoVerde){
+            boolean elfoVivo = oElfo.getStatus() == Status.VIVO;
+            if(elfoVivo && oElfo instanceof ElfoVerde){
                 for(Dwarf oAnao : osAnoes){
                     oElfo.atirarFlecha(oAnao);
                     ordemDoAtaque.add(oElfo);
@@ -21,14 +23,14 @@ public class NoturnosPorUltimo implements EstrategiaDeAtaque{
         }
         for(String chaveNomeElfo : exercito.keySet()){
             Elfo oElfo=this.exercito.get(chaveNomeElfo);
-            if(oElfo.getStatus() == Status.VIVO && oElfo instanceof ElfoNoturno){
+            boolean elfoVivo = oElfo.getStatus() == Status.VIVO;
+            if(elfoVivo && oElfo instanceof ElfoNoturno){
                 for(Dwarf oAnao : osAnoes){
                     oElfo.atirarFlecha(oAnao);
                     ordemDoAtaque.add(oElfo);
                 }
             }
-        }
-               
+        }      
         
         return this.ordemDoAtaque;
     }
