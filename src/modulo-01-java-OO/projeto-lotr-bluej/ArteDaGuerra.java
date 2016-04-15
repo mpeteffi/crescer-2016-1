@@ -4,7 +4,6 @@ public class ArteDaGuerra implements EstrategiaDeAtaque{
     private HashMap<String, Elfo> exercito;
     private ArrayList<Elfo> ordemDoAtaque = new ArrayList<>();
     
-    
     public ArteDaGuerra(HashMap<String, Elfo> exercito1){
         this.exercito=exercito1;
     }
@@ -15,7 +14,7 @@ public class ArteDaGuerra implements EstrategiaDeAtaque{
         ordemDoAtaque = new ArrayList<>();
         
         for(String chaveNomeElfo : exercito.keySet()){
-            if(qtdNoturno <= maxAtaqueNoturno){
+            if(qtdNoturno < maxAtaqueNoturno){
                 Elfo oElfo=this.exercito.get(chaveNomeElfo);
                 if(oElfo.getStatus() == Status.VIVO){
                     for(Dwarf oAnao : osAnoes){

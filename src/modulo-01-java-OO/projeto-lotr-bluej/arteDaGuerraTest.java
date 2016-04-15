@@ -7,8 +7,8 @@ import java.util.*;
 public class arteDaGuerraTest{
     
     @Test
-    public void atacarHordaDeElfosArteDaGuerra(){
-        //criar exercito com 4 elfos
+    public void atacarHordaDeElfosArteDaGuerra6e2(){
+        //criar exercito com 6 elfos
         ExercitoDeElfos e1 = new ExercitoDeElfos();
         Elfo ev1 = new ElfoVerde("ev1");
         Elfo en1 = new ElfoNoturno("en1");
@@ -33,9 +33,8 @@ public class arteDaGuerraTest{
         if(ordemAtaque.contains(en1)){cont++;};
         if(ordemAtaque.contains(en2)){cont++;};
         if(ordemAtaque.contains(en3)){cont++;};
-        assertEquals(cont,2);
-        assertTrue(ordemAtaque.size()==6);
+        assertEquals(cont,1);
+        assertTrue(ordemAtaque.size()==4);
     }
-    
-    
+       
 }
