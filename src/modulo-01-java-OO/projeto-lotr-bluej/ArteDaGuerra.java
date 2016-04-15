@@ -14,16 +14,23 @@ public class ArteDaGuerra implements EstrategiaDeAtaque{
         ordemDoAtaque = new ArrayList<>();
         
         for(String chaveNomeElfo : exercito.keySet()){
-            if(qtdNoturno < maxAtaqueNoturno){
-                Elfo oElfo=this.exercito.get(chaveNomeElfo);
-                if(oElfo.getStatus() == Status.VIVO){
-                    for(Dwarf oAnao : osAnoes){
+            Elfo oElfo=this.exercito.get(chaveNomeElfo);
+            boolean ElfoVivo=oElfo.getStatus() == Status.VIVO;
+            
+            //verificar instancia do elfo e atacar conforme as regras.
+            if(oElfo instanceof ElfoNoturno){
+                for(Dwarf oAnao : osAnoes){
+                    if(qtdNoturno < maxAtaqueNoturno){
                         oElfo.atirarFlecha(oAnao);
                         ordemDoAtaque.add(oElfo);
-                        if(oElfo instanceof ElfoNoturno){
-                            qtdNoturno++;
-                        } 
+                        qtdNoturno++;
                     }
+                }
+            }
+            if(oElfo instanceof ElfoVerde){
+                for(Dwarf oAnao : osAnoes){
+                    oElfo.atirarFlecha(oAnao);
+                    ordemDoAtaque.add(oElfo);
                 }
             }
         }
