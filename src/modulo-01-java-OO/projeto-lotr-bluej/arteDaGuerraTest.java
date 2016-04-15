@@ -7,34 +7,81 @@ import java.util.*;
 public class arteDaGuerraTest{
     
     @Test
-    public void atacarHordaDeElfosArteDaGuerra6e2(){
-        //criar exercito com 6 elfos
-        ExercitoDeElfos e1 = new ExercitoDeElfos();
-        Elfo ev1 = new ElfoVerde("ev1");
-        Elfo en1 = new ElfoNoturno("en1");
-        Elfo en2 = new ElfoNoturno("en2");
-        Elfo en3 = new ElfoNoturno("en3");
-        e1.alistarUmElfo(ev1);
-        e1.alistarUmElfo(en1);
-        e1.alistarUmElfo(en2);
-        e1.alistarUmElfo(en3);
+    public void atacarHorda1Verde3NoturnoE2Dwarves(){
+        //criar exercito com 1 verde e 3 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(1, 3);
         //criar horda de dwarves com 2 elfos
-        ArrayList<Dwarf> hordaDeAnoes = new ArrayList<>();
-        Dwarf a1 = new Dwarf("a1");
-        Dwarf a2 = new Dwarf("a2");
-        hordaDeAnoes.add(a1);
-        hordaDeAnoes.add(a2);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(2);
         //atacar usando arteDaGuerra
         EstrategiaDeAtaque estrategia = new ArteDaGuerra(e1.getExercito());
         ArrayList<Elfo> ordemAtaque = estrategia.atacarHorda(hordaDeAnoes);
-        //comparar ordem de ataque com o esperado
-        assertTrue(ordemAtaque.contains(ev1));
-        int cont=0;
-        if(ordemAtaque.contains(en1)){cont++;};
-        if(ordemAtaque.contains(en2)){cont++;};
-        if(ordemAtaque.contains(en3)){cont++;};
-        assertEquals(cont,1);
-        assertTrue(ordemAtaque.size()==4);
+        
+        //contarNoturnosEVerdes
+        int verdes=0, noturnos=0;
+        for(int i=0; i<ordemAtaque.size();i++){
+            if(ordemAtaque.get(i) instanceof ElfoVerde){
+                verdes++;
+            } else {
+                noturnos++;
+            }
+        }
+        
+        //só podem haver no maximo 2 ataques de noturnos
+        assertTrue(noturnos<=2);
+        
+        //esperado
+        assertEquals(2,verdes);
+        assertEquals(2,noturnos);
     }
-       
+    
+    @Test
+    public void atacarHorda5Verde7NoturnoE3Dwarves(){
+        //criar exercito com 5 verdes e 7 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(5, 7);
+        //criar horda de dwarves com 3 elfos
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(3);
+        //atacar usando arteDaGuerra
+        EstrategiaDeAtaque estrategia = new ArteDaGuerra(e1.getExercito());
+        ArrayList<Elfo> ordemAtaque = estrategia.atacarHorda(hordaDeAnoes);
+        
+        //contarNoturnosEVerdes
+        int verdes=0, noturnos=0;
+        for(int i=0; i<ordemAtaque.size();i++){
+            if(ordemAtaque.get(i) instanceof ElfoVerde){
+                verdes++;
+            } else {
+                noturnos++;
+            }
+        }
+        
+        //só podem haver no maximo 2 ataques de noturnos
+        assertTrue(noturnos<=10);
+        
+        //esperado
+        assertEquals(15,verdes);
+        assertEquals(10,noturnos);
+    }
+    
+    private ExercitoDeElfos criarExercitoDeElfos(int verdes, int noturnos){
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        
+        for(int i=1;i<=verdes;i++){
+            exercito.alistarUmElfo(new ElfoVerde("ElfoVerde" + i));
+        }
+        for(int i=1;i<=noturnos;i++){
+            exercito.alistarUmElfo(new ElfoNoturno("ElfoNoturno" + i));
+        }
+    
+        return exercito;
+    }
+    
+    private ArrayList<Dwarf> criarHordaDwarves(int anoes){
+        ArrayList<Dwarf> horda = new ArrayList<>();
+        
+        for(int i=1;i<=anoes;i++){
+            horda.add(new Dwarf("Anao" + i));
+        }
+    
+        return horda;
+    }
 }
