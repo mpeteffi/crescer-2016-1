@@ -7,7 +7,7 @@ import java.util.*;
 public class HobbitContadorTest
 {
    @Test
-   public void HobbitCalculaDiferencaArraydeArrays(){
+   public void hobbitCalculaDiferencaArraydeArrays(){
        ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
        arrayDePares.add(new ArrayList<>(Arrays.asList(6, 14))); 
        arrayDePares.add(new ArrayList<>(Arrays.asList(5, 4)));
@@ -18,7 +18,7 @@ public class HobbitContadorTest
    }
 
    @Test
-   public void HobbitCalculaDiferencaArraydeArrays840(){
+   public void hobbitCalculaDiferencaArraydeArrays840(){
        ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
        arrayDePares.add(new ArrayList<>(Arrays.asList(15,18))); 
        arrayDePares.add(new ArrayList<>(Arrays.asList(4, 5)));

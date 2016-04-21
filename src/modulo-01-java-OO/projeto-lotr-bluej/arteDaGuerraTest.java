@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.*;
 
-public class arteDaGuerraTest{
+public class ArteDaGuerraTest{
     
     @Test
     public void atacarHorda1Verde3NoturnoE2Dwarves(){

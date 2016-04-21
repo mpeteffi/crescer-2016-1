@@ -14,8 +14,8 @@ public class ArteDaGuerra implements EstrategiaDeAtaque{
         ordemDoAtaque = new ArrayList<>();
         
         for(String chaveNomeElfo : exercito.keySet()){
-            Elfo oElfo=this.exercito.get(chaveNomeElfo);
-            boolean ElfoVivo=oElfo.getStatus() == Status.VIVO;
+            Elfo oElfo = this.exercito.get(chaveNomeElfo);
+            boolean elfoVivo = oElfo.getStatus() == Status.VIVO;
             
             //verificar instancia do elfo e atacar conforme as regras.
             if(oElfo instanceof ElfoNoturno && elfoVivo){
