@@ -94,4 +94,8 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
         this.elfosQueAtacam = numVerdes + numNoturnos;
         return meioAMeio = numVerdes==numNoturnos;
     }
+    
+        public ArrayList<Elfo> getOrdemUltimoAtaque(){
+        return this.ordemDoAtaque;
+    }
 }

@@ -37,4 +37,8 @@ public class ArteDaGuerra implements EstrategiaDeAtaque{
         
         return this.ordemDoAtaque;
     }
+    
+    public ArrayList<Elfo> getOrdemUltimoAtaque(){
+        return this.ordemDoAtaque;
+    }
 }
