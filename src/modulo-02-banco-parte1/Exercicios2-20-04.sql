@@ -47,3 +47,18 @@ Select UF as Estado,
 From Cidade
 group by uf, nome
 having count(1) >= 2
+
+--exercicio 9
+
+Select MAX(IDAssociado)+1 as Pr�ximoID
+From Associado
+
+--exercicio 10
+
+Delete CidadeAux
+Insert into CidadeAux (IDCidade, Nome, UF)
+	select distinct min(IDCidade) as IDCidade,
+			        Nome, 
+					UF 
+	from Cidade 
+	group by Nome, UF 
