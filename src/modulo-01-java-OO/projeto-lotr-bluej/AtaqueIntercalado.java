@@ -53,13 +53,14 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
                     this.intercalados.add(oElfo);
                     cont++;
                 } else {  //para o segundo em diante      
+                    Elfo anterior = this.intercalados.get(cont-1);
                     
                     /*boolean intercalados para verificar se atual elfo tem
                     instancia diferente do que atacou anteriormente.*/
                     boolean intercalados = oElfo instanceof ElfoNoturno &&
-                        this.intercalados.get(cont-1) instanceof ElfoVerde ||
-                        this.intercalados.get(cont-1) instanceof ElfoNoturno &&
-                        oElfo instanceof ElfoVerde;
+                            anterior instanceof ElfoVerde ||
+                            anterior instanceof ElfoNoturno &&
+                            oElfo instanceof ElfoVerde;
                         
                     if(intercalados && elfoVivo && naoEstaNaLista){
                             this.intercalados.add(oElfo);
