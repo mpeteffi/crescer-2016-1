@@ -3,7 +3,6 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
     private HashMap<String, Elfo> exercito;
     private ArrayList<Elfo> ordemDoAtaque = new ArrayList<>();
     private ArrayList<Elfo> intercalados = new ArrayList<>();
-    private int elfosQueAtacam;
     
     public AtaqueIntercalado(HashMap<String, Elfo> exercito1){
         this.exercito=exercito1;
@@ -38,7 +37,7 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
         int cont=0;
         
         //while para garantir o numero de elfos que atacam
-        while(cont<elfosQueAtacam) {
+        while(cont<exercito.size()) {
             
             //percorrer elfos para atacar
             for(String chaveNomeElfo : exercito.keySet()){
@@ -75,7 +74,6 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
     
     private boolean verificar5050(){
         int numVerdes=0, numNoturnos=0;
-        this.elfosQueAtacam=0;
         boolean meioAMeio = false;
         
         //verificando se o exercito tem 50% verde e 50% noturno dos vivos
@@ -91,7 +89,6 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
             }
         }
         
-        this.elfosQueAtacam = numVerdes + numNoturnos;
         return meioAMeio = numVerdes==numNoturnos;
     }
     
