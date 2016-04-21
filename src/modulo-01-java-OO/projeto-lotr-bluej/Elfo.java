@@ -1,5 +1,6 @@
 public class Elfo extends Personagem{
     protected int flechas=42;
+    protected static int quantidadeElfos;
     
     public Elfo(String nome){
         super(nome);

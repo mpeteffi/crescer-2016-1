@@ -12,24 +12,24 @@ public class ElfoTest
     
     @Test
     public void elfoContadorAumentaACadaNewElfo(){
-        int esperado = Personagem.quantidadeElfos;
+        int esperado = Elfo.quantidadeElfos;
         Elfo l1 = new Elfo("L1");
-        assertEquals(esperado+1, Personagem.quantidadeElfos);
+        assertEquals(esperado+1, Elfo.quantidadeElfos);
         Elfo l2 = new ElfoVerde("verde");
-        assertEquals(esperado+2, Personagem.quantidadeElfos);
+        assertEquals(esperado+2, Elfo.quantidadeElfos);
         Elfo l3 = new ElfoNoturno("noturno");
-        assertEquals(esperado+3, Personagem.quantidadeElfos);
+        assertEquals(esperado+3, Elfo.quantidadeElfos);
     }
     
     @Test
     public void elfoContadorAumentaACadaNewElfoComFinalize(){
-        assertEquals(0, Personagem.quantidadeElfos);
+        assertEquals(0, Elfo.quantidadeElfos);
         Elfo l1 = new Elfo("L1");
-        assertEquals(1, Personagem.quantidadeElfos);
+        assertEquals(1, Elfo.quantidadeElfos);
         Elfo l2 = new ElfoVerde("verde");
-        assertEquals(2, Personagem.quantidadeElfos);
+        assertEquals(2, Elfo.quantidadeElfos);
         Elfo l3 = new ElfoNoturno("noturno");
-        assertEquals(3, Personagem.quantidadeElfos);
+        assertEquals(3, Elfo.quantidadeElfos);
     }
     
     @Test

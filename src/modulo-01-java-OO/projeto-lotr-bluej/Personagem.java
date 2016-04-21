@@ -5,7 +5,6 @@ public abstract class Personagem
     protected double vida;
     protected Inventario bolsa = new Inventario();
     protected Status status = Status.VIVO;
-    protected static int quantidadeElfos;
 
     public Personagem(String nome)
     {
