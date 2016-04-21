@@ -3,7 +3,7 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
     private HashMap<String, Elfo> exercito;
     private ArrayList<Elfo> ordemDoAtaque = new ArrayList<>();
     private ArrayList<Elfo> intercalados = new ArrayList<>();
-    private int elfosQueAtacam=0;
+    private int elfosQueAtacam;
     
     public AtaqueIntercalado(HashMap<String, Elfo> exercito1){
         this.exercito=exercito1;

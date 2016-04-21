@@ -1,11 +1,11 @@
 public abstract class Personagem
 {
     protected String nome;
-    protected int experiencia=0; 
+    protected int experiencia; 
     protected double vida;
     protected Inventario bolsa = new Inventario();
     protected Status status = Status.VIVO;
-    protected static int quantidadeElfos=0;
+    protected static int quantidadeElfos;
 
     public Personagem(String nome)
     {
@@ -41,4 +41,5 @@ public abstract class Personagem
     }
     
     public abstract void tentarSorte();
+
 }
