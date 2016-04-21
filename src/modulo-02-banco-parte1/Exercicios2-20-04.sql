@@ -50,7 +50,7 @@ having count(1) >= 2
 
 --exercicio 9
 
-Select MAX(IDAssociado)+1 as Prï¿½ximoID
+Select MAX(IDAssociado)+1 as PróximoID
 From Associado
 
 --exercicio 10
@@ -86,7 +86,7 @@ Select
 	Case Sexo
 		 when 'M' then 'Masculino'
 		 when 'F' then 'Feminino'
-		 else 'Nï¿½o Especificado'
+		 else 'Não Especificado'
 	end as Sexo
 From Associado
 
@@ -101,3 +101,27 @@ Select
 		when salario>2326 then '27,5%'
 	end as PercentualIR
 from Empregado
+
+--exercicio 14
+
+begin transaction
+go
+
+delete 
+from Cidade
+where substring(Nome,1,1)='*'
+and IDCidade not in (select distinct min(IDCidade)
+					 from Cidade 
+					 group by Nome, UF)
+
+commit
+
+--exercicio 15
+
+begin transaction
+go
+
+Alter Table Cidade
+	Add Constraint UK_NomeUF Unique(Nome, UF)
+
+commit
