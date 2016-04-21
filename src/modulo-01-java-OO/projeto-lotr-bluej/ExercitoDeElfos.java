@@ -5,10 +5,6 @@ public class ExercitoDeElfos
     private HashMap<String, Elfo> exercito = new HashMap<>();
     public HashMap<Status, ArrayList<Elfo>> elfosDivididos = new HashMap<>();
     
-    public ExercitoDeElfos(){        
-     
-    }
-    
     public void alistarUmElfo(Elfo elfo){
         if(elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno){
             exercito.put(elfo.getNome(),elfo);
