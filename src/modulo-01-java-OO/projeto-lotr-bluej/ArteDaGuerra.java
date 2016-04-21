@@ -18,7 +18,7 @@ public class ArteDaGuerra implements EstrategiaDeAtaque{
             boolean ElfoVivo=oElfo.getStatus() == Status.VIVO;
             
             //verificar instancia do elfo e atacar conforme as regras.
-            if(oElfo instanceof ElfoNoturno){
+            if(oElfo instanceof ElfoNoturno && elfoVivo){
                 for(Dwarf oAnao : osAnoes){
                     if(qtdNoturno < maxAtaqueNoturno){
                         oElfo.atirarFlecha(oAnao);
@@ -27,7 +27,7 @@ public class ArteDaGuerra implements EstrategiaDeAtaque{
                     }
                 }
             }
-            if(oElfo instanceof ElfoVerde){
+            if(oElfo instanceof ElfoVerde && elfoVivo){
                 for(Dwarf oAnao : osAnoes){
                     oElfo.atirarFlecha(oAnao);
                     ordemDoAtaque.add(oElfo);
