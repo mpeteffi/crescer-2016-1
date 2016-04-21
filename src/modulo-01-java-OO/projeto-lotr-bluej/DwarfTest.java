@@ -6,46 +6,46 @@ import org.junit.Test;
 public class DwarfTest
 {
     @Test
-    public void testeAtribuirNome(){
+    public void atribuirNome(){
         Dwarf d1 = new Dwarf("Joao");
         assertEquals("Joao",d1.getNome());
     }
     
     @Test
-    public void testeAtribuicaoVida(){
+    public void atribuicaoVida(){
         Dwarf d1 = new Dwarf("Joao");
         assertEquals(110,d1.getVida(),0.001);
     }
     
     @Test
-    public void testeDawrfPerdeVida(){
+    public void dawrfPerdeVida(){
         Dwarf d1 = new Dwarf("Joao");
         d1.perderVida();
         assertEquals(100,d1.getVida(),0.001);
     }
     
     @Test
-    public void testeDwarfNasceVivo(){
+    public void dwarfNasceVivo(){
         Dwarf d1 = new Dwarf("Joao");
         assertEquals(Status.VIVO,d1.getStatus());
     }
     
     @Test
-    public void testeDwarfComVida0Morre(){
+    public void dwarfComVida0Morre(){
         Dwarf d1 = new Dwarf("Joao");
         for(int i=1;i<=11;i++){d1.perderVida();}
         assertEquals(Status.MORTO,d1.getStatus());
     }
     
     @Test
-    public void testeDwarfVidaNuncaNegativa(){
+    public void dwarfVidaNuncaNegativa(){
         Dwarf d1 = new Dwarf("Joao");
         for(int i=1;i<=15;i++){d1.perderVida();}
         assertEquals(0,d1.getVida(),0.001);
     }
     
     @Test
-    public void testeDwarfMortoSempreComVida0(){
+    public void dwarfMortoSempreComVida0(){
         Dwarf d1 = new Dwarf("Joao");
         for(int i=1;i<=15;i++){d1.perderVida();}
         assertEquals(0,d1.getVida(),0.001);
@@ -53,7 +53,7 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfGanhaItem(){
+    public void dwarfGanhaItem(){
         Dwarf d1 = new Dwarf("João");
         Item i1 = new Item(1,"Martelo");
         d1.adicionarItem(i1);
@@ -61,7 +61,7 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfPerdeItem(){
+    public void dwarfPerdeItem(){
         Dwarf d1 = new Dwarf("João");
         Item i1 = new Item(1,"Martelo");
         d1.adicionarItem(i1);
@@ -71,7 +71,7 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfRecebe111NascimentoPadrao(){
+    public void dwarfRecebe111NascimentoPadrao(){
         Dwarf d1 = new Dwarf("João");
         assertEquals(1,d1.getNascimento().getDia());
         assertEquals(1,d1.getNascimento().getMes());
@@ -79,7 +79,7 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfRecebe10Abr3200Nascimento(){
+    public void dwarfRecebe10Abr3200Nascimento(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,3200);
         Dwarf d1 = new Dwarf("João",data);
         assertEquals(10,d1.getNascimento().getDia());
@@ -88,13 +88,13 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfNumeroSorte101(){
+    public void dwarfNumeroSorte101(){
         Dwarf d1 = new Dwarf("João");
         assertTrue(d1.getNumeroSorte()==101.0);
     }
     
     @Test
-    public void testeDwarfNumeroSorteBissexto(){
+    public void dwarfNumeroSorteBissexto(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
         Dwarf d1 = new Dwarf("João",data);
         d1.perderVida();
@@ -103,28 +103,28 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfNumeroSorteNaoBissextoJoao(){
+    public void dwarfNumeroSorteNaoBissextoJoao(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
         Dwarf d1 = new Dwarf("João",data);
         assertTrue(d1.getNumeroSorte()!=33.0);
     }
     
     @Test
-    public void testeDwarfNumeroSorteNaoBissextoSeixas(){
+    public void dwarfNumeroSorteNaoBissextoSeixas(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
         Dwarf d1 = new Dwarf("Seixas",data);
         assertTrue(d1.getNumeroSorte()==33.0);
     }
     
     @Test
-    public void testeDwarfNumeroSorteNaoBissextoMeireles(){
+    public void dwarfNumeroSorteNaoBissextoMeireles(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
         Dwarf d1 = new Dwarf("Meireles",data);
         assertTrue(d1.getNumeroSorte()==33.0);
     }
     
     @Test
-    public void testeDwarfSorteNaoPerdeVidaNaoGanhaExp(){
+    public void dwarfSorteNaoPerdeVidaNaoGanhaExp(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
         Dwarf d1 = new Dwarf("Seixas",data);
         //Sorte entre 0 e 100
@@ -134,7 +134,7 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfSortePerdeVidaNaoGanhaExp(){
+    public void dwarfSortePerdeVidaNaoGanhaExp(){
         Dwarf d1 = new Dwarf("João");
         //Sorte maior que 100
         d1.perderVida();
@@ -143,7 +143,7 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfSorteNaoPerdeVidaGanha2Exp(){
+    public void dwarfSorteNaoPerdeVidaGanha2Exp(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
         Dwarf d1 = new Dwarf("João",data);
         d1.perderVida();
@@ -155,7 +155,7 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfSorteGanharMilItens(){
+    public void dwarfSorteGanharMilItens(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
         Dwarf d1 = new Dwarf("João",data);
         d1.perderVida();
@@ -169,7 +169,7 @@ public class DwarfTest
     }
     
     @Test
-    public void testeDwarfSorteGanharMilItensDeCada(){
+    public void dwarfSorteGanharMilItensDeCada(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
         Dwarf d1 = new Dwarf("João",data);
         d1.perderVida();

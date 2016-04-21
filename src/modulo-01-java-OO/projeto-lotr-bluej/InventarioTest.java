@@ -12,7 +12,7 @@ public class InventarioTest
 {
      
     @Test
-    public void testeItemAdicionado(){
+    public void itemAdicionado(){
         Item i1 = new Item(1,"Martelo");
         Inventario bolsa = new Inventario();
         bolsa.adicionarItem(i1);
@@ -20,7 +20,7 @@ public class InventarioTest
     }
     
     @Test
-    public void testeRemoverDaLista(){
+    public void removerDaLista(){
         Item i1 = new Item(1,"Martelo");
         Inventario bolsa = new Inventario();
         bolsa.adicionarItem(i1);
@@ -30,7 +30,7 @@ public class InventarioTest
     }
     
     @Test
-    public void ImprimirTodasDescricoesDeItens(){
+    public void imprimirTodasDescricoesDeItens(){
         Dwarf d1 = new Dwarf("Legolas");
         Item i1 = new Item(1,"Martelo");
         Item i2 = new Item(1,"Machado");

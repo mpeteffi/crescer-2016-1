@@ -6,7 +6,7 @@ import org.junit.Test;
 public class IrishDwarfTest
 {
     @Test
-    public void testeIrishDwarfSorteGanharQMilVezes(){
+    public void irishDwarfSorteGanharQMilVezes(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
         IrishDwarf d1 = new IrishDwarf("João",data);
         d1.perderVida();
@@ -20,7 +20,7 @@ public class IrishDwarfTest
     }
     
     @Test
-    public void testeIirishDwarfSorteGanharQMilVezesDeCada(){
+    public void irishDwarfSorteGanharQMilVezesDeCada(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
         IrishDwarf d1 = new IrishDwarf("João",data);
         d1.perderVida();
