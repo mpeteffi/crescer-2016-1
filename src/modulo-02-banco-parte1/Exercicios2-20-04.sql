@@ -62,3 +62,42 @@ Insert into CidadeAux (IDCidade, Nome, UF)
 					UF 
 	from Cidade 
 	group by Nome, UF 
+
+--exercicio 11
+
+begin transaction
+go
+
+update Cidade 
+set Nome = CONCAT('*', Nome) 
+where Nome in (
+	Select Nome
+	From Cidade
+	group by nome, uf
+	having count(1) >= 2
+);
+
+commit
+
+--exercicio 12
+
+Select
+	Nome as NomeAssociado,
+	Case Sexo
+		 when 'M' then 'Masculino'
+		 when 'F' then 'Feminino'
+		 else 'N�o Especificado'
+	end as Sexo
+From Associado
+
+--exercicio 13
+
+Select
+	NomeEmpregado as Nome,
+	Salario as SalarioMensal,
+	case 
+		when salario<1164 then '0%'
+		when salario between 1164 and 2326 then '15%'
+		when salario>2326 then '27,5%'
+	end as PercentualIR
+from Empregado
