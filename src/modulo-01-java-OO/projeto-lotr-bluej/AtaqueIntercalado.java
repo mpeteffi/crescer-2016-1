@@ -33,7 +33,7 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
         return this.ordemDoAtaque;
     }
     
-    public ArrayList<Elfo> intercalarElfos(){
+    private ArrayList<Elfo> intercalarElfos(){
         intercalados = new ArrayList<>();
         int cont=0;
         
@@ -73,7 +73,7 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
         return intercalados;
     }
     
-    public boolean verificar5050(){
+    private boolean verificar5050(){
         int numVerdes=0, numNoturnos=0;
         this.elfosQueAtacam=0;
         boolean meioAMeio = false;
@@ -95,7 +95,7 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
         return meioAMeio = numVerdes==numNoturnos;
     }
     
-        public ArrayList<Elfo> getOrdemUltimoAtaque(){
+    public ArrayList<Elfo> getOrdemUltimoAtaque(){
         return this.ordemDoAtaque;
     }
 }

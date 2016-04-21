@@ -54,35 +54,7 @@ public class AtaqueIntercaladoTest
             ordemAtaque.get(6)instanceof ElfoVerde);
     }
     
-    @Test
-    public void verificar5050com3e3(){
-        ExercitoDeElfos e1 = criarExercitoDeElfos(3, 3);
-        AtaqueIntercalado estrategia = new AtaqueIntercalado(e1.getExercito());
-        assertTrue(estrategia.verificar5050());
-    }
-    
-    @Test
-    public void verificar5050com3e4(){
-        ExercitoDeElfos e1 = criarExercitoDeElfos(3, 4);
-        AtaqueIntercalado estrategia = new AtaqueIntercalado(e1.getExercito());
-        assertFalse(estrategia.verificar5050());
-    }
-    
-    @Test
-    public void verificar5050com7e0(){
-        ExercitoDeElfos e1 = criarExercitoDeElfos(7, 0);
-        AtaqueIntercalado estrategia = new AtaqueIntercalado(e1.getExercito());
-        assertFalse(estrategia.verificar5050());
-    }
-    
-    @Test
-    public void verificar5050com0e0(){
-        ExercitoDeElfos e1 = criarExercitoDeElfos(0, 0);
-        AtaqueIntercalado estrategia = new AtaqueIntercalado(e1.getExercito());
-        assertTrue(estrategia.verificar5050());
-    }
-    
-    public ExercitoDeElfos criarExercitoDeElfos(int verdes, int noturnos){
+    private ExercitoDeElfos criarExercitoDeElfos(int verdes, int noturnos){
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         
         for(int i=1;i<=verdes;i++){
@@ -95,7 +67,7 @@ public class AtaqueIntercaladoTest
         return exercito;
     }
     
-    public ArrayList<Dwarf> criarHordaDwarves(int anoes){
+    private ArrayList<Dwarf> criarHordaDwarves(int anoes){
         ArrayList<Dwarf> horda = new ArrayList<>();
         
         for(int i=1;i<=anoes;i++){
