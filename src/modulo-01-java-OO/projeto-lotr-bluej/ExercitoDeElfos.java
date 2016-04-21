@@ -19,7 +19,7 @@ public class ExercitoDeElfos
         return this.elfosDivididos.get(status);
     }
     
-    public HashMap getExercito(){
+    public HashMap<String, Elfo> getExercito(){
         return this.exercito;
     } 
     
