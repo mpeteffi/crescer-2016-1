@@ -2,7 +2,6 @@ import java.util.*;
 
 public class HobbitContador
 {
-    public HobbitContador(){}
     
     public int calcularDiferenca(ArrayList<ArrayList<Integer>> array){
         int diferenca=0;

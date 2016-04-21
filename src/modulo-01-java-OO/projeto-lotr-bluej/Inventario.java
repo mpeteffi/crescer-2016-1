@@ -3,8 +3,6 @@ import java.util.ArrayList;
 public class Inventario{
     private ArrayList<Item> inventario = new ArrayList<>();
 
-    public Inventario(){}
-
     public void adicionarItem(Item item){
         this.inventario.add(item);
     }
