@@ -12,7 +12,7 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
         this.ordemDoAtaque = new ArrayList<>();
         
         //verifica se são 50% de cada tipo de elfo para poder atacar
-        if(verificar5050()){
+        if(elfosVivos() && verificar5050()){
             
             //cria um array de elfos verdes e noturnos intercalados
             this.intercalados = intercalarElfos();
@@ -42,31 +42,33 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
             //percorrer elfos para atacar
             for(String chaveNomeElfo : exercito.keySet()){
                 Elfo oElfo=this.exercito.get(chaveNomeElfo);
-                boolean elfoVivo = oElfo.getStatus()==Status.VIVO;
                 
                 /*boolean naoEstaNaLista verifica se o Elfo atual ainda não está 
                 na lista dos intercalados para atacar*/
                 boolean naoEstaNaLista = !(this.intercalados.contains(oElfo));
                 
-                //verificar se é o primeiro a atacar
-                if(cont==0 && elfoVivo && naoEstaNaLista){
-                    this.intercalados.add(oElfo);
-                    cont++;
-                } else {  //para o segundo em diante      
-                    Elfo anterior = this.intercalados.get(cont-1);
+                if(naoEstaNaLista){
                     
-                    /*boolean intercalados para verificar se atual elfo tem
-                    instancia diferente do que atacou anteriormente.*/
-                    boolean intercalados = oElfo instanceof ElfoNoturno &&
+                    //verificar se é o primeiro a atacar
+                    if(cont==0){
+                        this.intercalados.add(oElfo);
+                        cont++;
+                    } else {  //para o segundo em diante      
+                        Elfo anterior = this.intercalados.get(cont-1);
+                    
+                        /*boolean intercalados para verificar se atual elfo tem
+                         * instancia diferente do que atacou anteriormente.*/
+                         boolean intercalados = oElfo instanceof ElfoNoturno &&
                             anterior instanceof ElfoVerde ||
                             anterior instanceof ElfoNoturno &&
                             oElfo instanceof ElfoVerde;
                         
-                    if(intercalados && elfoVivo && naoEstaNaLista){
+                        if(intercalados){
                             this.intercalados.add(oElfo);
                             cont++;
+                        }
                     }
-                }
+                }   
             }
         }   
             
@@ -80,17 +82,31 @@ public class AtaqueIntercalado implements EstrategiaDeAtaque{
         //verificando se o exercito tem 50% verde e 50% noturno dos vivos
         for(String chaveNomeElfo : this.exercito.keySet()){
             Elfo oElfo=this.exercito.get(chaveNomeElfo);
-            boolean elfoVivo = oElfo.getStatus()==Status.VIVO;
             
-            if(oElfo instanceof ElfoVerde && elfoVivo){
+            if(oElfo instanceof ElfoVerde){
                 numVerdes++;
             }
-            if(oElfo instanceof ElfoNoturno && elfoVivo){
+            if(oElfo instanceof ElfoNoturno){
                 numNoturnos++;
             }
         }
         
         return meioAMeio = numVerdes==numNoturnos;
+    }
+    
+    private boolean elfosVivos(){
+        boolean elfosVivos = true;
+        
+        for(String chaveNomeElfo : this.exercito.keySet()){
+            Elfo oElfo=this.exercito.get(chaveNomeElfo);
+            
+            if(oElfo.getStatus()!=Status.VIVO){
+                elfosVivos=false;
+                break;
+            }
+        }
+        
+        return elfosVivos;
     }
     
     public ArrayList<Elfo> getOrdemUltimoAtaque(){
