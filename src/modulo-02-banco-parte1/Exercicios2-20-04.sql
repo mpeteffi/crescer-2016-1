@@ -13,9 +13,9 @@ From Associado
 --exercicio 3
 
 Select NomeEmpregado,
-	   Datediff(Month,DataAdmissao,Getdate()) as MesesDeTrabalho
+	   Datediff(Month,DataAdmissao,convert(datetime,'31/12/2000', 103)) as MesesDeTrabalho
 From empregado
-Where DataAdmissao between '1980-05-01' and '1982-01-20'
+Where DataAdmissao between convert(datetime, '01/05/1980', 103) and convert(datetime,'20/01/1982', 103)
 
 --exercicio 4
 
