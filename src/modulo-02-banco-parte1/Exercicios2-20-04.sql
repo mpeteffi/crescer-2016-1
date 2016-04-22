@@ -19,7 +19,7 @@ Where DataAdmissao between convert(datetime, '01/05/1980', 103) and convert(date
 
 --exercicio 4
 
-Select TOP(1)
+Select TOP(1) with ties
 	Cargo,
 	count(1) as cont
 From Empregado
