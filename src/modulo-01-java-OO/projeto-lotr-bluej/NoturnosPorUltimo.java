@@ -9,33 +9,26 @@ public class NoturnosPorUltimo implements EstrategiaDeAtaque{
     }
     
     public ArrayList<Elfo> atacarHorda(ArrayList<Dwarf> osAnoes){
-        ordemDoAtaque = new ArrayList<>();
-        
+        ordemDoAtaque.clear();
+        classeAtacar(ElfoVerde.class, osAnoes);
+        classeAtacar(ElfoNoturno.class, osAnoes);
+        return this.ordemDoAtaque;
+    }
+
+    private void classeAtacar(Class classe, ArrayList<Dwarf> osAnoes) {
         for(String chaveNomeElfo : exercito.keySet()){
             Elfo oElfo=this.exercito.get(chaveNomeElfo);
             boolean elfoVivo = oElfo.getStatus() == Status.VIVO;
-            if(elfoVivo && oElfo instanceof ElfoVerde){
+            if(elfoVivo && oElfo.getClass() == classe){
                 for(Dwarf oAnao : osAnoes){
                     oElfo.atirarFlecha(oAnao);
                     ordemDoAtaque.add(oElfo);
                 }
             }
         }
-        for(String chaveNomeElfo : exercito.keySet()){
-            Elfo oElfo=this.exercito.get(chaveNomeElfo);
-            boolean elfoVivo = oElfo.getStatus() == Status.VIVO;
-            if(elfoVivo && oElfo instanceof ElfoNoturno){
-                for(Dwarf oAnao : osAnoes){
-                    oElfo.atirarFlecha(oAnao);
-                    ordemDoAtaque.add(oElfo);
-                }
-            }
-        }      
-        
-        return this.ordemDoAtaque;
     }
     
-        public ArrayList<Elfo> getOrdemUltimoAtaque(){
+    public ArrayList<Elfo> getOrdemUltimoAtaque(){
         return this.ordemDoAtaque;
     }
 }
