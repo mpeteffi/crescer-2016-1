@@ -9,7 +9,7 @@ public class ArteDaGuerra implements EstrategiaDeAtaque{
     }
     
     public ArrayList<Elfo> atacarHorda(ArrayList<Dwarf> osAnoes){
-        int maxAtaqueNoturno = (int)(exercito.size()*osAnoes.size()*(0.3)),
+        int maxAtaqueNoturno = (int)(exercito.size()*osAnoes.size()*0.3),
         qtdNoturno=0;
         ordemDoAtaque = new ArrayList<>();
         
