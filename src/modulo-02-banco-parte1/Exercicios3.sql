@@ -67,7 +67,7 @@ commit
 --exercicio 7
 
 select 
-	(sum(ea.Salario)-sum(e.Salario)) as Diferenï¿½a
+	(sum(ea.Salario)-sum(e.Salario)) as Diferença
 From Empregado e
 Inner Join EmpregadoAux ea on e.IDEmpregado=ea.IDEmpregado
 
@@ -82,3 +82,25 @@ Where e.salario = (
 		max(salario) 
 	from Empregado
 	where IDDepartamento IS NOT NULL)
+
+--exercicio 9
+
+Select 
+	a.Nome, 
+	c.Nome 
+From Associado a
+Inner Join Cidade c ON c.IDCidade = a.IDCidade
+Union All
+Select 
+	e.NomeEmpregado, 
+	d.Localizacao 
+From Empregado e
+Inner Join Departamento d ON e.IDDepartamento = d.IDDepartamento
+
+--exercicio 10
+
+Select 
+	c.Nome, 
+	c.UF 
+From Cidade c
+Inner Join Associado a ON c.IDCidade = a.IDCidade
