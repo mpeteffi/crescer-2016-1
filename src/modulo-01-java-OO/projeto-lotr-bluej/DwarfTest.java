@@ -6,9 +6,21 @@ import org.junit.Test;
 public class DwarfTest
 {
     @Test
-    public void atribuirNome(){
+    public void atribuirNomeJoao(){
         Dwarf d1 = new Dwarf("Joao");
         assertEquals("Joao",d1.getNome());
+    }
+    
+    @Test
+    public void atribuirNomeVazio(){
+        Dwarf d1 = new Dwarf("");
+        assertEquals("",d1.getNome());
+    }
+    
+    @Test
+    public void atribuirNomeNull(){
+        Dwarf d1 = new Dwarf(null);
+        assertEquals(null,d1.getNome());
     }
     
     @Test
@@ -18,7 +30,7 @@ public class DwarfTest
     }
     
     @Test
-    public void dawrfPerdeVida(){
+    public void dawrfPerde10Vida(){
         Dwarf d1 = new Dwarf("Joao");
         d1.perderVida();
         assertEquals(100,d1.getVida(),0.001);
@@ -50,6 +62,9 @@ public class DwarfTest
         for(int i=1;i<=15;i++){d1.perderVida();}
         assertEquals(0,d1.getVida(),0.001);
         assertEquals(Status.MORTO,d1.getStatus());
+        for(int i=1;i<=5;i++){d1.perderVida();}
+        assertEquals(0,d1.getVida(),0.001);
+        assertEquals(Status.MORTO,d1.getStatus());
     }
     
     @Test
@@ -58,6 +73,19 @@ public class DwarfTest
         Item i1 = new Item(1,"Martelo");
         d1.adicionarItem(i1);
         assertEquals(i1,d1.getInventario().getLista().get(0));
+        assertEquals(1,d1.getInventario().getLista().size());
+    }
+    
+    @Test
+    public void dwarfGanha2Itens(){
+        Dwarf d1 = new Dwarf("João");
+        Item i1 = new Item(1,"Martelo");
+        Item i2 = new Item(1,"Machado");
+        d1.adicionarItem(i1);
+        d1.adicionarItem(i2);
+        assertEquals(i1,d1.getInventario().getLista().get(0));
+        assertEquals(i2,d1.getInventario().getLista().get(1));
+        assertEquals(2,d1.getInventario().getLista().size());
     }
     
     @Test
@@ -88,15 +116,31 @@ public class DwarfTest
     }
     
     @Test
-    public void dwarfNumeroSorte101(){
+    public void dwarfRecebeNullDataNascimento(){
+        Dwarf d1 = new Dwarf("João",null);
+        assertNull(d1.getNascimento());
+    }
+    
+    @Test
+    public void dwarfNumeroSorte101Padrao(){
         Dwarf d1 = new Dwarf("João");
         assertTrue(d1.getNumeroSorte()==101.0);
     }
     
     @Test
-    public void dwarfNumeroSorteBissexto(){
+    public void dwarfNumeroSorteBissexto2016Vida90(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
         Dwarf d1 = new Dwarf("João",data);
+        d1.perderVida();
+        d1.perderVida();
+        assertTrue(d1.getNumeroSorte()==-3333.0);
+    }
+    
+    @Test
+    public void dwarfNumeroSorteBissexto2020Vida80(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2020);
+        Dwarf d1 = new Dwarf("João",data);
+        d1.perderVida();
         d1.perderVida();
         d1.perderVida();
         assertTrue(d1.getNumeroSorte()==-3333.0);
@@ -106,7 +150,7 @@ public class DwarfTest
     public void dwarfNumeroSorteNaoBissextoJoao(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
         Dwarf d1 = new Dwarf("João",data);
-        assertTrue(d1.getNumeroSorte()!=33.0);
+        assertFalse(d1.getNumeroSorte()==33.0);
     }
     
     @Test
@@ -124,10 +168,27 @@ public class DwarfTest
     }
     
     @Test
+    public void dwarfNumeroSorteBissextoSeixas(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
+        Dwarf d1 = new Dwarf("Seixas",data);
+        assertFalse(d1.getNumeroSorte()==33.0);
+    }
+    
+    @Test
+    public void dwarfNumeroSorteBissextoMeireles(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2020);
+        Dwarf d1 = new Dwarf("Meireles",data);
+        assertFalse(d1.getNumeroSorte()==33.0);
+    }
+    
+    @Test
     public void dwarfSorteNaoPerdeVidaNaoGanhaExp(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2015);
         Dwarf d1 = new Dwarf("Seixas",data);
         //Sorte entre 0 e 100
+        d1.perderVida();
+        assertEquals(110,d1.getVida(),0.001);
+        assertEquals(0,d1.getExperiencia());
         d1.perderVida();
         assertEquals(110,d1.getVida(),0.001);
         assertEquals(0,d1.getExperiencia());
@@ -139,6 +200,9 @@ public class DwarfTest
         //Sorte maior que 100
         d1.perderVida();
         assertEquals(100,d1.getVida(),0.001);
+        assertEquals(0,d1.getExperiencia());
+        d1.perderVida();
+        assertEquals(90,d1.getVida(),0.001);
         assertEquals(0,d1.getExperiencia());
     }
     
