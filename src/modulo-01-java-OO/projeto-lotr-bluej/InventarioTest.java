@@ -18,6 +18,12 @@ public class InventarioTest
     }    
     
     @Test
+    public void getItemComMaiorQuantidadeComInventarioVazio() {
+        Inventario inv = new Inventario();
+        assertTrue(inv.itemMaisPopular().getQuantidade()==0);
+    }
+    
+    @Test
     public void itemAdicionado(){
         Item i1 = new Item(1,"Martelo");
         Inventario bolsa = new Inventario();
