@@ -8,6 +8,51 @@ import java.util.*;
 public class AtaqueIntercaladoTest
 {
     @Test
+    public void atacarHordaIntercaladoSoComNoturnos(){
+        //criar exercito com 0 verdes e 3 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(0,3);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(2);
+        EstrategiaDeAtaque estrategia = new AtaqueIntercalado(e1.getExercito());
+        assertTrue(estrategia.getOrdemUltimoAtaque().equals(new ArrayList<Elfo>()));
+    }
+    
+    @Test
+    public void atacarHordaIntercaladoSoComVerdes(){
+        //criar exercito com 3 verdes e 0 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(3,0);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(6);
+        EstrategiaDeAtaque estrategia = new AtaqueIntercalado(e1.getExercito());
+        assertTrue(estrategia.getOrdemUltimoAtaque().equals(new ArrayList<Elfo>()));
+    }
+    
+    @Test
+    public void atacarHordaIntercaladoMaisNoturnos(){
+        //criar exercito com 3 verdes e 4 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(3,4);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(6);
+        EstrategiaDeAtaque estrategia = new AtaqueIntercalado(e1.getExercito());
+        assertTrue(estrategia.getOrdemUltimoAtaque().equals(new ArrayList<Elfo>()));
+    }
+    
+    @Test
+    public void atacarComExercitoVazio(){
+        ExercitoDeElfos e1 = new ExercitoDeElfos();
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(6);
+        EstrategiaDeAtaque estrategia = new AtaqueIntercalado(e1.getExercito());
+        List<Elfo> ordemAtaque = estrategia.atacarHorda(hordaDeAnoes);
+        assertTrue(ordemAtaque.isEmpty());
+    }
+    
+    @Test
+    public void atacarHordaIntercaladoMaisVerdes(){
+        //criar exercito com 3 verdes e 2 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(3,2);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(6);
+        EstrategiaDeAtaque estrategia = new AtaqueIntercalado(e1.getExercito());
+        assertTrue(estrategia.getOrdemUltimoAtaque().equals(new ArrayList<Elfo>()));
+    }
+    
+    @Test
     public void atacarHordaAtaqueIintercalado2anoes3verdes3noturnos(){
         //criar exercito com 3 ElfosVerdes e 3 ElfosNoturnos
         ExercitoDeElfos e1 = criarExercitoDeElfos(3, 3);

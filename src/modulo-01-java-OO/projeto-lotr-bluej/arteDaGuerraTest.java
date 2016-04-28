@@ -5,7 +5,48 @@ import org.junit.Test;
 import java.util.*;
 
 public class ArteDaGuerraTest{
+    @Test
+    public void atacarHordasoVerdes(){
+        //criar exercito com 5 verde e 0 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(5,0);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(2);
+        EstrategiaDeAtaque estrategia = new ArteDaGuerra(e1.getExercito());
+        ArrayList<Elfo> ordemAtaque = estrategia.atacarHorda(hordaDeAnoes);
+        
+        int verdes=0, noturnos=0;
+        for(int i=0; i<ordemAtaque.size();i++){
+            if(ordemAtaque.get(i) instanceof ElfoVerde){
+                verdes++;
+            } else {
+                noturnos++;
+            }
+        }
+        
+        assertEquals(10,verdes);
+        assertEquals(0,noturnos);
+    }
     
+    @Test
+    public void atacarHordaSoNoturno(){
+        //criar exercito com 0 verde e 5 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(0,5);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(2);
+        EstrategiaDeAtaque estrategia = new ArteDaGuerra(e1.getExercito());
+        ArrayList<Elfo> ordemAtaque = estrategia.atacarHorda(hordaDeAnoes);
+        
+        int verdes=0, noturnos=0;
+        for(int i=0; i<ordemAtaque.size();i++){
+            if(ordemAtaque.get(i) instanceof ElfoVerde){
+                verdes++;
+            } else {
+                noturnos++;
+            }
+        }
+        
+        assertEquals(0,verdes);
+        assertEquals(3,noturnos);
+    }
+        
     @Test
     public void atacarHorda1Verde3NoturnoE2Dwarves(){
         //criar exercito com 1 verde e 3 noturnos

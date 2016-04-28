@@ -5,6 +5,38 @@ import org.junit.Test;
 import java.util.*;
 
 public class NoturnosPorUltimoTest{
+    @Test
+    public void atacarHordaIntercaladoSoComVerdes(){
+        //criar exercito com 3 verdes e 0 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(3,0);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(6);
+        EstrategiaDeAtaque estrategia = new NoturnosPorUltimo(e1.getExercito());
+        ArrayList<Elfo> ordemAtaque = estrategia.atacarHorda(hordaDeAnoes);
+        for(int i=0;i<18;i++){
+            assertTrue(ordemAtaque.get(i)instanceof ElfoVerde);
+        }
+    }
+    
+    @Test
+    public void atacarHordaIntercaladoSoComNoturnos(){
+        //criar exercito com 0 verdes e 6 noturnos
+        ExercitoDeElfos e1 = criarExercitoDeElfos(0,6);
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(6);
+        EstrategiaDeAtaque estrategia = new NoturnosPorUltimo(e1.getExercito());
+        ArrayList<Elfo> ordemAtaque = estrategia.atacarHorda(hordaDeAnoes);
+        for(int i=0;i<36;i++){
+            assertTrue(ordemAtaque.get(i)instanceof ElfoNoturno);
+        }
+    }
+    
+    @Test
+    public void atacarComExercitoVazio(){
+        ExercitoDeElfos e1 = new ExercitoDeElfos();
+        ArrayList<Dwarf> hordaDeAnoes = criarHordaDwarves(6);
+        EstrategiaDeAtaque estrategia = new NoturnosPorUltimo(e1.getExercito());
+        List<Elfo> ordemAtaque = estrategia.atacarHorda(hordaDeAnoes);
+        assertTrue(ordemAtaque.isEmpty());
+    }
     
     @Test
     public void atacarHordaDeElfosNoturnosUltimo2e2(){

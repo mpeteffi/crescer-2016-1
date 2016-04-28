@@ -44,8 +44,13 @@ public class ElfoTest
         assertTrue(legolas.getVida()==100);
     }
     
+    @Test
+    public void contadorDeElfosZeradoEmCenarioSemNew(){
+        assertEquals(0, Elfo.quantidadeElfos);
+    }
+    
     @Test 
-    public void elfoNasceComVivo(){
+    public void elfoNasceVivo(){
         Elfo legolas = new Elfo("Legolas");
         assertEquals(legolas.getStatus(),Status.VIVO);
     }
@@ -127,6 +132,14 @@ public class ElfoTest
         Elfo legolas = new Elfo("Legolas",10);
         legolas.atirarFlecha(new Dwarf("gimli"));
         String esperado = "Legolas possui 9 flechas e 1 nível de experiência.";
+        assertEquals(esperado,legolas.toString());
+    }
+    
+    @Test
+    public void toStringElfoNullCom10FlechasEAtiraUma(){
+        Elfo legolas = new Elfo(null,10);
+        legolas.atirarFlecha(new Dwarf("gimli"));
+        String esperado = "null possui 9 flechas e 1 nível de experiência.";
         assertEquals(esperado,legolas.toString());
     }
     

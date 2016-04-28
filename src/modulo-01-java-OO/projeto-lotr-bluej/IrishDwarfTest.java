@@ -20,6 +20,17 @@ public class IrishDwarfTest
     }
     
     @Test
+    public void irishDwarfSorteGanharQMilVezesSemItens(){
+        DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
+        IrishDwarf d1 = new IrishDwarf("João",data);
+        d1.perderVida();
+        d1.perderVida();
+        //Sorte menor que 0
+        d1.tentarSorte();
+        assertTrue(d1.getInventario().getLista().isEmpty());
+    }
+    
+    @Test
     public void irishDwarfSorteGanharQMilVezesDeCada(){
         DataTerceiraEra data = new DataTerceiraEra(10,4,2016);
         IrishDwarf d1 = new IrishDwarf("João",data);

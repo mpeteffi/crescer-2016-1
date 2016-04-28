@@ -42,6 +42,17 @@ public class ElfoVerdeTest
         assertEquals(verde.getInventario().getLista().get(1),i4);
     }
     
+    @Test
+    public void NaoAdicionaNulls(){
+        Elfo verde = new ElfoVerde("Verde");
+        Item i1 = new Item(1,null);
+        Item i2 = new Item(0,null);
+        verde.adicionarItem(i1);
+        verde.adicionarItem(i2);
+        verde.adicionarItem(null);
+        assertEquals(verde.getInventario().getLista().size(),0);
+    }
+    
     @Test 
     public void elfoVerdeNasceCom100DeVida(){
         Elfo verde = new ElfoVerde("Legolas");
