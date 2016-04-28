@@ -32,6 +32,15 @@ public class ElfoNoturnoTest
     }
     
     @Test
+    public void elfoNoturnoPerde975PorCentoDeVidaPor2Flechada(){
+        Elfo legolas = new ElfoNoturno("Legolas",50);
+        assertEquals(legolas.getVida(),100,0.001);
+        legolas.atirarFlecha(new Dwarf("gimli"));
+        legolas.atirarFlecha(new Dwarf("gimli"));
+        assertEquals(legolas.getVida(),90.25,0.001);
+    }
+    
+    @Test
     public void elfoNoturnoMorreAoAtirarMuitasFlechas(){
         Elfo legolas = new ElfoNoturno("Legolas",100);
         for(int i=0;i<=90;i++){legolas.atirarFlecha(new Dwarf("gimli"));}
