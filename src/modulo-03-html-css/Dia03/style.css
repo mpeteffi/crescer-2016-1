@@ -17,6 +17,7 @@ body {
     clear:left;
     margin-top: 30px;
     margin-left: 30px;
+    overflow: auto;
 }
 
 .a{
@@ -56,9 +57,4 @@ body {
 
 .int:nth-child(4n+1){
     clear:left;
-}
-
-.clear{
-    position: static;
-    clear: both;
 }
