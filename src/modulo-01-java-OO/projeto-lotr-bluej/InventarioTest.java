@@ -10,7 +10,13 @@ import java.util.ArrayList;
 
 public class InventarioTest
 {
-     
+    @Test
+    public void getDescricoesItensVazio() {
+        Inventario inventario = new Inventario();
+        String obtido = inventario.getDescricoesItens();
+        assertEquals("", obtido);
+    }    
+    
     @Test
     public void itemAdicionado(){
         Item i1 = new Item(1,"Martelo");
