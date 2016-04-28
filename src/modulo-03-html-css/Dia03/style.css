@@ -1,0 +1,69 @@
+body {
+    height: 1500px;
+    position: relative;
+    left: -8px;
+    top: -8px;
+}
+
+.fix {
+    position:fixed;
+    top:0px;
+    height: 30px;
+    width: 100%;
+    z-index: 1;
+    background-color: black;
+}
+
+.container{
+    position: static;
+    float:left;
+    clear:left;
+    margin-top: 30px;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+.a{
+    margin-top: 60px;
+    background-color: blue;
+}
+
+.b{
+    background-color: green;
+}
+
+.caixinha{
+    float:left;
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.um {
+    position: relative;
+    left: 240px;
+}
+
+.tres {
+    position:relative;
+    left: -240px;
+}
+
+.int {
+    position: relative;
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 10px;
+}
+
+.int:nth-child(4n+1){
+    clear:left;
+}
+
+.clear{
+    position: static;
+    clear: both;
+}
