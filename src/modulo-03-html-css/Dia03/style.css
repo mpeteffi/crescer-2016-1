@@ -1,8 +1,6 @@
 body {
     height: 1500px;
-    position: relative;
-    left: -8px;
-    top: -8px;
+    margin:0px;
 }
 
 .fix {
@@ -16,15 +14,12 @@ body {
 
 .container{
     position: static;
-    float:left;
     clear:left;
     margin-top: 30px;
     margin-left: 30px;
-    display: inline-block;
 }
 
 .a{
-    margin-top: 60px;
     background-color: blue;
 }
 
