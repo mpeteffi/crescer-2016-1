@@ -1,0 +1,19 @@
+body {
+  padding-top: 50px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.container-fluid {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.menu-icone-texto {
+  position: absolute;
+  top: -16px;
+  padding-left: 20px;
+}
