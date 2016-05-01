@@ -1,5 +1,6 @@
 body {
   padding-top: 50px;
+  height: auto!important;
 }
 
 .starter-template {
@@ -7,7 +8,7 @@ body {
   text-align: center;
 }
 
-.container-fluid {
+.container-top {
   padding-left: 45px;
   padding-right: 45px;
 }
@@ -16,4 +17,52 @@ body {
   position: absolute;
   top: -16px;
   padding-left: 20px;
+}
+
+.menu-icone{
+  position:absolute;
+}
+
+.user-um {
+  height: 50px;
+  border-radius: 50%;
+  display: inline;
+  float: left;
+}
+
+.user-data p {
+  margin: 0px;
+  display: inline;
+  margin-left: 10px;
+  position: relative;
+}
+
+.sidebar {
+  padding-top: 35px;
+  min-width: 260px;
+}
+
+#user-photo-top > a {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+#user-photo-top p {
+    position: absolute;
+    top: 10px;
+    left: 70px;
+}
+
+#user-photo-top p:first-of-type {
+    top: -15px;
+}
+
+.nav-sidebar .glyphicon {
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 768px){
+  .icone-toggle{
+    display: none;
+  }
 }
