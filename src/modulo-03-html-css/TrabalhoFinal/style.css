@@ -49,13 +49,13 @@ body {
 }
 
 #user-photo-top p {
-    position: absolute;
-    top: 10px;
-    left: 70px;
+  position: absolute;
+  top: 10px;
+  left: 70px;
 }
 
 #user-photo-top p:first-of-type {
-    top: -15px;
+  top: -15px;
 }
 
 .nav-sidebar .glyphicon {
