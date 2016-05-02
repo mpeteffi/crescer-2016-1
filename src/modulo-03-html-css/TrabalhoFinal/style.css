@@ -26,21 +26,23 @@ body {
 .user-um {
   height: 50px;
   border-radius: 50%;
-  display: inline;
-  float: left;
 }
 
 .user-data p {
   margin: 0px;
-  display: inline;
-  margin-left: 10px;
   position: relative;
-  top:8px;
 }
 
+.user-data a {
+  text-align: center;
+}
+
+.user-data img{
+  height: 70px;
+  margin-bottom: 10px;
+}
 .sidebar {
   padding-top: 35px;
-  min-width: 260px;
 }
 
 #user-photo-top > a {
@@ -64,7 +66,7 @@ body {
 
 .seta-nav {
   position: absolute;
-  left: 220px;
+  right: 10px;
   top: 15px;
 }
 
