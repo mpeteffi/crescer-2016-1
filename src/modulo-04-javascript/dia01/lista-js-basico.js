@@ -1,3 +1,5 @@
+'use strict';
+
 function daisyGame(numeroPetalas){
     ehNumero = typeof numeroPetalas === 'number';
     ehInteiro = numeroPetalas%1 === 0;
