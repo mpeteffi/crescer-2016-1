@@ -1,11 +1,14 @@
 'use strict';
 
 function daisyGame(numeroPetalas){
-    ehNumero = typeof numeroPetalas === 'number';
-    ehInteiro = numeroPetalas%1 === 0;
-    if(ehNumero && ehInteiro)
-    return numeroPetalas%2===0 ? 'Love Me Not' : 'Love Me';
-    else return ("Por favor, insira um número natural.")
+    if(numeroPetalas !== null){
+      var ehNumero = (typeof numeroPetalas === 'number');
+      var ehNatural = (numeroPetalas%1 === 0 && numeroPetalas>0);
+      if(ehNumero && ehNatural){
+        return numeroPetalas%2===0 ? 'Love Me Not' : 'Love Me';
+      }
+    }
+  return ("Por favor, insira um número natural.");
 }
 
 function maiorTexto(lista) {
