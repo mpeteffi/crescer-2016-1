@@ -12,3 +12,15 @@ function obterDoadores(){
   return doadores;
 }
 
+//exercicio 2
+function obterCavaleiroComMaisGolpes() {
+  var indexMaisGolpes = -1;
+  var maiorQtsGolpes = 0;
+  for(var i in goldSaints){
+    if(goldSaints[i].golpes.length > maiorQtsGolpes){
+      maiorQtsGolpes = goldSaints[i].golpes.length;
+      indexMaisGolpes = i;
+    }
+  }
+  return goldSaints[indexMaisGolpes];
+}
