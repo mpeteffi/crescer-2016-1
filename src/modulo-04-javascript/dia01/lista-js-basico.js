@@ -46,3 +46,13 @@ function imprime (array, fn){
     }
   } else { return ("Você deve informar um Array de Strings e uma Function, nesta ordem.")}
 }
+
+function adicionar(a){
+  return function(b) {
+    var aEhNumero = (a!=null && typeof a === 'number' && !isNaN(a));
+    var bEhNumero = (b!=null && typeof b === 'number' && !isNaN(b));
+    if(aEhNumero && bEhNumero){
+      return a+b;
+    } else {return ("Favor informar apenas números como parâmetros.")}
+  }
+}
