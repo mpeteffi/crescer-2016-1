@@ -5,7 +5,7 @@ function daisyGame(numeroPetalas){
     var ehNumero = (typeof numeroPetalas === 'number');
     var ehNatural = (numeroPetalas%1 === 0 && numeroPetalas>0);
     if(ehNumero && ehNatural){
-      return numeroPetalas%2===0 ? 'Love Me Not' : 'Love Me';
+      return numeroPetalas%2===0 ? 'Love me not' : 'Love me';
     }
   }
   return ("Por favor, insira um número natural.");
@@ -23,7 +23,7 @@ function maiorTexto(lista) {
         var index = i;}
       }
       if(tamanho>0) {
-        return ("A maior palavra é " + lista[index] + " com " + tamanho + " caracteres.");
+        return (lista[index]);
       } else { return ("Nenhuma String encontrada no Array informado.");
     }
   } else { return ("Favor inserir um Array de Strings como parâmetro");}
@@ -97,7 +97,7 @@ function queroCafe(mascada, precos){
     if(qtdPrecos>0){
       if(arrayFinal.length > 0){
         arrayFinal.sort(function(a, b){return a-b});
-        return arrayFinal;
+        return arrayFinal.toString();
       } else {
         return ("Mascada insuficiente para comprar café.")
       }
