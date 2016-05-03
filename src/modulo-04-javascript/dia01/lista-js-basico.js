@@ -45,7 +45,7 @@ function imprime (array, fn){
     if(qtdString===0){
       return ("Nenhuma String encontrada no Array informado.");
     }
-  } else { return ("Você deve informar um Array de Strings e uma Function, nesta ordem.")}
+  } else { return ("Você deve informar um Array de Strings e uma Function, nesta ordem.");}
 }
 
 function adicionar(a){
