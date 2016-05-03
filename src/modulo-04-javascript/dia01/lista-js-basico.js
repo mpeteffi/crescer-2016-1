@@ -56,3 +56,24 @@ function adicionar(a){
     } else {return ("Favor informar apenas números como parâmetros.")}
   }
 }
+
+function fiboSum(n) {
+  var ehNumeroNatural = (n!=null && typeof n === 'number' && !isNaN(n) && n%1===0 && n>0);
+  if(ehNumeroNatural){
+    var soma = 0;
+    var atual = 1;
+    var anterior = 1;
+    for (var i=1; i<=n; i++){
+      if (i<=2){
+        soma += 1;
+      } else {
+        atual += anterior;
+        soma += atual;
+        anterior = atual - anterior;
+      }
+    }
+    return soma;
+  } else{
+    return ("Informe um número natural como parâmetro.");
+  }
+}
