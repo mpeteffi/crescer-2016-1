@@ -59,7 +59,7 @@ function adicionar(a){
 }
 
 function fiboSum(n) {
-  var ehNumeroNatural = (n!=null && typeof n === 'number' && !isNaN(n) && n%1===0 && n>0);
+  var ehNumeroNatural = (n!==null && typeof n === 'number' && !isNaN(n) && n%1===0 && n>0);
   if(ehNumeroNatural){
     var soma = 0;
     var atual = 1;
