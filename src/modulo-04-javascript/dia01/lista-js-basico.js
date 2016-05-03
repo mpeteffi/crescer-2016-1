@@ -77,3 +77,34 @@ function fiboSum(n) {
     return ("Informe um número natural como parâmetro.");
   }
 }
+
+function queroCafe(mascada, precos){
+  var ehNumero = (mascada!=null && typeof mascada === 'number' && !isNaN(mascada));
+  var ehArray = Array.isArray(precos);
+  if(ehNumero && ehArray){
+    var qtdPrecos = 0;
+    var arrayFinal = [];
+    for(var i=0; i<precos.length; i++){
+      var oPreco = precos[i];
+      var ehPrecoValido = (oPreco!=null && typeof oPreco === 'number' && !isNaN(oPreco));
+      if(ehPrecoValido){
+        qtdPrecos++;
+        if(oPreco<=mascada){
+          arrayFinal.push(oPreco);
+        }
+      }
+    }
+    if(qtdPrecos>0){
+      if(arrayFinal.length > 0){
+        arrayFinal.sort(function(a, b){return a-b});
+        return arrayFinal;
+      } else {
+        return ("Mascada insuficiente para comprar café.")
+      }
+    } else {
+      return ("Nenhum preço válido encontrado na Array informada.");
+    }
+  } else {
+    return ("Insira o valor da mascada e um array de preços, nesta ordem.");
+  }
+}
