@@ -110,23 +110,18 @@ function queroCafe(mascada, precos){
 }
 
 function contarPorTipo(obj, stringInformada){
+
+  function getType(v) {
+    return v === null ? 'null' : typeof v !== 'undefined' && v.constructor === Array ? 'array' : typeof v;
+  }
+
   var stringsValidas = ['string','number','boolean','object','undefined','null','function','array'];
   var ehObjeto = typeof obj === 'object';
   var ehStringValida = stringsValidas.includes(stringInformada);
   if(ehObjeto && ehStringValida){
     var qtdDoTipo = 0;
-    for (var i in obj){
-      if(stringInformada === 'null'){
-        if(obj[i] === null){
-          qtdDoTipo++;
-        }
-      }
-      if(stringInformada === 'array'){
-        if(obj[i] instanceof Array){
-          qtdDoTipo++;
-        }
-      }
-      if(typeof obj[i] === stringInformada){
+    for (var i in obj) {
+      if (getType(obj[i]) === stringInformada){
         qtdDoTipo++;
       }
     }
