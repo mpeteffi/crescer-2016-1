@@ -1,13 +1,13 @@
 'use strict';
 
 function daisyGame(numeroPetalas){
-    if(numeroPetalas !== null){
-      var ehNumero = (typeof numeroPetalas === 'number');
-      var ehNatural = (numeroPetalas%1 === 0 && numeroPetalas>0);
-      if(ehNumero && ehNatural){
-        return numeroPetalas%2===0 ? 'Love Me Not' : 'Love Me';
-      }
+  if(numeroPetalas !== null){
+    var ehNumero = (typeof numeroPetalas === 'number');
+    var ehNatural = (numeroPetalas%1 === 0 && numeroPetalas>0);
+    if(ehNumero && ehNatural){
+      return numeroPetalas%2===0 ? 'Love Me Not' : 'Love Me';
     }
+  }
   return ("Por favor, insira um número natural.");
 }
 
