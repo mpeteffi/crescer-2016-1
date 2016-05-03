@@ -129,10 +129,10 @@ function contarPorTipo(obj, stringInformada){
     if(qtdDoTipo>0){
       return qtdDoTipo;
     } else {
-      return ("Nenhuma propriedade do objeto é do tipo informado.")
+      return ("Nenhuma propriedade do objeto é do tipo informado.");
     }
   } else {
-    return ("Informe um objeto complexo e uma string válida, nesta ordem.")
+    return ("Informe um objeto complexo e uma string válida, nesta ordem.");
   }
 }
 
