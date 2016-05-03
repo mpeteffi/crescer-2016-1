@@ -139,3 +139,24 @@ function contarPorTipo(obj, stringInformada){
     return ("Informe um objeto complexo e uma string válida, nesta ordem.")
   }
 }
+
+
+// A função revelarSaiyaman sobrescreve "goku", que é
+// variável global e recebe o novo valor sem problemas.
+// O problema que acontece com a tentativa de sobrescerver
+// gohan se deve ao fato do uso do "var" na frente.
+// Com o "var", estamos declarando um novo gohan, desta vez local,
+// que tenta acessar a ele mesmo (o gohan local, e não o global)
+// para concatenar um novo valor. Como o gohan local ainda não tem valor,
+// pois está sendo declarado, é retornado a string "undefined" quando
+// tentamos concatenar o conteudo da mesma. Sem o uso do var, estariamos
+// apenas sobrescrevendo o gohan global, assim como no caso do goku,
+// e a função retornaria o esperado.
+
+// var gohan = 'gohan', goku = 'Goku';
+// function revelarSaiyaman() {
+//   console.log(gohan);
+//   goku = 'Son Goku';
+//   var gohan = 'Son ' + gohan;
+//   return gohan;
+// }
