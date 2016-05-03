@@ -29,4 +29,20 @@ function maiorTexto(lista) {
   } else { return ("Favor inserir um Array de Strings como parâmetro");}
 }
 
+function imprime (array, fn){
+  var ehArray = Array.isArray(array);
+  var ehFunction = (typeof fn === "function");
+  if(ehArray && ehFunction) {
+    var qtdString = 0;
+    for(var i=0; i<array.length; i++){
+      var ehString = typeof array[i] === "string";
+      if(ehString){
+        fn(array[i]);
+        qtdString++;
+      }
+    }
+    if(qtdString===0){
+      return ("Nenhuma String encontrada no Array informado.");
+    }
+  } else { return ("Você deve informar um Array de Strings e uma Function, nesta ordem.")}
 }
