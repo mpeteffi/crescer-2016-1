@@ -108,3 +108,34 @@ function queroCafe(mascada, precos){
     return ("Insira o valor da mascada e um array de preços, nesta ordem.");
   }
 }
+
+function contarPorTipo(obj, stringInformada){
+  var stringsValidas = ['string','number','boolean','object','undefined','null','function','array'];
+  var ehObjeto = typeof obj === 'object';
+  var ehStringValida = stringsValidas.includes(stringInformada);
+  if(ehObjeto && ehStringValida){
+    var qtdDoTipo = 0;
+    for (var i in obj){
+      if(stringInformada === 'null'){
+        if(obj[i] === null){
+          qtdDoTipo++;
+        }
+      }
+      if(stringInformada === 'array'){
+        if(obj[i] instanceof Array){
+          qtdDoTipo++;
+        }
+      }
+      if(typeof obj[i] === stringInformada){
+        qtdDoTipo++;
+      }
+    }
+    if(qtdDoTipo>0){
+      return qtdDoTipo;
+    } else {
+      return ("Nenhuma propriedade do objeto é do tipo informado.")
+    }
+  } else {
+    return ("Informe um objeto complexo e uma string válida, nesta ordem.")
+  }
+}
