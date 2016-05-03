@@ -50,12 +50,12 @@ function imprime (array, fn){
 
 function adicionar(a){
   return function(b) {
-    var aEhNumero = (a!=null && typeof a === 'number' && !isNaN(a));
-    var bEhNumero = (b!=null && typeof b === 'number' && !isNaN(b));
+    var aEhNumero = (a!==null && typeof a === 'number' && !isNaN(a));
+    var bEhNumero = (b!==null && typeof b === 'number' && !isNaN(b));
     if(aEhNumero && bEhNumero){
       return a+b;
-    } else {return ("Favor informar apenas números como parâmetros.")}
-  }
+    } else {return ("Favor informar apenas números como parâmetros.");}
+  };
 }
 
 function fiboSum(n) {
