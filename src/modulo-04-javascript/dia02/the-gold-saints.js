@@ -31,5 +31,5 @@ function obterAlturaMedia(){
   for(var i in goldSaints){
     totalAlturas += goldSaints[i].alturaCm;
   }
-  return ((totalAlturas/100)/12).toFixed(2);
+  return parseFloat(((totalAlturas/100)/12).toFixed(2));
 }

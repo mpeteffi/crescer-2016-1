@@ -14,6 +14,6 @@ describe('Ex 2. O com mais golpes', function() {
 
 describe('Ex 4. Altura Media dos cavaleiros', function() {
   it('obterAlturaMedia (1.86)', function() {
-    expect(obterAlturaMedia()).toEqual("1.86");
+    expect(obterAlturaMedia()).toEqual(1.86);
   });
 });
