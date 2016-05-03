@@ -11,3 +11,9 @@ describe('Ex 2. O com mais golpes', function() {
     expect(obterCavaleiroComMaisGolpes()).toEqual(goldSaints[5]);
   });
 });
+
+describe('Ex 4. Altura Media dos cavaleiros', function() {
+  it('obterAlturaMedia (1.86)', function() {
+    expect(obterAlturaMedia()).toEqual("1.86");
+  });
+});

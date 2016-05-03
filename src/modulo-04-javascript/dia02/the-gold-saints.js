@@ -24,3 +24,12 @@ function obterCavaleiroComMaisGolpes() {
   }
   return goldSaints[indexMaisGolpes];
 }
+
+//exercicio 4
+function obterAlturaMedia(){
+  var totalAlturas = 0;
+  for(var i in goldSaints){
+    totalAlturas += goldSaints[i].alturaCm;
+  }
+  return ((totalAlturas/100)/12).toFixed(2);
+}
