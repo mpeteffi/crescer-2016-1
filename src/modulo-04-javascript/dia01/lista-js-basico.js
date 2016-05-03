@@ -16,14 +16,15 @@ function maiorTexto(lista) {
     var tamanho = 0;
     for (var i=0; i<lista.length; i++){
       var palavra = lista[i];
+      var indexDoMaior;
       var naoEhNull = palavra !== null;
       var ehString = typeof palavra === "string";
       if(naoEhNull && ehString && palavra.length > tamanho){
         tamanho = palavra.length;
-        var index = i;}
+        indexDoMaior = i;}
       }
       if(tamanho>0) {
-        return (lista[index]);
+        return (lista[indexDoMaior]);
       } else { return ("Nenhuma String encontrada no Array informado.");
     }
   } else { return ("Favor inserir um Array de Strings como parâmetro");}
