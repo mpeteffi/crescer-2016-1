@@ -117,3 +117,17 @@ function obterSobrepeso(){
     return obterIMCDoCavaleiro(cavaleiro) > 27.8;
   });
 }
+
+
+// function imprimeAnagramas(prefix, letras){
+// 		if (letras.length <= 1) {
+// 			return (prefix + letras);
+// 		} else {
+// 			for (var i = 0; i < letras.length; i++) {
+// 				var atual = letras.substring(i, i + 1);
+// 				var anterior = letras.substring(0, i);
+// 				var proxima = letras.substring(i + 1);
+// 				imprimeAnagramas(prefix + atual, anterior + proxima);
+// 			}
+// 		}
+// 	}
