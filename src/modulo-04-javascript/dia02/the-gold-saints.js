@@ -44,7 +44,7 @@ function obterMesesComMaisAniversarios() {
 function obterAlturaMedia(){
   var totalAlturas = 0;
   goldSaints.forEach(function(cavaleiro){
-    totalAlturas += ((cavaleiro.alturaCm/12)/100);
+    totalAlturas += cmToM(cavaleiro.alturaCm/12);
   });
   return duasCasas(totalAlturas);
 }
@@ -60,7 +60,7 @@ function obterAlturaMediana(){
   } else {
     var mediana = alturasCavaleiros[Math.floor(alturasCavaleiros.length/2)];
   }
-  return duasCasas(mediana/100);
+  return duasCasas(cmToM(mediana));
 }
 
 // exercicio 6A
@@ -83,7 +83,7 @@ function  calcularMediaDePesoEmKg(cavaleiros){
       cavaleirosComPeso++;
     }
   });
-  return duasCasas(0.453592*totalPeso/cavaleirosComPeso);
+  return duasCasas(lbToKg(totalPeso)/cavaleirosComPeso);
 }
 
 // exercicio 7
@@ -98,7 +98,7 @@ function calcularIMC(){
 
 // função auxiliar 7 e 8
 function obterIMCDoCavaleiro(cavaleiro){
-  return duasCasas((cavaleiro.pesoLb*0.453592)/Math.pow((cavaleiro.alturaCm/100),2));
+  return duasCasas(lbToKg(cavaleiro.pesoLb)/Math.pow(cmToM(cavaleiro.alturaCm),2));
 }
 
 // exercicio 8
@@ -111,6 +111,14 @@ function obterSobrepeso(){
 //função auxiliar para arredondar
 function duasCasas(num){
   return Math.round(num * 100)/100;
+}
+//função para converter libras para kg
+function lbToKg(lb){
+  return lb*0.453592;
+}
+//função para converter cm para metro
+function cmToM(cm){
+  return cm/100;
 }
 
 // function imprimeAnagramas(prefix, letras){
