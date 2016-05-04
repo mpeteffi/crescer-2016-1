@@ -12,6 +12,12 @@ describe('Ex 2. O com mais golpes', function() {
   });
 });
 
+describe('Ex 3. Obter meses com mais aniversarios', function() {
+  it('obterMesesComMaisAniversarios()', function() {
+    expect(obterMesesComMaisAniversarios()).toEqual(['Março','Maio','Novembro']);
+  });
+});
+
 describe('Ex 4. Altura Media dos cavaleiros', function() {
   it('obterAlturaMedia (1.86)', function() {
     expect(obterAlturaMedia()).toEqual(1.85);

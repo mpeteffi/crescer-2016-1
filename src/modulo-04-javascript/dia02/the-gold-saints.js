@@ -18,6 +18,38 @@ function obterCavaleiroComMaisGolpes() {
   return cavaleiroMaisGolpes;
 }
 
+//exercicio 3
+function obterMesesComMaisAniversarios() {
+  var osMesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+  // criar object contador com campos meses preenchidos com quantidade de aniversariantes.
+  var contador = [];
+  goldSaints.forEach(function (cavaleiro) {
+    var indexMes = new Date(cavaleiro.dataNascimento).getMonth();
+    if(typeof contador[indexMes] === "undefined") {
+      contador[indexMes] = 1;
+    } else {contador[indexMes]=contador[indexMes]+1;}
+  });
+
+  // descobrir maior quantidade de aniversarios por mês.
+  var maiorQuantidade = 0;
+  for(var i in contador){
+    if(contador[i] > maiorQuantidade){
+      maiorQuantidade = contador[i];
+    }
+  }
+
+  // criar array de com nomes dos meses com maior quantidade de aniversários.
+  var osMesesComMaisAniversarios = [];
+  for(var i=0; i<contador.length; i++){
+    if(contador[i] === 2){
+      osMesesComMaisAniversarios.push(osMesesDoAno[i]);
+    }
+  }
+
+  return osMesesComMaisAniversarios;
+}
+
 //exercicio 4
 function obterAlturaMedia(){
   var totalAlturas = 0;
