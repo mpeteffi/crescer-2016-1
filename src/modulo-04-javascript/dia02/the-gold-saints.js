@@ -61,10 +61,9 @@ function obterAlturaMedia(){
 
 // exercicio 5
 function obterAlturaMediana(){
-  var alturasCavaleiros = [];
-  for(var i in goldSaints){
-    alturasCavaleiros.push(goldSaints[i].alturaCm);
-  }
+  var alturasCavaleiros = Object.keys(goldSaints).map(function(i) {
+    return (goldSaints[i].alturaCm)
+  });
   alturasCavaleiros.sort(function(a, b){return a-b;});
   if(alturasCavaleiros.length%2 === 0){
     var mediana = (alturasCavaleiros[(alturasCavaleiros.length/2)-1] + alturasCavaleiros[alturasCavaleiros.length/2])/2;
