@@ -3,33 +3,26 @@ console.log(goldSaints);
 
 //exercicio 1
 function obterDoadores(){
-  var doadores = [];
-  for(var i in goldSaints){
-    if(goldSaints[i].tipoSanguineo === 'O'){
-      doadores.push(goldSaints[i]);
-    }
-  }
-  return doadores;
+  return goldSaints.filter( function (cavaleiro){
+    return cavaleiro.tipoSanguineo === 'O';});
 }
 
 //exercicio 2
 function obterCavaleiroComMaisGolpes() {
-  var indexMaisGolpes = -1;
-  var maiorQtsGolpes = 0;
-  for(var i in goldSaints){
-    if(goldSaints[i].golpes.length > maiorQtsGolpes){
-      maiorQtsGolpes = goldSaints[i].golpes.length;
-      indexMaisGolpes = i;
+  var cavaleiroMaisGolpes = {golpes:[]};
+  goldSaints.forEach( function (cavaleiro) {
+    if(cavaleiro.golpes.length >= cavaleiroMaisGolpes.golpes.length){
+      cavaleiroMaisGolpes = cavaleiro;
     }
-  }
-  return goldSaints[indexMaisGolpes];
+  });
+  return cavaleiroMaisGolpes;
 }
 
 //exercicio 4
 function obterAlturaMedia(){
   var totalAlturas = 0;
-  for(var i in goldSaints){
-    totalAlturas += goldSaints[i].alturaCm;
-  }
-  return parseFloat(((totalAlturas/100)/12).toFixed(2));
+  goldSaints.forEach(function(cavaleiro){
+    totalAlturas += ((cavaleiro.alturaCm/12)/100);
+  });
+  return parseFloat(totalAlturas.toFixed(2));
 }
