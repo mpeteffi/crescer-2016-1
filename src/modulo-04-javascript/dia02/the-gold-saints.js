@@ -58,3 +58,18 @@ function obterAlturaMedia(){
   });
   return parseFloat(totalAlturas.toFixed(2));
 }
+
+// exercicio 5
+function obterAlturaMediana(){
+  var alturasCavaleiros = [];
+  for(var i in goldSaints){
+    alturasCavaleiros.push(goldSaints[i].alturaCm);
+  }
+  alturasCavaleiros.sort(function(a, b){return a-b;});
+  if(alturasCavaleiros.length%2 === 0){
+    var mediana = (alturasCavaleiros[(alturasCavaleiros.length/2)-1] + alturasCavaleiros[alturasCavaleiros.length/2])/2;
+  } else {
+    var mediana = alturasCavaleiros[Math.floor(alturasCavaleiros.length/2)];
+  }
+  return parseFloat((mediana/100).toFixed(2));
+}

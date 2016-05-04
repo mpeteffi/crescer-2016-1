@@ -23,3 +23,9 @@ describe('Ex 4. Altura Media dos cavaleiros', function() {
     expect(obterAlturaMedia()).toEqual(1.85);
   });
 });
+
+describe('Ex 5. Altura Mediana dos cavaleiros', function() {
+  it('obterAlturaMediana (1.84)', function() {
+    expect(obterAlturaMediana()).toEqual(1.84);
+  });
+});
