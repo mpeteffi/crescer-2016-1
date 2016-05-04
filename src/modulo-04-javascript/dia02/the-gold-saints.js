@@ -46,7 +46,7 @@ function obterAlturaMedia(){
   goldSaints.forEach(function(cavaleiro){
     totalAlturas += ((cavaleiro.alturaCm/12)/100);
   });
-  return parseFloat(totalAlturas.toFixed(2));
+  return duasCasas(totalAlturas);
 }
 
 // exercicio 5
@@ -60,7 +60,7 @@ function obterAlturaMediana(){
   } else {
     var mediana = alturasCavaleiros[Math.floor(alturasCavaleiros.length/2)];
   }
-  return parseFloat((mediana/100).toFixed(2));
+  return duasCasas(mediana/100);
 }
 
 // exercicio 6A
@@ -83,7 +83,7 @@ function  calcularMediaDePesoEmKg(cavaleiros){
       cavaleirosComPeso++;
     }
   });
-  return parseFloat((0.453592*totalPeso/cavaleirosComPeso).toFixed(2));
+  return duasCasas(0.453592*totalPeso/cavaleirosComPeso);
 }
 
 // exercicio 7
@@ -98,7 +98,7 @@ function calcularIMC(){
 
 // função auxiliar 7 e 8
 function obterIMCDoCavaleiro(cavaleiro){
-  return parseFloat(((cavaleiro.pesoLb*0.453592)/Math.pow((cavaleiro.alturaCm/100),2)).toFixed(2));
+  return duasCasas((cavaleiro.pesoLb*0.453592)/Math.pow((cavaleiro.alturaCm/100),2));
 }
 
 // exercicio 8
@@ -108,6 +108,10 @@ function obterSobrepeso(){
   });
 }
 
+//função auxiliar para arredondar
+function duasCasas(num){
+  return Math.round(num * 100)/100;
+}
 
 // function imprimeAnagramas(prefix, letras){
 // 		if (letras.length <= 1) {
