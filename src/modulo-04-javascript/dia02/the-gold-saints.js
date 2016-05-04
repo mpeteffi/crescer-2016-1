@@ -110,3 +110,10 @@ function calcularIMC(){
 function obterIMCDoCavaleiro(cavaleiro){
   return parseFloat(((cavaleiro.pesoLb*0.453592)/Math.pow((cavaleiro.alturaCm/100),2)).toFixed(2));
 }
+
+// exercicio 8
+function obterSobrepeso(){
+  return goldSaints.filter( function (cavaleiro){
+    return obterIMCDoCavaleiro(cavaleiro) > 27.8;
+  });
+}
