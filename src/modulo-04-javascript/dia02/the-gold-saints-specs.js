@@ -29,3 +29,15 @@ describe('Ex 5. Altura Mediana dos cavaleiros', function() {
     expect(obterAlturaMediana()).toEqual(1.84);
   });
 });
+
+describe('Ex 6.A Peso Medio dos cavaleiros', function() {
+  it('obterPesoMedio(84.27)', function() {
+    expect(obterPesoMedio()).toEqual(84.27);
+  });
+});
+
+describe('Ex 6.B Peso Medio dos cavaleiros', function() {
+  it('obterPesoMedioDoadores(80.67)', function() {
+    expect(obterPesoMedioDoadores()).toEqual(80.67);
+  });
+});

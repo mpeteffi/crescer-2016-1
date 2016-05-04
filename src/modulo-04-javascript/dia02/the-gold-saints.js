@@ -72,3 +72,26 @@ function obterAlturaMediana(){
   }
   return parseFloat((mediana/100).toFixed(2));
 }
+
+// exercicio 6A
+function obterPesoMedio(){
+  return calcularMediaDePesoEmKg(goldSaints);
+}
+
+// exercicio 6B
+function obterPesoMedioDoadores(){
+  return calcularMediaDePesoEmKg(obterDoadores());
+}
+
+// função auxiliar 6A e 6B
+function  calcularMediaDePesoEmKg(cavaleiros){
+  var totalPeso = 0;
+  var cavaleirosComPeso = 0;
+  cavaleiros.forEach(function(cavaleiro){
+    if(cavaleiro.hasOwnProperty('pesoLb')){
+      totalPeso += ((cavaleiro.pesoLb));
+      cavaleirosComPeso++;
+    }
+  });
+  return parseFloat((0.453592*totalPeso/cavaleirosComPeso).toFixed(2));
+}
