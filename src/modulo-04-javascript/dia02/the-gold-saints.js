@@ -100,8 +100,8 @@ function  calcularMediaDePesoEmKg(cavaleiros){
 function calcularIMC(){
   var imcs = [];
   goldSaints.forEach(function(cavaleiro){
-    if(cavaleiro.hasOwnProperty('pesoLb')){
-      imcs.push(obterIMCDoCavaleiro(cavaleiro));}
+  if(cavaleiro.hasOwnProperty('pesoLb')){
+    imcs.push(obterIMCDoCavaleiro(cavaleiro));}
   });
   return imcs;
 }
