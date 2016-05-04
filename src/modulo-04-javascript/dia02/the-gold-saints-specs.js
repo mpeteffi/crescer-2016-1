@@ -41,3 +41,9 @@ describe('Ex 6.B Peso Medio dos cavaleiros', function() {
     expect(obterPesoMedioDoadores()).toEqual(80.67);
   });
 });
+
+describe('Ex 7 Obter IMC dos cavaleiros', function() {
+  it('obterIMC', function() {
+    expect(calcularIMC()).toEqual([22.64, 29.48, 24.62, 24.22, 24.84, 20.53, 24.54, 24.31, 23.99, 22.45, 21.5]);
+  });
+});

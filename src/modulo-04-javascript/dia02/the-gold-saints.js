@@ -95,3 +95,18 @@ function  calcularMediaDePesoEmKg(cavaleiros){
   });
   return parseFloat((0.453592*totalPeso/cavaleirosComPeso).toFixed(2));
 }
+
+// exercicio 7
+function calcularIMC(){
+  var imcs = [];
+  goldSaints.forEach(function(cavaleiro){
+    if(cavaleiro.hasOwnProperty('pesoLb')){
+      imcs.push(obterIMCDoCavaleiro(cavaleiro));}
+  });
+  return imcs;
+}
+
+// função auxiliar 7 e 8
+function obterIMCDoCavaleiro(cavaleiro){
+  return parseFloat(((cavaleiro.pesoLb*0.453592)/Math.pow((cavaleiro.alturaCm/100),2)).toFixed(2));
+}
