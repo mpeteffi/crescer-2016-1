@@ -19,7 +19,6 @@ $(document).ready(function() {
 
     // adicionar propriedades ao colocar o mouse.
     $('#cavaleiros img').mouseover(function(i) {
-      $('#dados').show();
       var self = $(this);
       for (var campo in goldSaints[self[0].id-1]) {
         if (goldSaints[self[0].id-1].hasOwnProperty(campo)) {
@@ -32,7 +31,6 @@ $(document).ready(function() {
 
     // remover conteudo de propriedades ao retirar o mouse.
     $('#cavaleiros img').mouseout(function(i) {
-      $('#dados').hide();
       $('#dados').empty();
     });
   });
