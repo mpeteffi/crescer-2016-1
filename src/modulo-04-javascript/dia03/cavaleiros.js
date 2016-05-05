@@ -23,10 +23,12 @@ $(document).ready(function() {
       for (var campo in goldSaints[self[0].id-1]) {
         if (goldSaints[self[0].id-1].hasOwnProperty(campo)) {
           if(campo !== 'imagens'){
-            $('#dados').append(campo + ": " + goldSaints[self[0].id-1][campo] + " ").append('<br>');
+            $('#dados').append($('<strong>').text(campo + ":  ")).append(goldSaints[self[0].id-1][campo] + " ").append('<br>');
           }
         }
       }
+      // propriedades dos dados
+      $('#dados').css({"padding":"20px","font-size":"20px"});
     });
 
     // remover conteudo de propriedades ao retirar o mouse.
