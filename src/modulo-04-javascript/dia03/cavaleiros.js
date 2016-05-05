@@ -4,6 +4,7 @@ $(document).ready(function() {
 
   // adicionar imagens ao clicar no botão.
   $('button[name=btnCarregaCavaleiros]').click(function() {
+    $('#cavaleiros').empty();
     goldSaints.forEach(function(e) {
       var $imgMu = $('<img>')
       .attr('src', e.imagens[0].url)
