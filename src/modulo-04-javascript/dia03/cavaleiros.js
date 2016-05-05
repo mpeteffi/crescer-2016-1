@@ -21,13 +21,15 @@ $(document).ready(function() {
     // adicionar propriedades ao colocar o mouse.
     $('#cavaleiros img').mouseover(function(i) {
       var self = $(this);
-      for (var campo in goldSaints[self[0].id-1]) {
-        if (goldSaints[self[0].id-1].hasOwnProperty(campo)) {
-          if(campo !== 'imagens'){
-            $('#dados').append($('<strong>').text(campo + ":  ")).append(goldSaints[self[0].id-1][campo] + " ").append('<br>');
-          }
+      var cavaleiro = goldSaints[self[0].id-1];
+      for (var e in cavaleiro) {
+        var nomeCampo = e;
+        var valorCampo = cavaleiro[nomeCampo];
+        if(nomeCampo !== 'imagens'){
+          $('#dados').append($('<strong>').text(nomeCampo + ":  ")).append(valorCampo + " ").append('<br>');
         }
       }
+
       // propriedades dos dados
       $('#dados').css({"padding":"20px","font-size":"20px"});
     });
