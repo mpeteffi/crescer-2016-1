@@ -62,15 +62,20 @@ function duasCasas(num){
   return Math.round(num * 100)/100;
 }
 
-function kgToLb(lb){
-  return lb/0.453592;
+function kgToLb(num, inverse){
+  return !inverse ? num/0.453592 : num*0.453592;
 }
 
-function mToCm(cm){
-  return cm*100;
+function mToCm(num, inverse){
+  return !inverse ? num*100 : num/100;
 }
 
-function dateToDatetime(date){
- var slipts = date.split('/');
- return dataformatada = splits[0] + '-' + splits[1] + '-' + splits[2] + 'T03:00:00.000Z';
+function dateToDatetime(date, inverse){
+  if(!inverse){
+    var slipts = date.split('/');
+    return dataformatada = splits[0] + '-' + splits[1] + '-' + splits[2] + 'T03:00:00.000Z';
+  } else {
+    var data = new Date(date);
+    return data.getDate() + '/' + (data.getMonth() + 1) + '/' +  data.getFullYear();
+  }
 }
