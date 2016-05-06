@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Cavaleiros</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <div class="div-formulario">
   <form id="frmNovoCavaleiro" method="POST">
     <label for="nomeCavaleiro">Nome</label>
     <input id="nomeCavaleiro" type="text" name="nome" placeholder="Ex: Shiryu"><br>
-
     <label for="tipoSanguineo">Tipo Sanguíneo</label>
     <select id="tipoSanguineo" name="tipoSanguineo">
       <option>Selecione</option>
@@ -18,16 +18,12 @@
       <option value="AB">AB</option>
       <option value="O">O</option>
     </select><br>
-
     <label for="dataNascimento">Data Nascimento</label>
     <input id="dataNascimento" type="date" name="dataNascimento" placeholder="dd/MM/yyyy"><br>
-
     <label for="alturaM">Altura em Metros</label>
     <input id="alturaM" type="number" name="alturaM" placeholder="1.80"><br>
-
     <label for="pesoKg">Peso em Kg</label>
     <input id="pesoKg" type="number" name="pesoKg" placeholder="75"><br>
-
     <label for="signo">Signo</label>
     <select id="signo" name="signo">
       <option>Selecione</option>
@@ -44,28 +40,18 @@
       <option value="escorpiao">Escorpião</option>
       <option value="sagitario">Sagitário</option>
     </select><br>
-
     <label for="txtUrlImagem">URL Imagem</label>
     <input id="txtUrlImagem" type="text" name="urlImagem" placeholder="Ex: bit.ly/shiryu.png"><br>
-
     <label for="localNascimento">Local Nascimento</label>
     <input id="localNascimento" type="text" name="localNascimento" placeholder="Brasil"><br>
-
     <label for="localTreinamento">Local Treinamento</label>
     <input id="localTreinamento" type="text" name="localTreinamento" placeholder="Ex: Shiryu"><br>
-
-
-    <!--<input type="submit" value="Cadastrar!">-->
     <button type="submit">Cadastrar!</button><br><br>
   </form>
-
-
-
-
-  <button type="button" name="btnCarregaCavaleiros">Carregar!</button>
-  <ul id="cavaleiros"></ul>
+  </div>
   <div id="dados"></div>
-
+  <button type="button" id="carregar" name="btnCarregaCavaleiros">Carregar!</button>
+  <ul id="cavaleiros"></ul>
   <script type="text/javascript" src="../jquery/jquery-2.2.3.min.js"></script>
   <script type="text/javascript" src="cavaleiros.js"></script>
 </body>

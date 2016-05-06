@@ -26,7 +26,7 @@ $('#frmNovoCavaleiro').submit(function(e){
   goldSaints.push({
     id: goldSaints.length+1,
     nome: $('#nomeCavaleiro').val(),
-    DataNascimento: $('#dataNascimento').val(),
+    dataNascimento: $('#dataNascimento').val(),
     alturaCm: duasCasas(mToCm($('#alturaM').val())),
     pesoLb: duasCasas(kgToLb($('#pesoKg').val())),
     signo: $('#signo').val(),
@@ -44,10 +44,11 @@ $('#frmNovoCavaleiro').submit(function(e){
 
 function projetarCavaleiroNaTela(cavaleiro){
   var $imgMu = $('<img>').attr('src', cavaleiro.imagens[0].url).attr('id', cavaleiro.id).attr('alt', cavaleiro.nome);
-  $('#cavaleiros').append( $('<li>').append($imgMu));
+  $('#cavaleiros').append( $('<li>').append($imgMu).append($('<button>').text('remover!').attr('name',cavaleiro.id).attr('class','buttonExclude')));
   $('ul').css({"list-style-type": "none", "margin": "0px", "padding": "0px"});
-  $('ul li').css({"display": "inline", "margin": "0px", "padding": "0px"});
+  $('ul li').css({"position":"relative","display": "inline", "margin": "0px", "padding": "0px"});
   $('ul li img').css({"width":"7.5%","margin":"1px"});
+  $('.buttonExclude').css({'position':'absolute',"left":"0px","bottom":"0px","z-index":"99"});
 }
 
 function projetarPropriedadesDoCavaleiro(cavaleiro){
@@ -60,7 +61,7 @@ function projetarPropriedadesDoCavaleiro(cavaleiro){
     if(campo !== 'imagens'){
     $('#dados').append($('<strong>').text(nomeCampo + ":  ")).append(valorCampo + " ").append('<br>');}
   }
-  $('#dados').css({"padding":"20px","font-size":"20px"});
+  $('#dados').css({"padding":"20px","font-size":"17px"});
 }
 
 function duasCasas(num){

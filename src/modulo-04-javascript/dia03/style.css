@@ -1,0 +1,31 @@
+body {
+  position: relative;
+}
+
+.div-formulario{
+  display: inline-block;;
+  padding: 20px;
+  padding-bottom: 10px;
+  border: 1px #000 solid;
+  height: 300px;
+  width: 300px;
+}
+
+.div-formulario input {
+  margin: 5px 0px;
+}
+
+#dados {
+  position: absolute;
+  display: inline-block;;
+  border: 1px #000 solid;
+  padding: 20px;
+  padding-bottom: 0px;
+  height: 290px;
+  width: 450px;
+}
+
+#carregar {
+  display: block;
+  position: relative;
+}
