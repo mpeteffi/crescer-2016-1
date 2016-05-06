@@ -27,9 +27,13 @@ $('#frmNovoCavaleiro').submit(function(e){
     id: goldSaints.length+1,
     nome: $('#nomeCavaleiro').val(),
     DataNascimento: $('#dataNascimento').val(),
-    imagens: [{url: $('#txtUrlImagem').val(), isThumb: true }],
-    alturaCm: $('#alturaM').val()*100,
-    pesoLb: $('#pesoKg').val()/0.4845
+    alturaCm: duasCasas(mToCm($('#alturaM').val())),
+    pesoLb: duasCasas(kgToLb($('#pesoKg').val())),
+    signo: $('#signo').val(),
+    tipoSanguineo: $('#tipoSanguineo').val(),
+    localTreinamento: $('#localTreinamento').val(),
+    localNascimento: $('#localNascimento').val(),
+    imagens: [{url: $('#txtUrlImagem').val(), isThumb: true }]
   });
   localStorage['cavaleiros'] = JSON.stringify(goldSaints);
   e.preventDefault();
