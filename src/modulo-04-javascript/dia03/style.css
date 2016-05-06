@@ -7,16 +7,16 @@ body {
   padding: 20px;
   padding-bottom: 10px;
   border: 1px #000 solid;
-  height: 300px;
+  height: auto;
   width: 300px;
 }
 
 .div-formulario input {
-  margin: 5px 0px;
+  margin: 2px 0px;
 }
 
 .div-formulario select {
-  margin: 5px 0px;
+  margin: 2px 0px;
 }
 
 #dados {

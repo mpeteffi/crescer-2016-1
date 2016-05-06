@@ -40,11 +40,18 @@ $('#frmNovoCavaleiro').submit(function(e){
     tipoSanguineo: $('#tipoSanguineo').val(),
     localTreinamento: $('#localTreinamento').val(),
     localNascimento: $('#localNascimento').val(),
+    golpes: $("input[id='golpes']").map(function(){return " "+$(this).val();}).get(),
     imagens: [{url: $('#txtUrlImagem').val(), isThumb: true }]
   });
   localStorage['cavaleiros'] = JSON.stringify(goldSaints);
   e.preventDefault();
   adicionarImagens();
+});
+
+// adicionar mais campos inputs para cadastrar mais golpes
+$('#addGolpes').click(function(){
+ var $input = $('<input id="golpes">').attr('placeholder','Nome Golpe');
+ $('#addGolpes').after($input);
 });
 
 // funções auxiliares
