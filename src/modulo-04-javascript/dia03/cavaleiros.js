@@ -57,3 +57,15 @@ function projetarPropriedadesDoCavaleiro(cavaleiro){
       $('#dados').append($('<strong>').text(campo + ":  ")).append(valorCampo + " ").append('<br>');}
     $('#dados').css({"padding":"20px","font-size":"20px"});
 }}
+
+function duasCasas(num){
+  return Math.round(num * 100)/100;
+}
+
+function kgToLb(lb){
+  return lb/0.453592;
+}
+
+function mToCm(cm){
+  return cm*100;
+}
