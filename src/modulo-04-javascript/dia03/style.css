@@ -15,6 +15,10 @@ body {
   margin: 5px 0px;
 }
 
+.div-formulario select {
+  margin: 5px 0px;
+}
+
 #dados {
   position: absolute;
   display: inline-block;;

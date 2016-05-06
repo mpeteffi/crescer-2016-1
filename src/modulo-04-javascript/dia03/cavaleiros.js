@@ -19,6 +19,13 @@ function adicionarImagens(){
   $('#cavaleiros img').mouseout(function(i) {
     $('#dados').empty();
   });
+
+  // remover cavaleiro do array
+  $('#cavaleiros button').click(function(e){
+    var self = $(this);
+    delete goldSaints[self[0].id-1];
+    adicionarImagens();
+  });
 };
 
 //cadastrar cavaleiro no form
@@ -44,7 +51,7 @@ $('#frmNovoCavaleiro').submit(function(e){
 
 function projetarCavaleiroNaTela(cavaleiro){
   var $imgMu = $('<img>').attr('src', cavaleiro.imagens[0].url).attr('id', cavaleiro.id).attr('alt', cavaleiro.nome);
-  $('#cavaleiros').append( $('<li>').append($imgMu).append($('<button>').text('remover!').attr('name',cavaleiro.id).attr('class','buttonExclude')));
+  $('#cavaleiros').append( $('<li>').append($imgMu).append($('<button>').text('remover!').attr('name','exclude').attr('class','buttonExclude').attr('id', cavaleiro.id)));
   $('ul').css({"list-style-type": "none", "margin": "0px", "padding": "0px"});
   $('ul li').css({"position":"relative","display": "inline", "margin": "0px", "padding": "0px"});
   $('ul li img').css({"width":"7.5%","margin":"1px"});
