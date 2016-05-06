@@ -69,3 +69,8 @@ function kgToLb(lb){
 function mToCm(cm){
   return cm*100;
 }
+
+function dateToDatetime(date){
+ var slipts = date.split('/');
+ return dataformatada = splits[0] + '-' + splits[1] + '-' + splits[2] + 'T03:00:00.000Z';
+}
