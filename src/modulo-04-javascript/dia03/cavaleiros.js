@@ -52,11 +52,16 @@ function projetarCavaleiroNaTela(cavaleiro){
 
 function projetarPropriedadesDoCavaleiro(cavaleiro){
   for (var campo in cavaleiro) {
+    var nomeCampo = campo;
     var valorCampo = cavaleiro[campo];
+    if(campo === 'pesoLb'){nomeCampo = "pesoKg"; valorCampo = duasCasas(kgToLb(cavaleiro[campo], 1));}
+    if(campo === 'alturaCm'){nomeCampo = "alturaMetros"; valorCampo = duasCasas(mToCm(cavaleiro[campo], 1));}
+    if(campo === 'dataNascimento'){valorCampo = dateToDatetime(cavaleiro[campo], 1);}
     if(campo !== 'imagens'){
-      $('#dados').append($('<strong>').text(campo + ":  ")).append(valorCampo + " ").append('<br>');}
-    $('#dados').css({"padding":"20px","font-size":"20px"});
-}}
+    $('#dados').append($('<strong>').text(nomeCampo + ":  ")).append(valorCampo + " ").append('<br>');}
+  }
+  $('#dados').css({"padding":"20px","font-size":"20px"});
+}
 
 function duasCasas(num){
   return Math.round(num * 100)/100;
