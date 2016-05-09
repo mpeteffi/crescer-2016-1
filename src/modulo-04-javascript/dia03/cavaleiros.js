@@ -24,7 +24,7 @@ function adicionarImagens(){
   $('#cavaleiros button').click(function(e){
     var self = $(this);
     delete goldSaints[self[0].id-1];
-    adicionarImagens();
+    $(this).parents('li').hide();
   });
 };
 
