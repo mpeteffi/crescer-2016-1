@@ -10,70 +10,70 @@ using System.Threading.Tasks;
 namespace MegamanTestes
 {
     [TestClass]
-        public class ProtomanTestes
+    public class ProtomanTestes
+    {
+        [TestMethod]
+        public void ProtomanCausaCincoDeDano()
         {
-            [TestMethod]
-            public void ProtomanCausaCincoDeDano()
-            {
-                var bot = new Bot();
-                var protoman = new ProtoMan();
-                protoman.Atacar(bot);
-                Assert.AreEqual(bot.Vida, 95);
-            }
+            var bot = new Bot();
+            var protoman = new ProtoMan();
+            protoman.Atacar(bot);
+            Assert.AreEqual(bot.Vida, 95);
+        }
 
-            [TestMethod]
-            public void ProtomanTomaTresDano()
+        [TestMethod]
+        public void ProtomanTomaTresDano()
+        {
+            var bot = new Bot();
+            var protoman = new ProtoMan();
+            bot.Atacar(protoman);
+            Assert.AreEqual(protoman.Vida, 97);
+        }
+
+        [TestMethod]
+        public void ProtomanMorreEReviveCom20DeVida()
+        {
+            var bot = new Bot();
+            var protoman = new ProtoMan();
+            for (int i = 0; i < 34; i++)
             {
-                var bot = new Bot();
-                var protoman = new ProtoMan();
                 bot.Atacar(protoman);
-                Assert.AreEqual(protoman.Vida, 97);
             }
+            Assert.AreEqual(protoman.Vida, 20);
+        }
 
-            [TestMethod]
-            public void ProtomanMorreEReviveCom20DeVida()
+        [TestMethod]
+        public void ProtomanMorreNaoReviveDuasVezes()
+        {
+            var bot = new Bot();
+            var protoman = new ProtoMan();
+            for (int i = 0; i < 41; i++)
             {
-                var bot = new Bot();
-                var protoman = new ProtoMan();
-                for (int i = 0; i < 34; i++)
-                {
-                    bot.Atacar(protoman);
-                }
-                Assert.AreEqual(protoman.Vida, 20);
+                bot.Atacar(protoman);
             }
+            Assert.AreEqual(protoman.Vida, -1);
+        }
 
-            [TestMethod]
-            public void ProtomanMorreNaoReviveDuasVezes()
+        [TestMethod]
+        public void ProtomanCausaSeteDeDano()
+        {
+            var bot = new Bot();
+            var protoman = new ProtoMan();
+            for (int i = 0; i < 34; i++)
             {
-                var bot = new Bot();
-                var protoman = new ProtoMan();
-                for (int i = 0; i < 41; i++)
-                {
-                    bot.Atacar(protoman);
-                }
-                Assert.AreEqual(protoman.Vida, -1);
+                bot.Atacar(protoman);
             }
-
-            [TestMethod]
-            public void ProtomanCausaSeteDeDano()
-            {
-                var bot = new Bot();
-                var protoman = new ProtoMan();
-                for (int i = 0; i < 34; i++)
-                {
-                    bot.Atacar(protoman);
-                }
-                protoman.Atacar(bot);
-                Assert.AreEqual(bot.Vida, 93);
-            }
+            protoman.Atacar(bot);
+            Assert.AreEqual(bot.Vida, 93);
+        }
 
 
-            [TestMethod]
-            public void ProtomanToString()
-            {
-                var protoman = new ProtoMan();
-                Assert.AreEqual(protoman.toString(), "Nome: {Protoman}, Vida: {100}, Ataque: {5}, Defesa: {2}");
-            }
-        
+        [TestMethod]
+        public void ProtomanToString()
+        {
+            var protoman = new ProtoMan();
+            Assert.AreEqual(protoman.toString(), "Nome: {Protoman}, Vida: {100}, Ataque: {5}, Defesa: {2}");
+        }
+
     }
 }
