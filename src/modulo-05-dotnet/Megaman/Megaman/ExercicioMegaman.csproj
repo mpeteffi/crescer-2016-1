@@ -46,13 +46,13 @@
     <Compile Include="Bot.cs" />
     <Compile Include="BotasDeSuperVelocidade.cs" />
     <Compile Include="CanhaoDePlasma.cs" />
+    <Compile Include="Class2.cs" />
     <Compile Include="EscudoDeEnergia.cs" />
     <Compile Include="Rush.cs" />
     <Compile Include="IUpgrade.cs" />
     <Compile Include="Protoman.cs" />
     <Compile Include="Robo.cs" />
     <Compile Include="Megaman.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
