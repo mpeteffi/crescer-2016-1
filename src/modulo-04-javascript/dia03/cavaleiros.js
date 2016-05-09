@@ -21,11 +21,18 @@ function adicionarImagens(){
   });
 
   // remover cavaleiro do array
-  $('#cavaleiros button').click(function(e){
+  $('#cavaleiros button').click(deletaCavaleiro);
+  function removeCavaleiro () {
     var self = $(this);
-    delete goldSaints[self[0].id-1];
-    $(this).parents('li').hide();
-  });
+    var index = parseInt(self.attr('id'));
+    var cavaleiro = goldSaints.filter(function (e) {
+        return e.id === index;
+    })
+    index = goldSaints.indexOf(cavaleiro[0]);
+    goldSaints.splice(index, 1);
+    localStorage['cavaleiros'] = JSON.stringify(goldSaints);
+    $(this).parents('li').remove();
+  };
 };
 
 //cadastrar cavaleiro no form
