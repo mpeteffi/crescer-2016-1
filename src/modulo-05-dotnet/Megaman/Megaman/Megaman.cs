@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExercicioMegaman
 {
-    public class MegaMan : Robo
+    public class Megaman : Robo
     {
         public override string Nome
         {
