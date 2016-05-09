@@ -4,23 +4,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExercicioMegaman
+namespace JogoMegaMan
 {
     public abstract class Robo
     {
-        public string nome;
-        protected int vida;
-        protected int ataque;
-        protected int defesa;
+        public abstract string Nome { get; }
+        public virtual int BonusEquipAtaque { get; set; }
+        public virtual int BonusEquipDefesa { get; set; }
+        List<IUpgrade> upgrades = new List<IUpgrade>();
+
+        public int Vida { get; protected set; }
+
+        protected virtual int MaxUpgrades
+        {
+            get { return 3; }
+        }
 
         public Robo()
         {
-            vida = 100;
-            ataque = 5;
-            defesa = 0;
+            Vida = 100;
         }
 
+        protected virtual int Ataque
+        {
+            get
+            {
+                return 5 + BonusEquipAtaque;
+            }
+        }
 
+        protected virtual int Defesa
+        {
+            get
+            {
+                return 0 + BonusEquipDefesa;
+            }
+        }
+
+        public virtual void Atacar(Robo robo)
+        {
+            robo.RecebeDano(Ataque);
+        }
+
+        public virtual void RecebeDano(int dano)
+        {
+            Vida -= (dano - this.Defesa);
+        }
+
+        public virtual string toString()
+        {
+            return "Nome: {" + this.Nome + "}, Vida: {" + this.Vida + "}, Ataque: {" + this.Ataque + "}, Defesa: {" + this.Defesa + "}";
+        }
 
     }
 }
