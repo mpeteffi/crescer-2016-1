@@ -75,5 +75,71 @@ namespace MegamanTestes
             Assert.AreEqual(protoman.toString(), "Nome: {Protoman}, Vida: {100}, Ataque: {5}, Defesa: {2}");
         }
 
+        [TestMethod]
+        public void ProtoManRecebeCanhaoPlasmaAtaqueCausa7Dano()
+        {
+            var protoman = new ProtoMan();
+            var canhao = new CanhaoDePlasma();
+            var bot = new Bot();
+            protoman.EquiparUpgrade(canhao);
+            protoman.Atacar(bot);
+            Assert.AreEqual(bot.Vida, 93);
+        }
+
+        [TestMethod]
+        public void ProtoManRecebeEscudoDeEnergiaToma1Dano()
+        {
+            var protoman = new ProtoMan();
+            var escudo = new EscudoDeEnergia();
+            var bot = new Bot();
+            protoman.EquiparUpgrade(escudo);
+            bot.Atacar(protoman);
+            Assert.AreEqual(protoman.Vida, 99);
+        }
+
+        [TestMethod]
+        public void ProtoManRecebeLendarioToma2Causa6Dano()
+        {
+            var protoman = new ProtoMan();
+            var botas = new BotasDeSuperVelocidade();
+            var bot = new Bot();
+            protoman.EquiparUpgrade(botas);
+            protoman.Atacar(bot);
+            bot.Atacar(protoman);
+            Assert.AreEqual(bot.Vida, 94);
+            Assert.AreEqual(protoman.Vida, 98);
+        }
+
+        [TestMethod]
+        public void ProtoManComEquipERevividoCausa13()
+        {
+            var protoman = new ProtoMan();
+            var canhao = new CanhaoDePlasma();
+            var bot = new Bot();
+            for (int i = 0; i < 4; i++)
+            {
+                protoman.EquiparUpgrade(canhao);
+            }
+            for (int i = 0; i < 40; i++)
+            {
+                bot.Atacar(protoman);
+            }
+            protoman.Atacar(bot);
+            Assert.AreEqual(bot.Vida, 87);
+        }
+
+        [TestMethod]
+        public void ProtoManEquipaRushCausa9Toma0Dano()
+        {
+            var protoman = new ProtoMan();
+            var rush = new Rush();
+            var botDois = new Bot();
+            protoman.EquiparUpgrade(rush);
+            protoman.Atacar(botDois);
+            Assert.AreEqual(botDois.Vida, 91);
+            botDois.Atacar(protoman);
+            Assert.AreEqual(protoman.Vida, 100);
+        }
+
     }
 }
