@@ -6,15 +6,29 @@ using System.Threading.Tasks;
 
 namespace ExercicioMegaman
 {
-    public class Megaman : Robo
+    public class MegaMan : Robo
     {
-        public Megaman()
+        public override string Nome
         {
-
+            get
+            {
+                return "Megaman";
+            }
+        }
+        protected override int Ataque
+        {
+            get
+            {
+                return 6 + BonusEquipAtaque;
+            }
         }
 
-
-
-
+        public virtual void Atacar(Robo robo)
+        {
+            if (Vida <= 30)
+                robo.RecebeDano(3 + Ataque);
+            else
+                robo.RecebeDano(Ataque);
+        }
     }
 }
