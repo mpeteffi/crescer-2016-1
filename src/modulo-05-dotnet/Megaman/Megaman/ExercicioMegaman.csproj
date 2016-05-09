@@ -7,8 +7,8 @@
     <ProjectGuid>{0015144F-AB42-48C6-BAFC-CD0E7D54F48B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Megaman</RootNamespace>
-    <AssemblyName>Megaman</AssemblyName>
+    <RootNamespace>ExercicioMegaman</RootNamespace>
+    <AssemblyName>ExercicioMegaman</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IUpgrade.cs" />
     <Compile Include="Robo.cs" />
     <Compile Include="Megaman.cs" />
     <Compile Include="Program.cs" />
