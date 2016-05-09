@@ -1,2 +1,6 @@
-C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\Megaman\Megaman\bin\Debug\Megaman.exe.config
 C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\Megaman\Megaman\bin\Debug\ExercicioMegaman.exe.config
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\Megaman\Megaman\bin\Debug\ExercicioMegaman.exe
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\Megaman\Megaman\bin\Debug\ExercicioMegaman.pdb
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\Megaman\Megaman\obj\Debug\ExercicioMegaman.csprojResolveAssemblyReference.cache
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\Megaman\Megaman\obj\Debug\ExercicioMegaman.exe
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\Megaman\Megaman\obj\Debug\ExercicioMegaman.pdb
