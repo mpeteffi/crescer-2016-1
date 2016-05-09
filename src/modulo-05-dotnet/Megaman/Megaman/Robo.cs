@@ -56,5 +56,26 @@ namespace ExercicioMegaman
             return "Nome: {" + this.Nome + "}, Vida: {" + this.Vida + "}, Ataque: {" + this.Ataque + "}, Defesa: {" + this.Defesa + "}";
         }
 
+        public virtual void EquiparUpgrade(IUpgrade upgrade)
+        {
+            if (upgrades.Count < this.MaxUpgrades)
+            {
+                upgrades.Add(upgrade);
+                switch (upgrade.TipoUpgrade)
+                {
+                    case "UpgradeDeAtaque":
+                        this.BonusEquipAtaque += upgrade.BonusAtaque;
+                        break;
+                    case "UpgradeDeDefesa":
+                        this.BonusEquipDefesa += upgrade.BonusDefesa;
+                        break;
+                    default:
+                        this.BonusEquipAtaque += upgrade.BonusAtaque;
+                        this.BonusEquipDefesa += upgrade.BonusDefesa;
+                        break;
+                }
+            }
+        }
+
     }
 }
