@@ -90,7 +90,7 @@ namespace Repositorio
 
         public IList<Funcionario> OrdenadosPorCargo()
         {
-            throw new NotImplementedException();
+            return Funcionarios.OrderBy(func => func.Cargo.Titulo).ThenBy(func => func.Nome).ToList();
         }
 
         public IList<Funcionario> BuscarPorNome(string nome)
