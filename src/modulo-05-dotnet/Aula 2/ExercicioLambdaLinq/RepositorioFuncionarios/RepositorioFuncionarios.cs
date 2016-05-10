@@ -109,12 +109,7 @@ namespace Repositorio
             var dataComparar = hoje.AddYears(-(idade));
             var limiteSuperior = dataComparar.AddYears(5).Year;
             var limiteInferior = dataComparar.AddYears(-5).Year;
-            return Funcionarios.Where(func => estaDentroDoLimite(func, limiteInferior, limiteSuperior)).ToList();
-        }
-
-        public bool estaDentroDoLimite(Funcionario func, int menor, int maior)
-        {
-            return func.DataNascimento.Year >= menor && func.DataNascimento.Year <= maior;
+            return Funcionarios.Where(func => (func.DataNascimento.Year >= limiteInferior && func.DataNascimento.Year <= limiteSuperior)).ToList();
         }
 
         public double SalarioMedio(TurnoTrabalho? turno = null)
