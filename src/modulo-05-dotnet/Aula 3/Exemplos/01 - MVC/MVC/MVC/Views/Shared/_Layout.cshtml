@@ -4,36 +4,29 @@
 }
 
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <title>Street Fighter - @ViewBag.Title</title>
     <link href="~/Content/Estilos/main.css" rel="stylesheet" />
 </head>
-
 <body>
     <div class="menu">
-        <span class="item">
-            @Html.ActionLink("Inicio", "Index", "StreetFighter", new { style = "border: 1px solid yellow;", @class = "menu-link" })            
-            @*<a href="~/StreetFighter">Início</a>*@
-        </span>
-        <span class="item">
-            <a href="https://www.google.com.br/search?q=Street+Fighter&tbm=nws">Noticia</a>
-        </span>
-        <span class="item">
-            <a href="ficha-tecnica.html#conteudo">Ficha Técnica</a>
-        </span>
-        <span class="item">
-            <a href="sobre.html#conteudo">Sobre</a>
-        </span>
+        <ul>
+            <li>@Html.ActionLink("Inicio", "Index", "StreetFighter")</li>
+            <li><a target="_blank" href="https://www.google.com.br/?gws_rd=ssl#q=street+fighter&tbm=nws">Notícias</a></li>
+            <li>@Html.ActionLink("Ficha Técnica", "FichaTecnica", "StreetFighter")</li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
     </div>
+    <div class="content">
 
-    <div id="conteudo" class="conteudo">
         <div class="titulo">
-            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Title</h2>
         </div>
 
-        <div class="corpo">
+        <div class="texto">
             @RenderBody()
         </div>
     </div>
