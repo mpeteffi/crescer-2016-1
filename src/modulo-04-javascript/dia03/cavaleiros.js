@@ -9,7 +9,7 @@ $(function () {
 
   //cadastrar cavaleiro no form
   $('#frmNovoCavaleiro').submit(function(e){
-    var cavaleiro = formToCavaleiro(this);
+    var cavaleiro = formToCavaleiro($('#frmNovoCavaleiro'));
     goldSaints.push(cavaleiro);
     localStorage['cavaleiros'] = JSON.stringify(goldSaints);
     e.preventDefault();
@@ -66,7 +66,7 @@ function formToCavaleiro($form){
     localTreinamento: formData.get('localTreinamento'),
     localNascimento: formData.get('localNascimento'),
     golpes: [formData.get('golpes')],
-    imagens: [{url: $('#txtUrlImagem').val(), isThumb: true }]
+    imagens: [{url: formData.get('urlImagem'), isThumb: true }]
   }
 }
 
@@ -82,13 +82,13 @@ function projetarCavaleiroNaTela(cavaleiro){
 function projetarPropriedadesDoCavaleiro(id){
   var cavaleiro = goldSaints.filter( function(cav){
     return cav.id === parseInt(id)
-  })
-  for (var campo in cavaleiro[0]) {
+  })[0];
+  for (var campo in cavaleiro) {
     var nomeCampo = campo;
-    var valorCampo = cavaleiro[0][campo];
-    if(campo === 'pesoLb'){nomeCampo = "pesoKg"; valorCampo = duasCasas(kgToLb(cavaleiro[0][campo], 1));}
-    if(campo === 'alturaCm'){nomeCampo = "alturaMetros"; valorCampo = duasCasas(mToCm(cavaleiro[0][campo], 1));}
-    if(campo === 'dataNascimento'){valorCampo = dateToDatetime(cavaleiro[0][campo], 1);}
+    var valorCampo = cavaleiro[campo];
+    if(campo === 'pesoLb'){nomeCampo = "pesoKg"; valorCampo = duasCasas(kgToLb(cavaleiro[campo], 1));}
+    if(campo === 'alturaCm'){nomeCampo = "alturaMetros"; valorCampo = duasCasas(mToCm(cavaleiro[campo], 1));}
+    if(campo === 'dataNascimento'){valorCampo = dateToDatetime(cavaleiro[campo], 1);}
     if(campo !== 'imagens'){
     $('#dados').append($('<strong>').text(nomeCampo + ":  ")).append(valorCampo + " ").append('<br>');}
   }
