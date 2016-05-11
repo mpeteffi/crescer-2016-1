@@ -114,7 +114,16 @@ namespace Repositorio
 
         public double SalarioMedio(TurnoTrabalho? turno = null)
         {
-            throw new NotImplementedException();
+            var salarios = new List<double>();
+            if (turno != null)
+            {
+                salarios = Funcionarios.Where(func => turno == func.TurnoTrabalho).Select(func => func.Cargo.Salario).ToList();
+            }
+            else
+            {
+                salarios = Funcionarios.Select(func => func.Cargo.Salario).ToList();
+            }
+            return salarios.Average();
         }
 
         public IList<Funcionario> AniversariantesDoMes()
