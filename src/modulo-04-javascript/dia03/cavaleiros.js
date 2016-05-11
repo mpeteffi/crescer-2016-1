@@ -65,7 +65,7 @@ function formToCavaleiro($form){
     tipoSanguineo: formData.get('tipoSanguineo'),
     localTreinamento: formData.get('localTreinamento'),
     localNascimento: formData.get('localNascimento'),
-    golpes: [formData.get('golpes')],
+    golpes: $("input[id='golpes']").map(function(){return $(this).val();}).get(),
     imagens: [{url: formData.get('urlImagem'), isThumb: true }]
   }
 }
