@@ -1,0 +1,19 @@
+﻿@model SobreMimModel
+
+@{
+    ViewBag.Title = "Sobre Mim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Model.Nome</h1>
+<img src="@Model.ImgUrl" alt="@Model.Nome">
+<p><strong>Nascimento:</strong> @Model.DataNascimento.ToShortDateString()</p>
+<p><strong>Altura:</strong> @Model.AlturaCm cm</p>
+<p><strong>Peso:</strong> @Model.Peso kg</p>
+<p><strong>Tipo sanguíneo:</strong> @Model.TipoSanguineo</p>
+<p><strong>Gosta:</strong> @Model.Gosta</p>
+<p><strong>Desgosta:</strong> @Model.Desgosta</p>
+<p><strong>Origem:</strong> @Model.Origem</p>
+<p><strong>Slack nickname:</strong> @Model.SlackNickname</p>
+<p><strong>Facebook page:</strong> @Model.FacebookPage</p>
+<p><strong>E-mail:</strong> @Model.Email</p>
