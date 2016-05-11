@@ -102,6 +102,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SobreMimModel.cs" />
     <Compile Include="Models\PersonagemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -117,6 +118,7 @@
     <Content Include="Views\Exemplo\UsandoLayout.cshtml" />
     <Content Include="Views\StreetFighter\Index.cshtml" />
     <Content Include="Views\StreetFighter\FichaTecnica.cshtml" />
+    <Content Include="Views\StreetFighter\SobreMim.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
