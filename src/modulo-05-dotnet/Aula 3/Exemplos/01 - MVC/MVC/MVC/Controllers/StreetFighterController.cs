@@ -12,5 +12,10 @@ namespace MVC.Controllers
         {
             return View();
         }
+
+        public ActionResult FichaTecnica()
+        {
+            return View("FichaTecnica");
+        }
     }
 }
