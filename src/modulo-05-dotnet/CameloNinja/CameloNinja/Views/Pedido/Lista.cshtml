@@ -58,9 +58,9 @@
                 @Html.DisplayFor(modelItem => item.Estado)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
-                @Html.ActionLink("Ver Detalhes", "Detalhes", new { id = item.Id }) |
-                @Html.ActionLink("Remover", "Deletar", new { id = item.Id })
+                @Html.ActionLink("Editar", "Editar"@*, new { id = item.Id }*@) |
+                @Html.ActionLink("Ver Detalhes", "Detalhes"@*, new { id = item.Id }*@) |
+                @Html.ActionLink("Remover", "Deletar"@*, new { id = item.Id }*@)
             </td>
         </tr>
     }
