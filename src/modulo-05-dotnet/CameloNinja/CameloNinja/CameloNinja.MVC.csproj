@@ -164,7 +164,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\TipoPagamento.cs" />
     <Compile Include="Models\PedidoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -185,6 +184,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CameloNinja.Dominio\CameloNinja.Dominio.csproj">
+      <Project>{04a38c6f-75b7-434c-a530-461fe20ac3b1}</Project>
+      <Name>CameloNinja.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CameloNinja.Repositorio\CameloNinja.Repositorio.csproj">
+      <Project>{3814ce99-5132-4ae5-bb34-53828a712628}</Project>
+      <Name>CameloNinja.Repositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
