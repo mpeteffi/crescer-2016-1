@@ -21,8 +21,17 @@ namespace LojaNinja.MVC.Controllers
         public ActionResult Salvar(PedidoModel model)
         {
             if (ModelState.IsValid)
-            { 
-                return View("Detalhes", model);
+            {
+                var pedido = new Pedido(
+                    model.DataDesejoEntrega,
+                    model.NomeProduto,
+                    model.ValorDeVenda,
+                    model.TipoDePagamento,
+                    model.NomeCliente,
+                    model.Cidade,
+                    model.Estado
+                    );
+                return View("Detalhes", pedido);
             }
             else
             {
