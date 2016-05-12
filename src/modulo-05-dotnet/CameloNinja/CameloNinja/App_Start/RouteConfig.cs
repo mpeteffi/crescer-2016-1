@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace CameloNinja
+namespace CameloNinja.MVC
 {
     public class RouteConfig
     {
@@ -16,7 +16,8 @@ namespace CameloNinja
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Pedido", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "CameloNinja.MVC.Controllers" }
             );
         }
     }

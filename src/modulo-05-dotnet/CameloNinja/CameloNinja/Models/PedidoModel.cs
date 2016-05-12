@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace CameloNinja.Models
+namespace CameloNinja.MVC.Models
 {
     public class PedidoModel
     {

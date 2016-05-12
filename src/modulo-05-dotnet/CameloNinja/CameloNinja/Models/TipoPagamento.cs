@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CameloNinja.Models
+namespace CameloNinja.MVC.Models
 {
     public enum TipoPagamento
     {
