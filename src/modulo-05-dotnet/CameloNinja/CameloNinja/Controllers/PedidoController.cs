@@ -16,7 +16,14 @@ namespace CameloNinja.MVC.Controllers
 
         public ActionResult Detalhes(PedidoModel model)
         {
-            return View(model);
+            if (ModelState.IsValid)
+            {
+                return View("Detalhes", model);
+            }
+            else
+            {
+                return View("Index", model);
+            }
         }
     }
 }
