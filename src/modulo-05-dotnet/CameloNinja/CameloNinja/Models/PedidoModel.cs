@@ -10,18 +10,9 @@ namespace CameloNinja.MVC.Models
 {
     public class PedidoModel
     {
-        [DisplayName("Data do Pedido")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime DataPedido { get; set; }
-
-        public PedidoModel()
-        {
-            DataPedido = DateTime.Now;
-        }
-
         [Required(ErrorMessage = "Data de Entrega deve ser informada")]
         [DisplayName("Data de Entrega")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataDesejoEntrega { get; set; }
 
         [Required(ErrorMessage = "Nome do Produto deve ser informado")]
