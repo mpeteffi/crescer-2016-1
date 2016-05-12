@@ -37,7 +37,7 @@ namespace LojaNinja.MVC.Controllers
             return View(pedido);
         }
 
-        public ActionResult Listagem()
+        public ActionResult Lista()
         {
             var pedidos = repositorio.ObterPedidos();
 

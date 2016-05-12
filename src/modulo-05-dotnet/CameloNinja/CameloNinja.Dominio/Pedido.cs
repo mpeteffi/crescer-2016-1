@@ -13,7 +13,7 @@ namespace CameloNinja.Dominio
         /// </summary>
         public Pedido(DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, string nomeCliente, string cidade, string estado)
         {
-            DataEntregaDesejada = dataEntregaDesejada;
+            DataEntrega = dataEntregaDesejada;
             NomeProduto = nomeProduto;
             Valor = valor;
             TipoPagamento = tipoPagamento;
@@ -35,7 +35,7 @@ namespace CameloNinja.Dominio
         public Pedido(int id, DateTime dataPedido, DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, string nomeCliente, string cidade, string estado, bool pedidoUrgente)
         {
             Id = id;
-            DataEntregaDesejada = dataEntregaDesejada;
+            DataEntrega = dataEntregaDesejada;
             NomeProduto = nomeProduto;
             Valor = valor;
             TipoPagamento = tipoPagamento;
