@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Cadastro de pedidos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model CameloNinja.Models.PedidoModel
+
+@using (Html.BeginForm("Detalhes","Pedido")) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal" >
+        <h2>Cadastro de Pedidos</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataDesejoEntrega, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataDesejoEntrega, new { htmlAttributes = new { @class = "form-control", placeholder = "Ex: 31/12/2016" } })
+                @Html.ValidationMessageFor(model => model.DataDesejoEntrega, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NomeProduto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NomeProduto, new { htmlAttributes = new { @class = "form-control", placeholder = "Ex: Espada Ninja" } })
+                @Html.ValidationMessageFor(model => model.NomeProduto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ValorDeVenda, htmlAttributes: new { @class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ValorDeVenda, new { htmlAttributes = new { @class = "form-control", @type = "number", @step = "0.01", placeholder = "Ex: 200.00" } })
+                @Html.ValidationMessageFor(model => model.ValorDeVenda, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoDePagamento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.TipoDePagamento, new { @class = "form-control"})
+                @Html.ValidationMessageFor(model => model.TipoDePagamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NomeCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NomeCliente, new { htmlAttributes = new { @class = "form-control", placeholder = "Ex: João da Silva" } })
+                @Html.ValidationMessageFor(model => model.NomeCliente, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" , placeholder = "Ex: Porto Alegre" } })
+                @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control", placeholder = "Ex: RS" } })
+                @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script type="text/javascript">
+        $.validator.methods.date = function (value, element) {
+            var date = new Date(value.replace(/(\d{2})[/](\d{2})[/](\d{4})/, "$2/$1/$3")); //31/12/2015
+            return this.optional(element) || !/Invalid|NaN/.test(date.toString());
+        }
+</script>

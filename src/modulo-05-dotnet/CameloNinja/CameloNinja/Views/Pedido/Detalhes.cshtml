@@ -1,0 +1,66 @@
+﻿@model CameloNinja.Models.PedidoModel
+
+    <h2>Detalhes do Pedido</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPedido)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDesejoEntrega)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataDesejoEntrega)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeProduto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeProduto)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorDeVenda)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorDeVenda)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDePagamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoDePagamento)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeCliente)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+    </dl>
+<p>
+    <button type="submit" class="btn btn-default">
+        @Html.ActionLink("Voltar a tela de cadastro.", "Index")
+    </button>
+</p>
