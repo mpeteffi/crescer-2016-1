@@ -4,3 +4,6 @@ N�mero Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Paga
 3;12/05/2016 00:00;31/12/2016 00:00;Murillo Peteffi;200;DINERS;Murillo Peteffi;São Leopoldo;RS;False
 4;12/05/2016 00:00;31/12/2016 00:00;Murillo Peteffi;200;DINERS;Murillo Peteffi;São Leopoldo;RS;False
 5;12/05/2016 00:00;31/12/2016 00:00;Murillo Peteffi;200;DINERS;Murillo Peteffi;São Leopoldo;RS;False
+6;13/05/2016 00:00;12/10/2018 00:00;Violão;399,80;VISA;João da Silva;Porto Alegre;RS;False
+7;13/05/2016 00:00;15/06/2016 00:00;Celular;999,90;VISA;Murillo Peteffi;São Leopoldo;RS;False
+8;13/05/2016 00:00;15/05/2016 00:00;Notebook;1999,90;DINERS;Murillo Peteffi;São Leopoldo;RS;True

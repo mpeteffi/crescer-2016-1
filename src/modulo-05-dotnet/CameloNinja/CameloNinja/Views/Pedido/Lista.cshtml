@@ -36,38 +36,39 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataPedido)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataEntrega)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NomeProduto)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Valor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NomeCliente)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cidade)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Estado)
-                </td>
-                <td>
-                    <a href="@Url.Action("Editar", "Pedido")" class="btn btn-info" style="padding: 4px 9px">
-                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                    </a>
-                    <a href="@Url.Action("Detalhes", "Pedido")" class="btn btn-warning" style="padding: 4px 9px">
-                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                    </a>
-                    <a href="@Url.Action("Remover", "Pedido")" class="btn btn-danger" style="padding: 4px 9px">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </a>
-                </td>
-            </tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataPedido)
+                    </td>
+                    <td @Html.Raw(item.PedidoUrgente ? "style='background-color: #d9534f'" : "")>
+                        @Html.DisplayFor(modelItem => item.DataEntrega)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomeProduto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Valor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomeCliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Editar", "Pedido")/@item.Id" class="btn btn-info" style="padding: 4px 9px">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </a>
+                        <a href="@Url.Action("Detalhes", "Pedido")/@item.Id" class="btn btn-warning" style="padding: 4px 9px">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                        </a>
+                        <a href="@Url.Action("Remover", "Pedido")/@item.Id" class="btn btn-danger" style="padding: 4px 9px">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </a>
+                    </td>
+</tr>
+            
         }
     </table>
