@@ -11,12 +11,11 @@ namespace CameloNinja.Repositorio
     public class RepositorioVendas
     {
         private static readonly object objetoLock = new object();
-        private const string PATH_ARQUIVO = @"C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\vendas.txt";
+        private const string PATH_ARQUIVO = @"C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\vendas.txt";
 
         public List<Pedido> ObterPedidos()
         {
             var linhasArquivo = File.ReadAllLines(PATH_ARQUIVO, Encoding.UTF8).ToList();
-
             return ConverteLinhasEmPedidos(linhasArquivo);
         }
 
@@ -60,9 +59,9 @@ namespace CameloNinja.Repositorio
         public void RemoverPedido(int id)
         {
             var pedidos = ObterPedidos();
-            var linhas = pedidos.Where(pedido => pedido.Id != id).ToList();
-            File.WriteAllText(PATH_ARQUIVO, string.Empty);
-            foreach (var linha in linhas)
+            var pedidosNovos = pedidos.Where(pedido => pedido.Id != id);
+            File.WriteAllText(PATH_ARQUIVO, "Número Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente");
+            foreach (var linha in pedidosNovos)
             {
                  File.AppendAllText(PATH_ARQUIVO, ConvertePedidoEmLinhaCSV(linha, linha.Id));
             }
@@ -71,10 +70,7 @@ namespace CameloNinja.Repositorio
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
         {
             var listaPedidos = new List<Pedido>();
-
-            //Remove linha do cabeçalho
             linhasArquivo.RemoveAt(0);
-
             foreach (var linha in linhasArquivo)
             {
                 var id = Convert.ToInt32(linha.Split(';')[0]);
@@ -92,7 +88,6 @@ namespace CameloNinja.Repositorio
                 var pedido = new Pedido(id, dataPedido, dataEntregaDesejada, nomeProduto, valorVenda, tipoPagamento, nomeCliente, cidade, estado, urgente);
                 listaPedidos.Add(pedido);
             }
-
             return listaPedidos;
         }
     }

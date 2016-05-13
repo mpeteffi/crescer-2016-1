@@ -62,8 +62,8 @@ namespace CameloNinja.MVC.Controllers
         public ActionResult Remover(int id)
         {
             repositorio.RemoverPedido(id);
-            ViewBag.Mensagem = "Pedido excluído!";
-            return View("Lista");
+            var pedidos = repositorio.ObterPedidos();
+            return View("Lista", pedidos);
         }
     }
 }

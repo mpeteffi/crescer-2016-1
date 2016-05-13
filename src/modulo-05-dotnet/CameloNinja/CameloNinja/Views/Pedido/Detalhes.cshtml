@@ -17,8 +17,9 @@
         <dt>
             @Html.DisplayNameFor(model => model.DataEntrega)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DataEntrega)
+        <dd style="position:relative">
+            @Html.DisplayFor(model => model.DataEntrega) 
+            @Html.Raw(Model.PedidoUrgente ? "<div class='alert alert-danger' style='position: absolute; top: -16px; left: 130px;' role='alert'><span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true' style='margin-right:10px'></span> Este pedido é urgente!</div>" : "")
         </dd>
         <hr />
         <dt>
