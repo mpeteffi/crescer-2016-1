@@ -29,7 +29,7 @@ namespace CameloNinja.Repositorio
         {
             lock (objetoLock)
             {
-                var utlimoId = this.ObterPedidos().Max(x => x.Id);
+                var utlimoId = this.ObterPedidos().Max(x => x.Id) ;
                 var idGerado = utlimoId + 1;
                 var novaLinha = ConvertePedidoEmLinhaCSV(pedido, idGerado);
                 File.AppendAllText(PATH_ARQUIVO, novaLinha);
@@ -59,7 +59,13 @@ namespace CameloNinja.Repositorio
 
         public void RemoverPedido(int id)
         {
-            
+            var pedidos = ObterPedidos();
+            var linhas = pedidos.Where(pedido => pedido.Id != id).ToList();
+            File.WriteAllText(PATH_ARQUIVO, string.Empty);
+            foreach (var linha in linhas)
+            {
+                 File.AppendAllText(PATH_ARQUIVO, ConvertePedidoEmLinhaCSV(linha, linha.Id));
+            }
         }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)

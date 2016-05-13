@@ -63,7 +63,7 @@ namespace CameloNinja.MVC.Controllers
         {
             repositorio.RemoverPedido(id);
             ViewBag.Mensagem = "Pedido excluído!";
-            return View("Mensagem");
+            return View("Lista");
         }
     }
 }

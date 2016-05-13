@@ -1,9 +1,4 @@
-N�mero Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente
-1;01/02/2009 06:17:15;01/02/2009 06:17;Kunai;350;MASTERCARD;Sarah;Sapiranga;RS;true
-2;01/02/2009 04:53;01/02/2009 04:53;Kunai;45,30;VISA;Betina;Parkville;MO;true
-3;12/05/2016 00:00;31/12/2016 00:00;Murillo Peteffi;200;DINERS;Murillo Peteffi;São Leopoldo;RS;False
-4;12/05/2016 00:00;31/12/2016 00:00;Murillo Peteffi;200;DINERS;Murillo Peteffi;São Leopoldo;RS;False
-5;12/05/2016 00:00;31/12/2016 00:00;Murillo Peteffi;200;DINERS;Murillo Peteffi;São Leopoldo;RS;False
-6;13/05/2016 00:00;12/10/2018 00:00;Violão;399,80;VISA;João da Silva;Porto Alegre;RS;False
-7;13/05/2016 00:00;15/06/2016 00:00;Celular;999,90;VISA;Murillo Peteffi;São Leopoldo;RS;False
-8;13/05/2016 00:00;15/05/2016 00:00;Notebook;1999,90;DINERS;Murillo Peteffi;São Leopoldo;RS;True
+
+1;01/02/2009 06:17;01/02/2009 06:17;Kunai;1200;VISA;carolina;Basildon;England;True
+2;01/02/2009 04:53;01/02/2009 04:53;Kunai;1200;VISA;Betina;Parkville                   ;MO;True
+5;13/05/2016 00:00;31/12/2016 00:00;Murillo Peteffi;200;DINERS;Murillo Peteffi;São Leopoldo;RS;False
