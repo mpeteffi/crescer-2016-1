@@ -48,15 +48,37 @@ namespace CameloNinja.Dominio
             PedidoUrgente = pedidoUrgente;
         }
 
+        [DisplayName("ID do Pedido")]
         public int Id { get; private set; }
+
+        [DisplayName("Data do Pedido")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataPedido { get; private set; }
-        public DateTime DataEntregaDesejada { get; private set; }
+
+        [DisplayName("Data de Entrega")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime DataEntrega { get; private set; }
+        
+        [DisplayName("Nome do Produto")]
         public string NomeProduto { get; private set; }
+
+        [DisplayName("Valor de Venda")]
+        [DisplayFormat(DataFormatString = "{0:c}", ApplyFormatInEditMode = true)]
         public decimal Valor { get; private set; }
+
+        [DisplayName("Tipo de Pagamento")]
         public TipoPagamento TipoPagamento { get; private set; }
+
+        [DisplayName("Nome do Cliente")]
         public string NomeCliente { get; private set; }
+
+        [DisplayName("Cidade")]
         public string Cidade { get; private set; }
+
+        [DisplayName("Estado")]
         public string Estado { get; private set; }
+
+
         public bool PedidoUrgente { get; private set; }
 
         private void ValidaPossibilidadeEntrega(double diasRestantesParaConcluirEntrega)
