@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LojaNinja.MVC.Controllers
+namespace CameloNinja.MVC.Controllers
 {
     public class PedidoController : Controller
     {
@@ -21,8 +21,9 @@ namespace LojaNinja.MVC.Controllers
         public ActionResult Salvar(PedidoModel model)
         {
             if (ModelState.IsValid)
-            {
-                var pedido = new Pedido(
+                try
+                {
+                    var pedido = new Pedido(
                     model.DataDesejoEntrega,
                     model.NomeProduto,
                     model.ValorDeVenda,
@@ -31,12 +32,17 @@ namespace LojaNinja.MVC.Controllers
                     model.Cidade,
                     model.Estado
                     );
-                return View("Detalhes", pedido);
-            }
-            else
-            {
+                    repositorio.IncluirPedido(pedido);
+                    ViewBag.MensagemSucesso = "Pedido salvo com sucesso!";
+                    return View("Detalhes", pedido);
+                }
+                catch (ArgumentException ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
+            
                 return View("Cadastro", model);
-            }
+           
         }
 
         public ActionResult Detalhes(int id)
@@ -51,6 +57,13 @@ namespace LojaNinja.MVC.Controllers
             var pedidos = repositorio.ObterPedidos();
 
             return View(pedidos);
+        }
+
+        public ActionResult Remover(int id)
+        {
+            repositorio.RemoverPedido(id);
+            ViewBag.Mensagem = "Pedido excluído!";
+            return View("Mensagem");
         }
     }
 }

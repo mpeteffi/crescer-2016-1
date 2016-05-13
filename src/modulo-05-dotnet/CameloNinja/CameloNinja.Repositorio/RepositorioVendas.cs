@@ -57,9 +57,9 @@ namespace CameloNinja.Repositorio
             throw new NotImplementedException();
         }
 
-        public void ExcluirPedido(int id)
+        public void RemoverPedido(int id)
         {
-            throw new NotImplementedException();
+            
         }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
