@@ -1,18 +1,16 @@
-﻿@{
+﻿@model CameloNinja.MVC.Models.PedidoModel
+@{
     ViewBag.Title = "Cadastro de pedidos";
 }
-
-@model CameloNinja.MVC.Models.PedidoModel
-
 @section scripts{
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/custom/validate-override.js"></script>
 }
 
-@using (Html.BeginForm("Salvar","Pedido")) 
+@using (Html.BeginForm("Salvar", "Pedido"))
 {
-    <div class="form-horizontal" >
+    <div class="form-horizontal">
         <h2>Cadastro de Pedidos</h2>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -23,7 +21,6 @@
                 @Html.ValidationMessageFor(model => model.DataDesejoEntrega, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.NomeProduto, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -31,23 +28,20 @@
                 @Html.ValidationMessageFor(model => model.NomeProduto, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.ValorDeVenda, htmlAttributes: new { @class = "control-label col-md-2"})
+            @Html.LabelFor(model => model.ValorDeVenda, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ValorDeVenda, new { htmlAttributes = new { @class = "form-control", placeholder = "Ex: 199,99" } })
                 @Html.ValidationMessageFor(model => model.ValorDeVenda, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.TipoDePagamento, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.TipoDePagamento, new { @class = "form-control"})
+                @Html.EnumDropDownListFor(model => model.TipoDePagamento, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TipoDePagamento, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.NomeCliente, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -55,15 +49,13 @@
                 @Html.ValidationMessageFor(model => model.NomeCliente, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" , placeholder = "Ex: Porto Alegre" } })
+                @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control", placeholder = "Ex: Porto Alegre" } })
                 @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -71,7 +63,6 @@
                 @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Cadastrar" class="btn btn-default" />
