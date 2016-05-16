@@ -41,7 +41,7 @@ namespace CameloNinja.MVC.Controllers
                     ModelState.AddModelError("", ex.Message);
                 }
             
-                return View("Cadastro", model);
+            return View("Cadastro", model);
            
         }
 

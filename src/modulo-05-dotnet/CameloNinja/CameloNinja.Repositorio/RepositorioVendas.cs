@@ -11,7 +11,8 @@ namespace CameloNinja.Repositorio
     public class RepositorioVendas
     {
         private static readonly object objetoLock = new object();
-        private const string PATH_ARQUIVO = @"C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\vendas.txt";
+        private const string PATH_ARQUIVO = @"C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\vendas.txt";
+        //private const string PATH_ARQUIVO = @"C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\vendas.txt";
 
         public List<Pedido> ObterPedidos()
         {
@@ -28,7 +29,7 @@ namespace CameloNinja.Repositorio
         {
             lock (objetoLock)
             {
-                var utlimoId = this.ObterPedidos().Max(x => x.Id) ;
+                var utlimoId = this.ObterPedidos().Max(x => x.Id);
                 var idGerado = utlimoId + 1;
                 var novaLinha = ConvertePedidoEmLinhaCSV(pedido, idGerado);
                 File.AppendAllText(PATH_ARQUIVO, novaLinha);
@@ -71,7 +72,7 @@ namespace CameloNinja.Repositorio
             File.WriteAllText(PATH_ARQUIVO, "Número Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente");
             foreach (var linha in pedidosNovos)
             {
-                 File.AppendAllText(PATH_ARQUIVO, ConvertePedidoEmLinhaCSV(linha, linha.Id));
+                File.AppendAllText(PATH_ARQUIVO, ConvertePedidoEmLinhaCSV(linha, linha.Id));
             }
         }
 
