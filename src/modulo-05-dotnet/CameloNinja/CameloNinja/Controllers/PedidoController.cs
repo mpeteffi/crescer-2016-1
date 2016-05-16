@@ -13,6 +13,7 @@ namespace CameloNinja.MVC.Controllers
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
 
+
         public ActionResult Cadastro()
         {
             return View();
