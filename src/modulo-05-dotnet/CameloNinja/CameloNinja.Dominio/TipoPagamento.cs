@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CameloNinja.Dominio
+﻿namespace CameloNinja.Dominio
 {
     public enum TipoPagamento
     {
