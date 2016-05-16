@@ -56,6 +56,14 @@ namespace CameloNinja.Repositorio
             throw new NotImplementedException();
         }
 
+        public List<Pedido> ObterPedidosFiltrados(string cliente, string produto)
+        {
+            var pedidos = this.ObterPedidos().Where(p =>
+                  (cliente == null || p.NomeCliente.ToLower() == cliente.ToLower())
+                  && (produto == null || p.NomeProduto.ToLower() == produto.ToLower())).ToList();
+            return pedidos;
+        }
+
         public void RemoverPedido(int id)
         {
             var pedidos = ObterPedidos();

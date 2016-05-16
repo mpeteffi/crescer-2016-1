@@ -52,10 +52,9 @@ namespace CameloNinja.MVC.Controllers
             return View(pedido);
         }
 
-        public ActionResult Lista()
+        public ActionResult Lista(string cliente, string produto)
         {
-            var pedidos = repositorio.ObterPedidos();
-
+            var pedidos = repositorio.ObterPedidosFiltrados(cliente, produto);
             return View(pedidos);
         }
 
