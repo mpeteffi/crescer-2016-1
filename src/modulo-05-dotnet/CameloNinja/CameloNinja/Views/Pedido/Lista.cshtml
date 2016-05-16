@@ -5,11 +5,17 @@
 
 <h2>Lista de Pedidos</h2>
 <hr>
-<p>
     <a href="@Url.Action("Cadastro", "Pedido")">
         <button type="submit" class="btn btn-default"> Adicionar novo pedido </button>
     </a>
-</p>
+    <form class="navbar-form navbar-left" style="margin-top: -0.5px;" action="~/Pedido/Lista" method="get">
+        <div class="form-group">
+
+            <input type="text" name="cliente" class="form-control" placeholder="Cliente">
+            <input type="text" name="produto" class="form-control" placeholder="Produto">
+        </div>
+        <button type="submit" class="btn btn-default">Filtrar</button>
+    </form>
 <table class="table table-bordered table-striped">
     <tr>
         <th>
