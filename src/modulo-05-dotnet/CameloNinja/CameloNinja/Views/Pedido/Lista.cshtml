@@ -5,10 +5,11 @@
 
 <h2>Lista de Pedidos</h2>
 <hr>
+<div class="opcoes-lista">
     <a href="@Url.Action("Cadastro", "Pedido")">
         <button type="submit" class="btn btn-default"> Adicionar novo pedido </button>
     </a>
-    <form class="navbar-form navbar-left" style="margin-top: -0.5px;" action="~/Pedido/Lista" method="get">
+    <form class="navbar-form navbar-left" action="~/Pedido/Lista" method="get">
         <div class="form-group">
 
             <input type="text" name="cliente" class="form-control" placeholder="Cliente">

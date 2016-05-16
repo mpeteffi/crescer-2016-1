@@ -75,3 +75,34 @@ a {
     .dd-urgente > span {
         margin-right: 10px;
     }
+
+.opcoes-lista {
+    margin-bottom: 15px;
+    overflow: auto;
+}
+
+    .opcoes-lista form {
+        padding: 0px 10px;
+        margin: 0px;
+        float: right !important;
+    }
+
+    .opcoes-lista a {
+        margin: 0px;
+    }
+
+#menu {
+    width: auto;
+    display: inline;
+    position: absolute;
+    top: 20px;
+    right: 140px;
+}
+
+    #menu a {
+        font-size: 22px;
+        margin: 10px;
+        padding: 10px;
+        color: #333 !important;
+        border-radius: 10px;
+    }
