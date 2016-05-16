@@ -1,4 +1,6 @@
 ﻿using CameloNinja.Dominio;
+using CameloNinja.Models.Login;
+using CameloNinja.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

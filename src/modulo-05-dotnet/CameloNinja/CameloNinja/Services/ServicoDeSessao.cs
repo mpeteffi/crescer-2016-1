@@ -1,4 +1,4 @@
-﻿using BaseAulaSeguranca.Models.Login;
+﻿using CameloNinja.Models.Login;
 using CameloNinja;
 using CameloNinja.Dominio;
 using System;

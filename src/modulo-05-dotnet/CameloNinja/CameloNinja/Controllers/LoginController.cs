@@ -1,6 +1,10 @@
-﻿using CameloNinja.Dominio;
+﻿using CameloNinja;
+using CameloNinja.Dominio;
+using CameloNinja.Filters;
+using CameloNinja.Models.Login;
 using CameloNinja.MVC.Models;
 using CameloNinja.Repositorio;
+using CameloNinja.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +35,7 @@ namespace CameloNinja.MVC.Controllers
         // que o form não seja válido caso enviado mais de uma vez (caso alguém intercepte o form e o reenvie).
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Entrar(LoginViewModel loginViewModel)
+        public ActionResult Entrar(LoginModel loginViewModel)
         {
             if (ModelState.IsValid)
             {

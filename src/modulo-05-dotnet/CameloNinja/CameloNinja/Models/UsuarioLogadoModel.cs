@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BaseAulaSeguranca.Models.Login
+namespace CameloNinja.Models.Login
 {
     // Criamos essa model para nos ajudar a encapsular os dados do Usuário Logado.
     public class UsuarioLogadoModel
