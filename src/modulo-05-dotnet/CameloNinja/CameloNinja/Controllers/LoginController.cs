@@ -19,7 +19,6 @@ namespace CameloNinja.MVC.Controllers
             {
                 return View("Login");
             }
-
             return RedirectToAction("AreaSecreta");
         }
 

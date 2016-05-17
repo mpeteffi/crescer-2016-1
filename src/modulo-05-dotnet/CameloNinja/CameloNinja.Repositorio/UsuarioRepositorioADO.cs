@@ -1,19 +1,11 @@
-﻿using System;
-using CameloNinja.Dominio;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CameloNinja.Dominio;
 using System.Configuration;
-using System.Transactions;
 using System.Data.SqlClient;
 
 namespace CameloNinja.Repositorio
 {
     public class UsuarioRepositorioADO : IUsuarioRepositorio
     {
-        private List<Usuario> _usuarios;
-
         public Usuario BuscarUsuarioPorAutenticacao(string email, string senha)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["BancoNinja"].ConnectionString;
