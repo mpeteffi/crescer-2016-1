@@ -7,19 +7,18 @@ using System.Web.Mvc;
 
 namespace CameloNinja.MVC.Controllers
 {
+    [CWIToken]
     public class PedidoController : Controller
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
 
         [HttpGet]
-        [CWIToken]
         public ActionResult Cadastro()
         {
             return View();
         }
 
         [HttpPost]
-        [CWIToken]
         public ActionResult Salvar(PedidoModel model)
         {
             if (ModelState.IsValid)
@@ -48,7 +47,6 @@ namespace CameloNinja.MVC.Controllers
         }
 
         [HttpGet]
-        [CWIToken]
         public ActionResult Detalhes(int id)
         {
             var pedido = repositorio.ObterPedidoPorId(id);
@@ -57,7 +55,6 @@ namespace CameloNinja.MVC.Controllers
         }
 
         [HttpGet]
-        [CWIToken]
         public ActionResult Lista(string cliente, string produto)
         {
             var pedidos = repositorio.ObterPedidosFiltrados(cliente, produto);
@@ -65,7 +62,6 @@ namespace CameloNinja.MVC.Controllers
         }
 
         [HttpPost]
-        [CWIToken]
         public ActionResult Remover(int id)
         {
             repositorio.RemoverPedido(id);
