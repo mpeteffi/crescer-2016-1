@@ -24,6 +24,12 @@ body {
     width: 300px;
 }
 
+#login img {
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 300px;
+}
+
 #main {
     width: 90%;
     padding-right: 15px;
@@ -43,6 +49,12 @@ body {
     #box h2 {
         margin-top: 0px;
     }
+
+.login-main {
+    width: 70%;
+    min-width: 430px;
+    max-width: 650px;
+}
 
 a {
     text-decoration: none !important;
@@ -95,14 +107,14 @@ a {
     width: auto;
     display: inline;
     position: absolute;
-    top: 20px;
-    right: 140px;
+    top: 15px;
+    right: 75px;
 }
 
     #menu a {
-        font-size: 22px;
-        margin: 10px;
-        padding: 10px;
-        color: #333 !important;
-        border-radius: 10px;
+        font-size: 16px;
+        /*margin: 10px;
+        padding: 10px;*/
+        /*color: #333 !important;*/
+        /*border-radius: 10px;*/
     }

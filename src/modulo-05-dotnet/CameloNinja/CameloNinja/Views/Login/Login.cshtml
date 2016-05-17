@@ -1,37 +1,58 @@
 ﻿@model CameloNinja.MVC.Models.LoginModel
-@section scripts{
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Página de Login</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="main" class="login-main">
+        <div id="box">
+            @using (Html.BeginForm("Entrar", "Login", FormMethod.Post, new { @class = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <div  id="login">
+                        <img src="~/Content/Imagens/logoCameloNinja.png" alt="logo">
+                    </div>
+                    <hr />
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", type = "password" } })
+                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Login!" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/custom/validate-override.js"></script>
-}
-
-@using (Html.BeginForm("Entrar", "Login", FormMethod.Post, new { @class = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        <h2>Formulário de Login</h2>
-        <hr />
-        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", type = "password" } })
-                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Login!" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
+</body>
+</html>

@@ -6,23 +6,38 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet">
     <link href="~/Content/style.css" rel="stylesheet">
 </head>
-<header id="nav-top">
-    <div id="logo">
-        <img src="~/Content/Imagens/logoCameloNinja.png" alt="logo">
-    </div>
-    <div id="menu">
-        <a href="~/Pedido/Cadastro">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        </a>
-        <a href="~/Pedido/Lista">
-            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-        </a>
-        <a href="~/Login/Sair">
-            LOGOUT
-        </a>
-    </div>
-</header>
 <body>
+    <header id="nav-top">
+            <div class="container-fluid container-top">
+                <div id="logo">
+                    <img src="~/Content/Imagens/logoCameloNinja.png" alt="logo">
+                </div>
+                <ul class="nav navbar-nav navbar-right" id="menu">
+                    <!-- Icones -->
+                    <li class="icone-toggle">
+                        <a class="icone-toggle" href="~/Pedido/Cadastro">
+                            <span class="icone-toggle glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            <span class="navbar-toggle menu-icone-texto" data-target=".navbar-collapse" data-toggle="collapse">Adicionar Pedido</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Pedido/Lista">
+                            <span class="glyphicon glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                            <span class="navbar-toggle menu-icone-texto" data-target=".navbar-collapse" data-toggle="collapse">Ver Lista de Pedidos</span>
+                        </a>
+                    </li>
+                    <!-- Botão DropDown para logout -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> @Session["BemVindo"] <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Sair", "Login")">Logout</a></li>
+                            @*<li><a href="~/Login/Sair> Logout </a></li>*@
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
     <div id="main">
         <div id="box">
             @RenderBody()

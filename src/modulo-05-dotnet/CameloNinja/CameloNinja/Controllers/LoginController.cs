@@ -48,6 +48,7 @@ namespace CameloNinja.MVC.Controllers
                 {
                     var usuarioLogadoModel = new UsuarioLogadoModel(usuarioEncontrado);
                     ServicoDeSessao.CriarSessao(usuarioLogadoModel);
+                    Session["BemVindo"] = "Olá, " + usuarioLogadoModel.Nome.Split(' ')[0];
                     return RedirectToAction("Lista","Pedido");
                 }
                 else
