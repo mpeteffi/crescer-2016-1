@@ -17,6 +17,23 @@ namespace CameloNinja.Services
         // Lembre-se: por se tratar de uma lista estática, todas as requisiões podem vê-la.
         private static Dictionary<string, string> _usuariosLogados = new Dictionary<string, string>();
 
+        public static void Deslogar()
+        {
+            //Abandonar Session
+            HttpContext.Current.Session.Abandon();
+
+            //Expirar Cookie
+            HttpCookie cookieDeAutenticacao = HttpContext.Current.Request.Cookies.Get(COOKIE_AUTENTICACAO);
+            if (cookieDeAutenticacao != null)
+            {
+                cookieDeAutenticacao.Expires = DateTime.Now.AddDays(-1);
+            }
+
+            //remover da lista de usuarios logados
+            var usuarioASerRemovido = _usuariosLogados.Select(u => u.Value.Equals(UsuarioLogado.Email)).ToString();
+            _usuariosLogados.Remove(usuarioASerRemovido);
+        }
+
         // Este cara apenas faz a mão de pegar o usuário logado da Sessão.
         // Mais fácil chamar por aqui do que ficar dando Cast em Session em tudo que é lugar não?
         public static UsuarioLogadoModel UsuarioLogado
