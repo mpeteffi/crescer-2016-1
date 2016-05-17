@@ -3,7 +3,6 @@ using System.Linq;
 
 namespace CameloNinja.Models.Login
 {
-    // Criamos essa model para nos ajudar a encapsular os dados do Usuário Logado.
     public class UsuarioLogadoModel
     {
         public UsuarioLogadoModel(Usuario usuario)
