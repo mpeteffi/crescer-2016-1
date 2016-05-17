@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameloNinja.Test", "CameloN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameloNinja.Repositorio", "CameloNinja.Repositorio\CameloNinja.Repositorio.csproj", "{3814CE99-5132-4AE5-BB34-53828A712628}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameloNinja.RepositorioEF", "CameloNinja.RepositorioEF\CameloNinja.RepositorioEF.csproj", "{F3FDA14B-4BEE-445B-9615-778D5B5ACAA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3814CE99-5132-4AE5-BB34-53828A712628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3814CE99-5132-4AE5-BB34-53828A712628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3814CE99-5132-4AE5-BB34-53828A712628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3FDA14B-4BEE-445B-9615-778D5B5ACAA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FDA14B-4BEE-445B-9615-778D5B5ACAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FDA14B-4BEE-445B-9615-778D5B5ACAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FDA14B-4BEE-445B-9615-778D5B5ACAA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +54,6 @@ Global
 		{04A38C6F-75B7-434C-A530-461FE20AC3B1} = {71D776AF-681A-4080-BBB0-94AFCDD6131B}
 		{20639334-0DE5-4E7F-B3EB-F61AE725F17E} = {71D776AF-681A-4080-BBB0-94AFCDD6131B}
 		{3814CE99-5132-4AE5-BB34-53828A712628} = {55184FE9-33C2-4A59-9660-D0E7D6E9DF30}
+		{F3FDA14B-4BEE-445B-9615-778D5B5ACAA5} = {55184FE9-33C2-4A59-9660-D0E7D6E9DF30}
 	EndGlobalSection
 EndGlobal

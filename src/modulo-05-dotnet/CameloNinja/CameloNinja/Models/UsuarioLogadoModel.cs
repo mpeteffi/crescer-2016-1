@@ -9,7 +9,6 @@ namespace CameloNinja.Models.Login
         {
             this.Email = usuario.Email;
             this.Nome = usuario.Nome;
-            this.Permissoes = usuario.Permissoes;
         }
 
         public string Email { get; private set; }
