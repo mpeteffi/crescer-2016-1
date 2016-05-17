@@ -11,7 +11,7 @@ namespace CameloNinja.Repositorio
             string connectionString = ConfigurationManager.ConnectionStrings["BancoNinja"].ConnectionString;
             using (var conexao = new SqlConnection(connectionString))
             {
-                string sql = "SELECT * FROM Usuarios WHERE email=@p_email and senha=@p_senha";
+                string sql = "SELECT * FROM Usuario WHERE email=@p_email and senha=@p_senha";
 
                 var comando = new SqlCommand(sql, conexao);
                 comando.Parameters.Add(new SqlParameter("p_email", email));

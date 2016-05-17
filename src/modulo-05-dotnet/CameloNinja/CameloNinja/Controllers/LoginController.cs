@@ -2,6 +2,7 @@
 using CameloNinja.Filters;
 using CameloNinja.Models.Login;
 using CameloNinja.MVC.Models;
+using CameloNinja.Repositorio;
 using CameloNinja.Services;
 using System.Web.Mvc;
 
@@ -10,6 +11,13 @@ namespace CameloNinja.MVC.Controllers
     public class LoginController : Controller
     {
         private UsuarioServico _usuarioServico;
+        
+        public LoginController()
+        {
+            _usuarioServico = new UsuarioServico(
+                    new UsuarioRepositorioADO()
+                );
+        }
 
         [HttpGet]
         public ActionResult Index()
@@ -49,7 +57,7 @@ namespace CameloNinja.MVC.Controllers
 
                     // Encapsulamos aqui a regra para criar a sessão.
                     ServicoDeSessao.CriarSessao(usuarioLogadoModel);
-                    return RedirectToAction("AreaSecreta");
+                    return RedirectToAction("Lista","Pedido");
                 }
                 else
                 {
@@ -57,7 +65,7 @@ namespace CameloNinja.MVC.Controllers
                 }
             }
 
-            return View("Index", loginViewModel);
+            return View("Login", loginViewModel);
         }
 
         [HttpGet]
