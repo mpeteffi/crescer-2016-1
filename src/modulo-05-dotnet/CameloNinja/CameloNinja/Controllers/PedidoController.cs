@@ -1,4 +1,5 @@
 ﻿using CameloNinja.Dominio;
+using CameloNinja.Filters;
 using CameloNinja.MVC.Models;
 using CameloNinja.Repositorio;
 using System;
@@ -10,12 +11,15 @@ namespace CameloNinja.MVC.Controllers
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
 
-
+        [HttpGet]
+        [CWIToken]
         public ActionResult Cadastro()
         {
             return View();
         }
 
+        [HttpPost]
+        [CWIToken]
         public ActionResult Salvar(PedidoModel model)
         {
             if (ModelState.IsValid)
@@ -43,6 +47,8 @@ namespace CameloNinja.MVC.Controllers
            
         }
 
+        [HttpGet]
+        [CWIToken]
         public ActionResult Detalhes(int id)
         {
             var pedido = repositorio.ObterPedidoPorId(id);
@@ -50,12 +56,16 @@ namespace CameloNinja.MVC.Controllers
             return View(pedido);
         }
 
+        [HttpGet]
+        [CWIToken]
         public ActionResult Lista(string cliente, string produto)
         {
             var pedidos = repositorio.ObterPedidosFiltrados(cliente, produto);
             return View(pedidos);
         }
 
+        [HttpPost]
+        [CWIToken]
         public ActionResult Remover(int id)
         {
             repositorio.RemoverPedido(id);
