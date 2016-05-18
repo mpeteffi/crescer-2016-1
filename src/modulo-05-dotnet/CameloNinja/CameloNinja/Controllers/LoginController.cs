@@ -1,5 +1,4 @@
 ﻿using CameloNinja.Dominio;
-using CameloNinja.Filters;
 using CameloNinja.Models.Login;
 using CameloNinja.MVC.Models;
 using CameloNinja.Repositorio;
@@ -14,9 +13,7 @@ namespace CameloNinja.MVC.Controllers
         
         public LoginController()
         {
-            _usuarioServico = new UsuarioServico(
-                    new UsuarioRepositorioADO()
-                );
+            _usuarioServico = new UsuarioServico(new UsuarioRepositorioADO());
         }
 
         [HttpGet]

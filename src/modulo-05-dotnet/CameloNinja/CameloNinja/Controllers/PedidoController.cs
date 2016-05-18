@@ -2,7 +2,6 @@
 using CameloNinja.Filters;
 using CameloNinja.MVC.Models;
 using CameloNinja.Repositorio;
-using System;
 using System.Web.Mvc;
 
 namespace CameloNinja.MVC.Controllers
