@@ -5,3 +5,10 @@ C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\Camel
 C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\obj\Debug\CameloNinja.Repositorio.csprojResolveAssemblyReference.cache
 C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\obj\Debug\CameloNinja.Repositorio.dll
 C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\obj\Debug\CameloNinja.Repositorio.pdb
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\bin\Debug\CameloNinja.Repositorio.dll
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\bin\Debug\CameloNinja.Repositorio.pdb
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\bin\Debug\CameloNinja.Dominio.dll
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\bin\Debug\CameloNinja.Dominio.pdb
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\obj\Debug\CameloNinja.Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\obj\Debug\CameloNinja.Repositorio.dll
+C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\obj\Debug\CameloNinja.Repositorio.pdb
