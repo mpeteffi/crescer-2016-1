@@ -14,6 +14,7 @@ namespace CameloNinja.MVC.Controllers
         [HttpGet]
         public ActionResult Cadastro()
         {
+            ViewBag.h2 = "Cadastro de Pedido";
             return View();
         }
 
@@ -44,6 +45,7 @@ namespace CameloNinja.MVC.Controllers
         {
             var pedido = repositorio.ObterPedidoPorId(id);
             var pedidoModel = PedidoToPedidoModel(pedido);
+            ViewBag.h2 = "Edição de Pedido";
             return View("Cadastro", pedidoModel);
         }
 
