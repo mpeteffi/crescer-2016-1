@@ -1,0 +1,5 @@
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\Aula 2\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.dll
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\Aula 2\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.pdb
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\Aula 2\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.dll
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\Aula 2\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.pdb
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\Aula 2\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache

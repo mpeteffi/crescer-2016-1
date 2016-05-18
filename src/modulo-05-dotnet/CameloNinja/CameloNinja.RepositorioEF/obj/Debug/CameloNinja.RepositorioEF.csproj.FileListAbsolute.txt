@@ -1,0 +1,14 @@
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\bin\Debug\CameloNinja.RepositorioEF.dll.config
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\bin\Debug\CameloNinja.RepositorioEF.dll
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\bin\Debug\CameloNinja.RepositorioEF.pdb
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\bin\Debug\CameloNinja.Dominio.dll
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\bin\Debug\EntityFramework.dll
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\bin\Debug\CameloNinja.Dominio.pdb
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\bin\Debug\EntityFramework.xml
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\obj\Debug\CameloNinja.RepositorioEF.csprojResolveAssemblyReference.cache
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\obj\Debug\CameloNinja.RepositorioEF.Migrations.Initial.resources
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\obj\Debug\CameloNinja.RepositorioEF.csproj.GenerateResource.Cache
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\obj\Debug\CameloNinja.RepositorioEF.dll
+C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.RepositorioEF\obj\Debug\CameloNinja.RepositorioEF.pdb
