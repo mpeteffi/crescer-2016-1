@@ -6,6 +6,11 @@ namespace CameloNinja.Dominio
 {
     public class Pedido
     {
+        public Pedido()
+        {
+
+        }
+
         public Pedido(DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, string nomeCliente, string cidade, string estado)
         {
             DataEntrega = dataEntregaDesejada;
@@ -64,7 +69,6 @@ namespace CameloNinja.Dominio
 
         [DisplayName("Estado")]
         public string Estado { get; private set; }
-
 
         public bool PedidoUrgente { get; private set; }
 

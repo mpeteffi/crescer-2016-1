@@ -16,7 +16,6 @@ namespace CameloNinja.Dominio
         {
             string senhaCriptografada = Criptografar(senha);
             Usuario usuarioEncontrado = _usuarioRepositorio.BuscarUsuarioPorAutenticacao(email, senhaCriptografada);
-
             return usuarioEncontrado;
         }
 
