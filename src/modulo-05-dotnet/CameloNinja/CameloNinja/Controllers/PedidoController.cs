@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace CameloNinja.MVC.Controllers
 {
-    [CWIToken]
+    [CameloToken]
     public class PedidoController : Controller
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
