@@ -192,6 +192,8 @@
     <Content Include="Views\Pedido\Lista.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Pedido\Mensagem.cshtml" />
+    <Content Include="Views\Login\CadastroUsuario.cshtml" />
+    <Content Include="Views\Login\SucessoCadastroUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

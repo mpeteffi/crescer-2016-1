@@ -55,5 +55,39 @@ namespace CameloNinja.MVC.Controllers
             }
             return View("Login", loginModel);
         }
+
+
+
+
+
+
+
+        [HttpGet]
+        public ActionResult CadastroUsuario()
+        {
+            return View("CadastroUsuario");
+        }
+
+        [HttpPost]
+        public ActionResult SucessoCadastroUsuario(UsuarioModel usuarioModel)
+        {
+
+            if (usuarioModel.Senha != usuarioModel.RepitaASenha)
+            {
+                ModelState.AddModelError("INVALID_PASSWORD", "Senhas não condizem.");
+                return RedirectToAction("CadastroUsuario", usuarioModel);
+            }
+            else if (usuarioModel.Senha.Length < 8)
+            {
+                ModelState.AddModelError("INVALID_PASSWORD", "Senha deve possuir pelo menos 8 caracteres");
+                return RedirectToAction("CadastroUsuario", usuarioModel);
+            }
+            else
+            {
+                _usuarioServico.Cadastrar(usuarioModel.Nome, usuarioModel.Email, usuarioModel.Senha);
+                ViewBag.MensagemCadastroSucesso = "Cadastrado com sucesso!";
+                return View("SucessoCadastroUsuario");
+            }
+        }
     }
 }

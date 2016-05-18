@@ -5,23 +5,21 @@ namespace CameloNinja.MVC.Models
 {
     public class UsuarioModel
     {
-        [Required(ErrorMessage = "Você deve informar um nome.")]
         [DisplayName("Nome")]
+        [StringLength(100)]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Você deve informar um email")]
-        [DisplayName("Email")]
+        [Required]
+        [DisplayName("E-mail")]
+        [StringLength(100)]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Você deve informar uma senha")]
-        [RegularExpression(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$",
-            ErrorMessage = "A senha deve conter no mínimo 8 caracteres tendo que ter uma letra minúscula e uma maiúscula.")]
+        [Required]
         [DisplayName("Senha")]
         public string Senha { get; set; }
 
-        [Required(ErrorMessage = "Você deve informar uma confirmação para a senha")]
-        [DisplayName("Confirmar senha")]
-        public string ConfirmaSenha { get; set; }
+        [DisplayName("Repita a senha")]
+        public string RepitaASenha { get; set; }
     }
 }
