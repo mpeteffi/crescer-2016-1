@@ -16,7 +16,7 @@ namespace CameloNinja.MVC
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Pedido", action = "Index", id = UrlParameter.Optional },
+                defaults: new { controller = "Pedido", action = "Lista", id = UrlParameter.Optional },
                 namespaces: new[] { "CameloNinja.MVC.Controllers" }
             );
         }
