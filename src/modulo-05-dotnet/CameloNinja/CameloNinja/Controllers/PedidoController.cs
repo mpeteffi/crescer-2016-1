@@ -18,38 +18,10 @@ namespace CameloNinja.MVC.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Salvar(PedidoModel model)
-        {
-            if (ModelState.IsValid)
-                try
-                {
-                    Pedido pedido = new Pedido(model.DataDesejoEntrega, model.NomeProduto, model.ValorDeVenda, model.TipoDePagamento, model.NomeCliente, model.Cidade, model.Estado);
-                    if (model.NumeroPedido.HasValue)
-                    {
-                        repositorio.AtualizarPedido(pedido, (int)model.NumeroPedido);
-                        return View("Detalhes", pedido);
-                    }
-                    else
-                    {
-                        repositorio.IncluirPedido(pedido);
-                        return View("Detalhes", pedido);
-                    }
-                }
-                catch (ArgumentException ex)
-                {
-                    ModelState.AddModelError("", ex.Message);
-                }
-            
-            return View("Cadastro", model);
-        }
-
         [HttpGet]
         public ActionResult Detalhes(int id)
         {
             var pedido = repositorio.ObterPedidoPorId(id);
-
             return View(pedido);
         }
 
@@ -72,6 +44,31 @@ namespace CameloNinja.MVC.Controllers
         public ActionResult Editar(int id)
         {
             var pedido = repositorio.ObterPedidoPorId(id);
+            var pedidoModel = PedidoToPedidoModel(pedido);
+            return View("Cadastro", pedidoModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Salvar(PedidoModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Pedido pedido = PedidoModelToPedido(model);
+
+                if (model.NumeroPedido.HasValue)
+                {
+                    repositorio.AtualizarPedido(pedido, (int)model.NumeroPedido);
+                    return View("Detalhes", pedido);
+                }
+                repositorio.IncluirPedido(pedido);
+                return View("Detalhes", pedido);
+            }
+            return View("Cadastro", model);
+        }
+
+        private PedidoModel PedidoToPedidoModel(Pedido pedido)
+        {
             PedidoModel pedidoModel = new PedidoModel
             {
                 NomeCliente = pedido.NomeCliente,
@@ -83,7 +80,20 @@ namespace CameloNinja.MVC.Controllers
                 TipoDePagamento = pedido.TipoPagamento,
                 ValorDeVenda = pedido.Valor
             };
-            return View("Cadastro", pedidoModel);
+            return pedidoModel;
+        }
+
+        private Pedido PedidoModelToPedido(PedidoModel pedidoModel)
+        {
+            Pedido pedido = new Pedido(
+                    pedidoModel.DataDesejoEntrega,
+                    pedidoModel.NomeProduto,
+                    pedidoModel.ValorDeVenda,
+                    pedidoModel.TipoDePagamento,
+                    pedidoModel.NomeCliente,
+                    pedidoModel.Cidade,
+                    pedidoModel.Estado);
+            return pedido;
         }
     }
 }
