@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel;
-using System;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 
 namespace CameloNinja.MVC.Models

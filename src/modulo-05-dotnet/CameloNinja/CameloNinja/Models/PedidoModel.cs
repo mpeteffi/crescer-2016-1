@@ -1,6 +1,5 @@
 ﻿using CameloNinja.Dominio;
 using System;
-using System.Linq;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
