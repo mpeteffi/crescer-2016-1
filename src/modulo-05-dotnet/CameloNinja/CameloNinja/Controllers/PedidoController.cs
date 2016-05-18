@@ -61,12 +61,12 @@ namespace CameloNinja.MVC.Controllers
             return View(pedidos);
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Remover(int id)
         {
             repositorio.RemoverPedido(id);
-            var pedidos = repositorio.ObterPedidos();
-            return View("Lista", pedidos);
+            ViewBag.Mensagem = "Pedido excluído com sucesso!";
+            return View("Mensagem");
         }
     }
 }
