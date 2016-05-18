@@ -1,9 +1,0 @@
-C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Dominio\bin\Debug\CameloNinja.Dominio.dll
-C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Dominio\bin\Debug\CameloNinja.Dominio.pdb
-C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Dominio\obj\Debug\CameloNinja.Dominio.dll
-C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Dominio\obj\Debug\CameloNinja.Dominio.pdb
-C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Dominio\bin\Debug\CameloNinja.Dominio.dll
-C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Dominio\bin\Debug\CameloNinja.Dominio.pdb
-C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Dominio\obj\Debug\CameloNinja.Dominio.csprojResolveAssemblyReference.cache
-C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Dominio\obj\Debug\CameloNinja.Dominio.dll
-C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Dominio\obj\Debug\CameloNinja.Dominio.pdb
