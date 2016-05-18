@@ -6,9 +6,6 @@ namespace CameloNinja.Dominio
 {
     public class Pedido
     {
-        /// <summary>
-        /// Construtor utilizado para montar pedidos novos
-        /// </summary>
         public Pedido(DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, string nomeCliente, string cidade, string estado)
         {
             DataEntrega = dataEntregaDesejada;
@@ -18,18 +15,12 @@ namespace CameloNinja.Dominio
             NomeCliente = nomeCliente;
             Cidade = cidade;
             Estado = estado;
-
-            //DateTime.Now contaria as horas, minutos e segundos, isso inviabliziaria algumas validações a seguir
             DataPedido = DateTime.Today;
-
             var diasRestantesParaConcluirEntrega = (dataEntregaDesejada - DataPedido).TotalDays;
             ValidaPossibilidadeEntrega(diasRestantesParaConcluirEntrega);
             DefineUrgenciaDoPedido(diasRestantesParaConcluirEntrega);
         }
 
-        /// <summary>
-        /// Construtor utilizado para montar pedidos recuperados do repositório
-        /// </summary>
         public Pedido(int id, DateTime dataPedido, DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, string nomeCliente, string cidade, string estado, bool pedidoUrgente)
         {
             Id = id;
@@ -45,7 +36,7 @@ namespace CameloNinja.Dominio
         }
 
         [DisplayName("ID do Pedido")]
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
         [DisplayName("Data do Pedido")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
@@ -92,7 +83,6 @@ namespace CameloNinja.Dominio
         {
             if (Id != 0)
                 throw new InvalidOperationException("Esse objeto já possuia Id, portanto ele já havia sido salvo no banco. Não é possível alterar esse valor.");
-
             Id = id;
         }
     }

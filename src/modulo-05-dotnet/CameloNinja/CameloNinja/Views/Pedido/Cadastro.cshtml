@@ -10,6 +10,7 @@
 
 @using (Html.BeginForm("Salvar", "Pedido"))
 {
+    @Html.AntiForgeryToken()
     <div class="form-horizontal">
         <h2>Cadastro de Pedidos</h2>
         <hr>
@@ -63,6 +64,9 @@
                 @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        @Html.HiddenFor(model => model.NumeroPedido)
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Cadastrar" class="btn btn-default" />

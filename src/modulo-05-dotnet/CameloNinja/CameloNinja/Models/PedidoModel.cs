@@ -8,6 +8,8 @@ namespace CameloNinja.MVC.Models
 {
     public class PedidoModel
     {
+        public int? NumeroPedido { get; set; }
+
         [Required(ErrorMessage = "Data de Entrega deve ser informada")]
         [DisplayName("Data de Entrega")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]

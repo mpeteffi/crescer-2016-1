@@ -19,23 +19,23 @@ namespace CameloNinja.MVC.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Salvar(PedidoModel model)
         {
             if (ModelState.IsValid)
                 try
                 {
-                    var pedido = new Pedido(
-                    model.DataDesejoEntrega,
-                    model.NomeProduto,
-                    model.ValorDeVenda,
-                    model.TipoDePagamento,
-                    model.NomeCliente,
-                    model.Cidade,
-                    model.Estado
-                    );
-                    repositorio.IncluirPedido(pedido);
-                    ViewBag.MensagemSucesso = "Pedido salvo com sucesso!";
-                    return View("Detalhes", pedido);
+                    Pedido pedido = new Pedido(model.DataDesejoEntrega, model.NomeProduto, model.ValorDeVenda, model.TipoDePagamento, model.NomeCliente, model.Cidade, model.Estado);
+                    if (model.NumeroPedido.HasValue)
+                    {
+                        repositorio.AtualizarPedido(pedido, (int)model.NumeroPedido);
+                        return View("Detalhes", pedido);
+                    }
+                    else
+                    {
+                        repositorio.IncluirPedido(pedido);
+                        return View("Detalhes", pedido);
+                    }
                 }
                 catch (ArgumentException ex)
                 {
@@ -43,7 +43,6 @@ namespace CameloNinja.MVC.Controllers
                 }
             
             return View("Cadastro", model);
-           
         }
 
         [HttpGet]
@@ -67,6 +66,24 @@ namespace CameloNinja.MVC.Controllers
             repositorio.RemoverPedido(id);
             ViewBag.Mensagem = "Pedido excluído com sucesso!";
             return View("Mensagem");
+        }
+
+        [HttpGet]
+        public ActionResult Editar(int id)
+        {
+            var pedido = repositorio.ObterPedidoPorId(id);
+            PedidoModel pedidoModel = new PedidoModel
+            {
+                NomeCliente = pedido.NomeCliente,
+                NomeProduto = pedido.NomeProduto,
+                NumeroPedido = pedido.Id,
+                Cidade = pedido.Cidade,
+                DataDesejoEntrega = pedido.DataEntrega,
+                Estado = pedido.Estado,
+                TipoDePagamento = pedido.TipoPagamento,
+                ValorDeVenda = pedido.Valor
+            };
+            return View("Cadastro", pedidoModel);
         }
     }
 }

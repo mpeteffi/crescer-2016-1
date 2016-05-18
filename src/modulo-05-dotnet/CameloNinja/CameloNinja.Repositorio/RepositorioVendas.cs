@@ -36,7 +36,26 @@ namespace CameloNinja.Repositorio
             }
         }
 
-        private string ConvertePedidoEmLinhaCSV(Pedido pedido, int proximoId)
+        public void AtualizarPedido(Pedido pedido, int idParaTrocar)
+        {
+            pedido.Id = idParaTrocar;
+            var pedidos = this.ObterPedidos();
+            var indiceASerSubstituido = pedidos.FindIndex(x => x.Id == idParaTrocar);
+            pedidos[indiceASerSubstituido] = pedido;
+
+            ReescreverArquivo(pedidos);
+        }
+
+        private void ReescreverArquivo(List<Pedido> pedidos)
+        {
+            File.WriteAllText(PATH_ARQUIVO, "Número Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente");
+            foreach (var linha in pedidos)
+            {
+                File.AppendAllText(PATH_ARQUIVO, ConvertePedidoEmLinhaCSV(linha, linha.Id));
+            }
+        }
+
+        public string ConvertePedidoEmLinhaCSV(Pedido pedido, int proximoId)
         {
             return string.Format(Environment.NewLine + "{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
                                 proximoId,
@@ -51,11 +70,6 @@ namespace CameloNinja.Repositorio
                                 pedido.PedidoUrgente);
         }
 
-        public void AtualizarPedido(Pedido pedido)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Pedido> ObterPedidosFiltrados(string cliente, string produto)
         {
             var pedidos = this.ObterPedidos().Where(p =>
@@ -67,12 +81,8 @@ namespace CameloNinja.Repositorio
         public void RemoverPedido(int id)
         {
             var pedidos = ObterPedidos();
-            var pedidosNovos = pedidos.Where(pedido => pedido.Id != id);
-            File.WriteAllText(PATH_ARQUIVO, "Número Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente");
-            foreach (var linha in pedidosNovos)
-            {
-                File.AppendAllText(PATH_ARQUIVO, ConvertePedidoEmLinhaCSV(linha, linha.Id));
-            }
+            var pedidosNovos = pedidos.Where(pedido => pedido.Id != id).ToList();
+            ReescreverArquivo(pedidosNovos);
         }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
