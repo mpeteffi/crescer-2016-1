@@ -11,7 +11,7 @@ namespace CameloNinja.MVC.Models
 
         [Required(ErrorMessage = "Data de Entrega deve ser informada")]
         [DisplayName("Data de Entrega")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataDesejoEntrega { get; set; }
 
         [Required(ErrorMessage = "Nome do Produto deve ser informado")]
@@ -20,7 +20,7 @@ namespace CameloNinja.MVC.Models
 
         [Required(ErrorMessage = "Valor de venda deve ser informado")]
         [DisplayName("Valor de Venda")]
-        [DisplayFormat(DataFormatString = "{0:c}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:c}")]
         public Decimal ValorDeVenda { get; set; }
 
         [Required]
