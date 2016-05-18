@@ -37,6 +37,10 @@ body {
     margin: 108px auto 1.8% auto;
 }
 
+.login-main {
+    width: 430px !important;
+}
+
 #box {
     background: #fff;
     margin: 0 auto;
@@ -49,12 +53,6 @@ body {
     #box h2 {
         margin-top: 0px;
     }
-
-.login-main {
-    width: 70%;
-    min-width: 430px;
-    max-width: 650px;
-}
 
 a {
     text-decoration: none !important;
@@ -113,8 +111,8 @@ a {
 
     #menu a {
         font-size: 16px;
-        /*margin: 10px;
-        padding: 10px;*/
-        /*color: #333 !important;*/
-        /*border-radius: 10px;*/
     }
+
+.form-horizontal .form-group {
+    margin: 0px 0px 15px 0px;
+}

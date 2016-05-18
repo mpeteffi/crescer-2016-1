@@ -10,8 +10,8 @@ namespace CameloNinja.Repositorio
     public class RepositorioVendas
     {
         private static readonly object objetoLock = new object();
-        private const string PATH_ARQUIVO = @"C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\vendas.txt";
-        //private const string PATH_ARQUIVO = @"C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\vendas.txt";
+        //private const string PATH_ARQUIVO = @"C:\Users\murillo.peteffi\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\vendas.txt";
+        private const string PATH_ARQUIVO = @"C:\Users\Murillo\Documents\crescer-2016-1\src\modulo-05-dotnet\CameloNinja\CameloNinja.Repositorio\vendas.txt";
 
         public List<Pedido> ObterPedidos()
         {
