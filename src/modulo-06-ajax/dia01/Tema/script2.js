@@ -3,7 +3,7 @@
 $(function(){
   $('#buscar').submit(function(event){
     var nomeDaBanda = $('input[name=inputBusca]').val();
-    var douchebag = (nomeDaBanda == 'Justin Bieber' && Math.floor(Math.random() * 10) > 1); //retorna numeros de 0 a 9;
+    var douchebag = (nomeDaBanda.toLower() == 'justin bieber' && Math.floor(Math.random() * 10) > 1); //retorna numeros de 0 a 9;
     var artistAPI = "https://api.spotify.com/v1/search?q=" + nomeDaBanda + "&type=artist";
     $.ajax({ url:artistAPI, type: 'GET' })
       .done(function (res){
