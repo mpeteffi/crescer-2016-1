@@ -1,5 +1,15 @@
 ﻿'use strict';
 
+var maxID = 0;
+
+setInterval(function () {
+    $.ajax({ url: urlCavaleiroGet, type: 'GET' }).done(function (res) {
+        res.data.forEach(function (cava) {
+            if (cava.Id > maxID) { $('#cavaleiros').append($('<li>').append(cava.Nome)); maxID = cava.Id;}
+        })
+    });
+}, 5000);
+
 function carregarDadosNaPagina() {
     $.ajax({ url: urlCavaleiroGet, type: 'GET' })
     .then(
@@ -10,6 +20,7 @@ function carregarDadosNaPagina() {
                 $cavaleiros.append(
                     $('<li>').append(cava.Nome)
                 );
+                if (cava.Id >= maxID) { maxID = cava.Id;}
             });
         },
         function onError(res) {
