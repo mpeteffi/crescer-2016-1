@@ -83,7 +83,7 @@ CavaleiroIndexView.prototype.excluirCavaleiroNoServidor = function (e) {
     $(this).parent('li').remove();
 };
 
-CavaleiroIndexView.prototype.editarCavaleiroNoServidor = function(e) {
+CavaleiroIndexView.prototype.editarCavaleiroNoServidor = function (e) {
     var cavaleiroId = e.data.id;
     var self = e.data.self;
     self.cavaleiros.buscar(cavaleiroId)
@@ -152,12 +152,27 @@ function simularAtualizacaoHardCoded() {
 setInterval(function () {
     $.get('/Cavaleiro/Get')
         .done(function onSuccess(res) {
-        res.data.forEach(function (cava) {
-            if (cava.Id > maiorIdCavaleiroNaTela)
-            {
-                $('#cavaleiros').append(_CavaleiroIndexDoMacroCosmos.criarHtmlCavaleiro(cava));
-                maiorIdCavaleiroNaTela = cava.Id;
-            }
-        })
-    });
+            var qtdNovos = 0;
+            res.data.forEach(function (cava) {
+                if (cava.Id > maiorIdCavaleiroNaTela) {
+                    $('#cavaleiros').append(_CavaleiroIndexDoMacroCosmos.criarHtmlCavaleiro(cava));
+                    maiorIdCavaleiroNaTela = cava.Id;
+                    qtdNovos++;
+                }
+            })
+            if (qtdNovos != 0) { notificarAoAtualizar(qtdNovos); }
+        });
 }, 5000);
+
+function notificarAoAtualizar(qtdNovos) {
+    Notification.requestPermission().then(function (result) {
+        console.log(result);
+        if (result === 'granted') {
+            var options = {
+                body: qtdNovos + ' novos cavaleiros encontrados!',
+                icon: 'https://cloud.githubusercontent.com/assets/18291019/15457293/679b63a2-205d-11e6-9477-028205e13d44.png'
+            }
+            new Notification('', options);
+        }
+    });
+};
