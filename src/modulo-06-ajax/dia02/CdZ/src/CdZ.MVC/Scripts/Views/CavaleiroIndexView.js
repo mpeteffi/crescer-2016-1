@@ -80,6 +80,7 @@ CavaleiroIndexView.prototype.excluirCavaleiroNoServidor = function (e) {
         .done(function (res) {
             self.successToast.show('Excluído com sucesso!');
         });
+    $(this).parent('li').remove();
 };
 
 CavaleiroIndexView.prototype.editarCavaleiroNoServidor = function(e) {
