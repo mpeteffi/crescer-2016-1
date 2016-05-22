@@ -1,5 +1,8 @@
 ﻿'use strict';
 
+var _CavaleiroIndexDoMacroCosmos = new CavaleiroIndexView;
+var maiorIdCavaleiroNaTela = 0;
+
 function CavaleiroIndexView(options) {
     options = options || {};
     this.errorToast = options.errorToast;
@@ -25,6 +28,7 @@ CavaleiroIndexView.prototype.render = function () {
                     self.cavaleirosUi.append(
                         self.criarHtmlCavaleiro(cava)
                     );
+                    if (cava.Id > maiorIdCavaleiroNaTela) { maiorIdCavaleiroNaTela = cava.Id; }
                 });
             },
             function onError(res) {
@@ -143,3 +147,16 @@ function simularAtualizacaoHardCoded() {
         cavaleiroHardCoded.Imagens[1].IsThumb = false;
     }
 };
+
+setInterval(function () {
+    $.get('/Cavaleiro/Get')
+        .done(function onSuccess(res) {
+        res.data.forEach(function (cava) {
+            if (cava.Id > maiorIdCavaleiroNaTela)
+            {
+                $('#cavaleiros').append(_CavaleiroIndexDoMacroCosmos.criarHtmlCavaleiro(cava));
+                maiorIdCavaleiroNaTela = cava.Id;
+            }
+        })
+    });
+}, 5000);
