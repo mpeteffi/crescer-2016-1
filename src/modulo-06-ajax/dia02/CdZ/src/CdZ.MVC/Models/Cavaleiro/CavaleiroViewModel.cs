@@ -14,6 +14,7 @@ namespace CdZ.MVC.Models.Cavaleiro
         public double AlturaCm { get; set; }
         public double PesoLb { get; set; }
         public string DataNascimento { get; set; }
+
         // Esta annotation [ScriptIgnore] é para "não enviar este campo no JSON"
         [ScriptIgnore]
         public DateTime DataNascimentoObj

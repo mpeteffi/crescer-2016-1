@@ -48,6 +48,6 @@ namespace CdZ.Repositorio.EF
             modelBuilder.Entity<Cavaleiro>().HasMany(_ => _.Imagens).WithRequired();
             base.OnModelCreating(modelBuilder);
         }
-
+        
     }
 }
