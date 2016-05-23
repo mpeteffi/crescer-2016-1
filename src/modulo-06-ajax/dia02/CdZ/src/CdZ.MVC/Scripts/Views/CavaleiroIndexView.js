@@ -38,7 +38,7 @@ CavaleiroIndexView.prototype.render = function () {
 
     // 2 - Registra evento de clique para inserção do cavaleiro fake
     // TODO - remover quando colocar o bind dos campos do formulário
-    $('#btnCriar').click(function () {
+    $('#btnCriarFake').click(function () {
         self.cavaleiros.inserir(cavaleiroHardCoded).done(function (res) {
             // Aqui estamos otendo os detalhes atualizados do cavaleiro recém inserido.
             // Notem o custo de fazer toda separação conceitual (uma action para cada tipo de operação no banco, etc).
