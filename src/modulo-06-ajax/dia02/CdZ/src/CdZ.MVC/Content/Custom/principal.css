@@ -16,3 +16,17 @@
 .erro {
     color: red;
 }
+
+#cavaleiros li {
+    list-style-type: none;
+    margin: 15px 0px;
+}
+
+#cavaleiros > li > img {
+    height: 150px;
+} 
+
+#cavaleiros button:first-of-type {
+    margin-top:5px;
+    margin-left: 15px;
+}

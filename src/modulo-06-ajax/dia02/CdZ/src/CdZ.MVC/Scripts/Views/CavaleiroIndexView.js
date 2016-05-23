@@ -25,8 +25,9 @@ CavaleiroIndexView.prototype.render = function () {
         .then(
             function onSuccess(res) {
                 res.data.forEach(function (cava) {
+                    var img = procurarThumb(cava.Imagens);
                     self.cavaleirosUi.append(
-                        self.criarHtmlCavaleiro(cava)
+                        self.criarHtmlCavaleiro(cava, img.Url)
                     );
                     if (cava.Id > maiorIdCavaleiroNaTela) { maiorIdCavaleiroNaTela = cava.Id; }
                 });
@@ -51,8 +52,15 @@ CavaleiroIndexView.prototype.render = function () {
     });
 };
 
-CavaleiroIndexView.prototype.criarHtmlCavaleiro = function (cava) {
+function procurarThumb(arrayDeImagem) {
+    return arrayDeImagem.filter(function (i) {
+        return i.IsThumb;
+    })[0];
+}
+
+CavaleiroIndexView.prototype.criarHtmlCavaleiro = function (cava, imgUrl) {
     return $('<li>')
+        .append($('<img>').attr('src', imgUrl)).append('<br>')
         .append(cava.Nome)
         .append(
             $('<button>')
