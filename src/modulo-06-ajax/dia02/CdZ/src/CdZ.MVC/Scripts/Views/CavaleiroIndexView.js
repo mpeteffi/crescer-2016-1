@@ -163,7 +163,8 @@ setInterval(function () {
             var qtdNovos = 0;
             res.data.forEach(function (cava) {
                 if (cava.Id > maiorIdCavaleiroNaTela) {
-                    $('#cavaleiros').append(_CavaleiroIndexDoMacroCosmos.criarHtmlCavaleiro(cava));
+                    var img = procurarThumb(cava.Imagens)
+                    $('#cavaleiros').append(_CavaleiroIndexDoMacroCosmos.criarHtmlCavaleiro(cava, img.Url));
                     maiorIdCavaleiroNaTela = cava.Id;
                     qtdNovos++;
                 }
@@ -176,8 +177,9 @@ function notificarAoAtualizar(qtdNovos) {
     Notification.requestPermission().then(function (result) {
         console.log(result);
         if (result === 'granted') {
+            var frase = qtdNovos > 1 ? ' novos cavaleiros encontrados!' : ' novo cavaleiro encontrado!';
             var options = {
-                body: qtdNovos + ' novos cavaleiros encontrados!',
+                body: qtdNovos + frase,
                 icon: 'https://cloud.githubusercontent.com/assets/18291019/15457293/679b63a2-205d-11e6-9477-028205e13d44.png'
             }
             new Notification('', options);
