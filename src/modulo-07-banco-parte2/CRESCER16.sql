@@ -1,4 +1,4 @@
---Exercicio 01
+--Exercicio 01 - Liste os clientes e suas respectivas cidades. 
 
 SELECT 
   Cli.IDCLIENTE, 
@@ -9,7 +9,7 @@ FROM Cliente Cli
 JOIN Cidade Cid on Cli.IDCIDADE = Cid.IDCIDADE;
 
 
--- Exercicio 02
+-- Exercicio 02 - Liste o total de pedidos realizados no mês de maio de 2016. 
 
 SELECT
   COUNT(1)
@@ -17,7 +17,7 @@ FROM Pedido Ped
 WHERE Ped.DATAPEDIDO between TO_DATE('01-05-2016') and TO_DATE('31-05-2016');
 
 
--- Exercicio 03
+-- Exercicio 03 - Liste todos os clientes que tenham o LTDA no nome ou razao social.
 
 SELECT
   Cli.IDCLIENTE,
@@ -28,7 +28,7 @@ WHERE Cli.NOME like '%ltda%'
   or Cli.RAZAOSOCIAL like '%ltda%';
   
   
--- Exercicio 04
+-- Exercicio 04 - Crie (insira) um novo registro na tabela de Produto, com as seguintes informações: Nome: Galocha Maragato Preço de custo: 35.67 Preço de venda: 77.95 Situação: A  
 
 CREATE SEQUENCE SQPRODUTO START WITH 8001;
 
@@ -40,7 +40,7 @@ VALUES
 COMMIT;
 
 
--- Exercicio 05 - Identifique e liste os produtos que nÃ£o tiveram nenhum pedido, considere os relacionamentos no modelo de dados, pois nÃ£o hÃ¡ relacionamento direto entre Produto e Pedido (serÃ¡ preciso relacionar PedidoItem). 
+-- Exercicio 05 - Identifique e liste os produtos que não tiveram nenhum pedido, considere os relacionamentos no modelo de dados, pois não há relacionamento direto entre Produto e Pedido (será preciso relacionar PedidoItem). 
 
 SELECT 
   NOME
