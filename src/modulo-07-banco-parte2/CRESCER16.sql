@@ -68,7 +68,7 @@ INNER JOIN PRODUTO Pro on peit.IDPRODUTO = Pro.IDPRODUTO
 WHERE Cli.IDCLIENTE = :pIDCLIENTE;
 
 
--- Exercicio 07 - 
+-- Exercicio 07 - Faça uma consulta que receba um parâmetro sendo o IDProduto e liste a quantidade de itens na tabela PedidoItem com este IDProduto foram vendidos no último ano (desde janeiro/2016). 
 
 SELECT 
   sum(quantidade)
@@ -77,3 +77,18 @@ INNER JOIN Pedido Ped on Ped.IDPEDIDO = Peit.IDPEDIDO
 WHERE Peit.IDPRODUTO = :pIDPRODUTO
 and Ped.DATAPEDIDO >= to_date('01/2016', 'mm/yyyy');
 
+
+-- Exercicio 08 - Utilizando de funções de agrupamento (aggregation function), faça uma consulta que liste agrupando por ano e mês a quantidade de pedidos comprados, a quantidade de produtos distintos comprados, o valor total dos pedidos, o menor valor de um pedido, o maior valor de um pedido e valor médio de um pedido. 
+
+SELECT
+  TO_CHAR(ped.DATAPEDIDO, 'mm/yyyy') ANO_MES,
+  COUNT(distinct item.IDPRODUTO) as Distintos,
+  SUM(ped.VALORPEDIDO) as Valor_Pedido,
+  MIN(ped.VALORPEDIDO) as MIN_Pedido,
+  MAX(ped.VALORPEDIDO) as MAX_Pedido,
+  round(AVG(ped.VALORPEDIDO),2) as MEDIA_Pedido,
+  COUNT(distinct ped.IDPEDIDO) as Total_Pedidos
+FROM PEDIDO ped
+INNER JOIN PEDIDOITEM item on item.IDPEDIDO = ped.IDPEDIDO
+GROUP BY TO_CHAR(ped.DATAPEDIDO, 'mm/yyyy');
+  
