@@ -38,3 +38,18 @@ VALUES
   (SQPRODUTO.NEXTVAL,'Galocha Maragato', 35.67, 77.95, 'A');
   
 COMMIT;
+
+
+-- Exercicio 05 - Identifique e liste os produtos que não tiveram nenhum pedido, considere os relacionamentos no modelo de dados, pois não há relacionamento direto entre Produto e Pedido (será preciso relacionar PedidoItem). 
+
+SELECT 
+  NOME
+FROM PRODUTO Pro
+WHERE Pro.IDPRODUTO NOT IN (
+  SELECT 
+    pro.IDPRODUTO
+  FROM PRODUTO pro
+  JOIN PEDIDOITEM peit on peit.IDPRODUTO = pro.IDPRODUTO
+);
+
+
