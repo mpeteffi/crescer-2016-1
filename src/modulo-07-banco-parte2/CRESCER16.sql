@@ -53,3 +53,19 @@ WHERE Pro.IDPRODUTO NOT IN (
 );
 
 
+-- Exercicio 06 - Liste todos os pedidos de um determinado cliente, considere que sempre que for executar esta consulta será informado o IDCliente como parâmetro. Deverão ser listados: Data do Pedido, Produto, Quantide, Valor Unitário, e valor total. 
+
+SELECT 
+  Ped.DATAPEDIDO, 
+  Pro.NOME, 
+  Peit.QUANTIDADE, 
+  Pro.PRECOVENDA as Valor_Unitario, 
+  Ped.VALORPEDIDO as Valor_Total
+FROM CLIENTE Cli
+INNER JOIN PEDIDO Ped on Cli.IDCLIENTE = Ped.IDCLIENTE
+INNER JOIN PEDIDOITEM Peit on ped.IDPEDIDO = Peit.IDPEDIDO
+INNER JOIN PRODUTO Pro on peit.IDPRODUTO = Pro.IDPRODUTO
+WHERE Cli.IDCLIENTE = :pIDCLIENTE;
+
+
+-- Exercicio 07 - 
