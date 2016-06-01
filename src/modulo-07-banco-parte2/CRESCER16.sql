@@ -69,3 +69,11 @@ WHERE Cli.IDCLIENTE = :pIDCLIENTE;
 
 
 -- Exercicio 07 - 
+
+SELECT 
+  sum(quantidade)
+FROM PedidoItem Peit
+INNER JOIN Pedido Ped on Ped.IDPEDIDO = Peit.IDPEDIDO
+WHERE Peit.IDPRODUTO = :pIDPRODUTO
+and Ped.DATAPEDIDO >= to_date('01/2016', 'mm/yyyy');
+
