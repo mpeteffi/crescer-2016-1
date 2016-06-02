@@ -35,7 +35,7 @@ BEGIN
 end;
 
 
--- Exercicio 02 - 
+-- Exercicio 02 - Faça um bloco PL/SQL que receba DOIS parâmetros (em tempo de execução apenas): nome e uf, verifique se já existe um registro em Cidade para a combinação, caso não exista faça um INSERT na tabela de Cidade.
 
 DECLARE
   vNomeCidade varchar2;
@@ -51,9 +51,8 @@ BEGIN
     and UF = :pvUF;
     
   if (vQuantidade = 0) then 
-    Insert into Cidade (IdCidade, Nome, UF)
-      Values (SQCIDADE.nextval, vNomeCidade, vUF);
+    Insert into Cidade (NOME, UF) Values (vNomeCidade, vUf);
   else 
-  DBMS_OUTPUT.PUT_LINE('Cidade e UF já existem.'); 
+    DBMS_OUTPUT.PUT_LINE('Cidade e UF já existem.'); 
   End if;
 End;
