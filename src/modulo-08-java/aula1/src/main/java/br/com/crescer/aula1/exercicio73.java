@@ -1,8 +1,6 @@
 package br.com.crescer.aula1;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -13,8 +11,7 @@ public class exercicio73 {
     
     public static void main (String[] args) {
         
-        final List<Estados> lista = Arrays.asList(Estados.values());
-        lista.sort();        
+        final List<Estados> lista = Arrays.asList(Estados.values());      
         
         StringBuffer listaOrdenada = new StringBuffer("");
         
@@ -27,6 +24,5 @@ public class exercicio73 {
         System.out.println(listaOrdenada);
         
     }
-    
 }
 
