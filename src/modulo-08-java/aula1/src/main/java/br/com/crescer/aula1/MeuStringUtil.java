@@ -20,8 +20,8 @@ public class MeuStringUtil {
         
         int quantidadeVogais = 0;
         String vogais = "aeiou";
-        for(int i = 0; i < aString.length(); i++){
-            if(vogais.indexOf(aString.charAt(i)) >= 0){
+        for(char c : aString.toLowerCase().toCharArray()){
+            if(vogais.indexOf(c) >= 0){
                 quantidadeVogais++;
             }
         }
