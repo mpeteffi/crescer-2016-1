@@ -54,7 +54,7 @@ public class MeuCalendarioUtilTest {
     public void tempoDecorrido() {
         Date data = new GregorianCalendar(2016, 4, 8).getTime();
         MeuCalendarioUtil instance = new MeuCalendarioUtil();
-        String expResult = "Já se passaram 0 Anos 1 meses e 0 dias.";
+        String expResult = "Já se passaram 0 Anos 1 meses e 1 dias.";
         String result = instance.tempoDecorrido(data);
         assertEquals(expResult, result);
     }
