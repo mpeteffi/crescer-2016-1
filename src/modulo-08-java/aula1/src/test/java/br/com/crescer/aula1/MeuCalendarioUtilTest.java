@@ -52,11 +52,11 @@ public class MeuCalendarioUtilTest {
     
     @Test
     public void tempoDecorrido() {
-        //DateTime data = new DateTime();
-        //MeuCalendarioUtil instance = new MeuCalendarioUtil();
-        //String expResult = "aaa";
-        //String result = instance.tempoDecorrido(data);
-        //assertEquals(new Date(), data.getDay());
+        Date data = new GregorianCalendar(2016, 4, 8).getTime();
+        MeuCalendarioUtil instance = new MeuCalendarioUtil();
+        String expResult = "Já se passaram 0 Anos 1 meses e 0 dias.";
+        String result = instance.tempoDecorrido(data);
+        assertEquals(expResult, result);
     }
     
 }

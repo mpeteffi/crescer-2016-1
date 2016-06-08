@@ -1,6 +1,8 @@
 package br.com.crescer.aula1;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * @author Murillo
@@ -20,24 +22,23 @@ public class MeuCalendarioUtil {
     
     public String tempoDecorrido(Date data){
     
-        /* stackoverflow.com/questions/13084651/java-method-to-find-difference-between-2-date-objects-in-years-months-and-days */
-        //Date dataAtual = new Date();        
-        //long diferenca = dataAtual.getTime() - data.getTime();
+        /* stackoverflow.com/questions/16558898/get-difference-between-two-dates-in-months-using-java */
+        Calendar inicioContagem = new GregorianCalendar();
+        inicioContagem.setTime(data);
+        Calendar dataAtual = new GregorianCalendar();
+        dataAtual.setTime(new Date());
 
-        //Date resultado = new Date(diferenca);
-        //SimpleDateFormat d = new SimpleDateFormat("dd");
-        //SimpleDateFormat m = new SimpleDateFormat("MM");
-        //SimpleDateFormat a = new SimpleDateFormat("yy");
-        
-        //String dia = d.format(resultado);
-        //String mes = m.format(resultado);
-        //String ano = a.format(resultado);
-        
-        //return new StringBuilder("Já se passaram ")
-                //.append(ano).append(" Anos ")
-                //.append(mes).append(" meses e ")
-                //.append(dia).append(" dias.")
-                //.toString();
+        int ano = dataAtual.get(Calendar.YEAR) - inicioContagem.get(Calendar.YEAR);
+        int mes = dataAtual.get(Calendar.MONTH) - inicioContagem.get(Calendar.MONTH);
+        int dia = dataAtual.get(Calendar.DAY_OF_MONTH) - inicioContagem.get(Calendar.DAY_OF_MONTH);
+        if(dia < 0){ mes--; dia = 30 - dia; }
+        if(mes < 0){ ano--; mes = 12 - mes; }
+                
+        return new StringBuilder("Já se passaram ")
+                .append(ano).append(" Anos ")
+                .append(mes).append(" meses e ")
+                .append(dia).append(" dias.")
+                .toString();
     }    
 }
 
