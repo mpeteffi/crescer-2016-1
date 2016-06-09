@@ -4,9 +4,8 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import static java.util.Arrays.asList;
 
 /**
  * @author Murillo
@@ -14,7 +13,7 @@ import java.util.List;
 public class MeuWriterUtils {
     
     public static void main(String[] args){
-        List<String> texto = new ArrayList<>(Arrays.asList("abc", "def", "teste", "linha4"));
+        List<String> texto = asList("abc", "def", "teste", "linha4");
         escrever("aula.txt", texto);
         
         MeuReaderUtils.exibirConteudo("aula.txt");
