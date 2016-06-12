@@ -40,9 +40,7 @@ public class Cidade implements Serializable  {
     }
     
     public Cidade(long id, String nome, String uf) {
-        this.id = id;
-        this.nome = nome;
-        this.uf = uf;
+        this(nome, uf);
     }
     
     public long getId() {
