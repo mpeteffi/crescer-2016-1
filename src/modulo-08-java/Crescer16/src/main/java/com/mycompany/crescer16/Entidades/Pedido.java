@@ -23,6 +23,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "PEDIDO")
 public class Pedido implements Serializable {
+    
     @Id 
     @GeneratedValue(strategy = SEQUENCE, generator = "SQPEDIDO")
     @SequenceGenerator(name = "SQPEDIDO", sequenceName = "SQPEDIDO", allocationSize = 1)

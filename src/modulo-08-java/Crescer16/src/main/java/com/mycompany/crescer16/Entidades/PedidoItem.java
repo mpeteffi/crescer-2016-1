@@ -18,6 +18,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PEDIDOITEM")
 public class PedidoItem implements Serializable {
+    
     @Id 
     @GeneratedValue(strategy = SEQUENCE, generator = "SQPEDIDOITEM")
     @SequenceGenerator(name = "SQPEDIDOITEM", sequenceName = "SQPEDIDOITEM", allocationSize = 1)

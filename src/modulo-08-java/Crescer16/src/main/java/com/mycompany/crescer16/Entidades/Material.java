@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "MATERIAL")
 public class Material implements Serializable{
+    
     @Id 
     @GeneratedValue(strategy = SEQUENCE, generator = "SQPEDIDO")
     @SequenceGenerator(name = "SQPEDIDO", sequenceName = "SQPEDIDO", allocationSize = 1)
