@@ -1,6 +1,6 @@
 package br.com.crescer.entity;
 
-import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +11,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author Carlos H. Nonnemacher
@@ -34,6 +36,11 @@ public class Pessoa extends SerializableID<Long> {
     @Column(name = "NM_PESSOA")
     private String nome;
 
+    @Temporal(TemporalType.DATE)
+    @Basic(optional = false)
+    @Column(name = "DT_NASCIMENTO_PESSOA")
+    private Date nascimento;
+
     @Override
     public Long getId() {
         return id;
@@ -49,6 +56,14 @@ public class Pessoa extends SerializableID<Long> {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Date getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
     }
 
 }

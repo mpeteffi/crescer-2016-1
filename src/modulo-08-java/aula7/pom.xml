@@ -9,6 +9,15 @@
     <artifactId>aula6</artifactId>
     <packaging>pom</packaging>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+            </plugin>
+        </plugins>
+    </build>
+    
     <modules>
         <module>crescer-web</module>
         <module>crescer-entity</module>
