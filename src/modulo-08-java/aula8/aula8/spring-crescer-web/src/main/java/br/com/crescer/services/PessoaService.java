@@ -19,5 +19,4 @@ public class PessoaService {
         p.setNascimento(new Date());
         return Stream.of(p).collect(Collectors.toList());
     }
-
 }
