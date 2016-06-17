@@ -12,6 +12,7 @@
         <module>aula4</module>
         <module>aula5</module>
         <module>aula6</module>
+        <module>aula8/aula8</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
