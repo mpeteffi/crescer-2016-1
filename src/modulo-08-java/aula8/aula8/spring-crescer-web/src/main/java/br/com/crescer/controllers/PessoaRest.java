@@ -29,7 +29,7 @@ public class PessoaRest {
         return service.save(p);
     }
 
-    @RequestMapping("/delete")
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public void delete(Long id) {
         service.delete(id);
     }
