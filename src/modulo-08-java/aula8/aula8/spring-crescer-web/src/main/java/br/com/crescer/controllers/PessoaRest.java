@@ -1,13 +1,11 @@
 package br.com.crescer.controllers;
 
+import br.com.crescer.entity.Pessoa;
 import br.com.crescer.services.PessoaService;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,18 +13,24 @@ import org.springframework.web.bind.annotation.RestController;
  * @author murillo.peteffi
  */
 @RestController
+@RequestMapping("/rest/pessoa")
 public class PessoaRest {
 
     @Autowired
-    PessoaService pessoaService;
-    
-    @RequestMapping(value = "/current_date_time_2")
-    public Date date() {
-        return new Date();
+    PessoaService service;
+
+    @RequestMapping(method = RequestMethod.GET)
+    public Iterable<Pessoa> list() {
+        return service.findAll();
     }
-    
-    @RequestMapping("/pessoa")
-    public List<Pessoa> list() {
-        return pessoaService.list();
-    }      
+
+    @RequestMapping(method = RequestMethod.POST)
+    public Pessoa save(@RequestBody Pessoa p) {
+        return service.save(p);
+    }
+
+    @RequestMapping("/delete")
+    public void delete(Long id) {
+        service.delete(id);
+    }
 }
