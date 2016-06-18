@@ -1,39 +1,38 @@
 package br.com.crescer.controllers;
 
+import br.com.crescer.entity.Pessoa;
+import br.com.crescer.services.PessoaService;
 import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author murillo.peteffi
  */
 @Controller
-public class Example {
-
-    @RequestMapping(value = "/Example")
-    String toIndex(@RequestParam(required = false) String name, Model model) {
-        model.addAttribute("name", name != null ? name : "Murillo");
+@RequestMapping("/pessoa")
+public class PessoaController {
+    
+    @Autowired
+    PessoaService service;
+    
+    @RequestMapping(method = RequestMethod.GET)
+    public String list(Model model) {
+        model.addAttribute("pessoa", new Pessoa());
+        model.addAttribute("pessoas", service.findAll());
         return "index";
     }
     
-    @ResponseBody
-    @RequestMapping(value = "/current_date_time")
-    public Date date() {
-        return new Date();
-    }
-    
-    @ResponseBody
-    @RequestMapping(value = "/pessoa.json", method = RequestMethod.POST)
-    public List<Pessoa> list(@RequestBody Pessoa p) {
-        p.setNascimento(new Date());
-        return Stream.of(p).collect(Collectors.toList());
+    @RequestMapping(method = RequestMethod.POST)
+    public String save(@ModelAttribute Pessoa p, Model model) {
+        if (p.getNascimento() == null) {
+            p.setNascimento(new Date());
+        }
+        service.save(p);
+        return list(model);
     }
 }
