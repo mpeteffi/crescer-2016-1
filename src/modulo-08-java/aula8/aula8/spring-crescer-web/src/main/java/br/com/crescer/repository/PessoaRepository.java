@@ -1,10 +1,10 @@
 package br.com.crescer.repository;
 
-import br.com.crescer.controllers.Pessoa;
+import br.com.crescer.entity.Pessoa;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * @author murillo.peteffi
+ * @author Murillo
  */
 public interface PessoaRepository extends CrudRepository<Pessoa, Long> {
 
