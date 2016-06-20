@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -34,5 +35,14 @@ public class PessoaController {
         }
         service.save(p);
         return list(model);
+    }
+    
+    @RequestMapping(value = "/append", method = RequestMethod.GET)
+    public String appendPessoa(Long id, String nome, Model model) {
+        Pessoa p = new Pessoa();  
+        p.setNome(nome);
+        p.setId(id);
+        model.addAttribute("pessoa", p);
+        return "append";
     }
 }
