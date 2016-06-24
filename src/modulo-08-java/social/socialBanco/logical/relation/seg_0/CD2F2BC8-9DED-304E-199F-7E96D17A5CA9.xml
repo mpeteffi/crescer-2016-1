@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PerfilPublicacao" directorySegmentName="seg_0" id="CD2F2BC8-9DED-304E-199F-7E96D17A5CA9">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:26:09 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<sourcePk>2ED20C8B-25B7-E6F0-9786-6EC57A60DF9A</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C760C6E3-6FAF-367F-78B4-7E0A1DBD2FDA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>EACE326C-D45A-616E-6706-FBC74A44ED93</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

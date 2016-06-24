@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PerfilSolicitacao" directorySegmentName="seg_0" id="3DCB31B0-2FA8-A1B9-E588-A67FF678234A">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:27:39 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<sourcePk>2ED20C8B-25B7-E6F0-9786-6EC57A60DF9A</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C760C6E3-6FAF-367F-78B4-7E0A1DBD2FDA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C264E262-50C1-DEA2-05D5-DD4A911B79DA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

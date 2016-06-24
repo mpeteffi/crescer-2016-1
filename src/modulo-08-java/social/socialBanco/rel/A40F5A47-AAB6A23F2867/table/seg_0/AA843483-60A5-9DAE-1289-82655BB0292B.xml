@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AA843483-60A5-9DAE-1289-82655BB0292B" name="Relacionamento">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>3B8C96A4-7655-A281-CBDC-B94C82C64101</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_relacionamento" id="A36511AA-DA5C-A665-CA1C-BF6805331319">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>893093C2-2020-669E-9D40-7F61098B6D5D</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_relacionamento" id="9F6DB1A5-DA74-E401-9B26-F8CEC28FDF52">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>39534947-4606-5782-0775-355D81FDC50C</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_perfil" id="78DB04DC-3177-4856-1E55-51F40BD7C2A5">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>F9E00A90-7DD3-EE6E-BF65-F4BC771B96F5</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0028F80-4177-B013-C591-5C411BE02426" referredColumn="45DF4E37-DC95-612B-E6FC-929DDDDE48BB"/>
+</associations>
+</Column>
+<Column name="id_perfil_relacionamento" id="A79FDD03-4ADA-A245-8CB8-160010D21F4C">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 18:26:23 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="51B4B5A9-3AC4-1A5E-3F40-DEFAE48505A2" referredColumn="45DF4E37-DC95-612B-E6FC-929DDDDE48BB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5DED7387-8E16-C97C-2BA0-4A60CDED582E" name="Relacionamento_PK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>FB5FCA6C-EB02-6D4B-FD8C-24D069F598E6</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A36511AA-DA5C-A665-CA1C-BF6805331319"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="474DA9E7-AB1D-A620-F498-679FA9C0FE43" name="Relacionamento_Perfil_FK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>D47BDCD8-2A39-D5F8-995D-779EC06B0FAC</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="78DB04DC-3177-4856-1E55-51F40BD7C2A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7DF6E614-2A15-6B01-86A0-0EF923F826BA" name="id_perfil_relacionamento">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 18:26:23 UTC</createdTime>
+<generatorID>2ED20C8B-25B7-E6F0-9786-6EC57A60DF9A</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A79FDD03-4ADA-A245-8CB8-160010D21F4C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

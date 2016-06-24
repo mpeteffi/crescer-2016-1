@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1CF11D86-7CED-B89E-B579-F9F8332D9CC5" name="Pessoa">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>E0C5B687-5101-AAD3-F863-8871F3566882</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pessoa" id="64F7F115-7F07-B9E0-E774-DB7FD0646DDB">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>42F3A080-1256-A0EE-2B80-20963A5740E1</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_pessoa" id="1A669667-892A-E38B-867A-DA88C410F4FF">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>DBCF1DF2-380D-2A48-4479-ABBE50BC3A66</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_nasc_pessoa" id="414531BD-9455-0B41-58EA-FAC758E6E56C">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>4E1F6C0E-441F-6056-0FDD-3F5AC7785AC1</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tp_sexo_pessoa" id="9C0B441F-6C34-1114-6A16-1FE5B38ABBF9">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>C5C2A042-9AF8-6967-B1CE-156DE8A5065E</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="imagem" id="146FFBF2-54EE-C7B5-BDAA-BAA22EC706DF">
+<createdBy>Murillo</createdBy>
+<createdTime>2016-06-22 03:01:12 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>400</dataTypeSize>
+<ownDataTypeParameters>400,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0E4952FA-E84F-3365-14FE-ABCFC3E85E79" name="Pessoa_PK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>DF2FC060-BA74-8226-50F0-6C09F251D65F</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64F7F115-7F07-B9E0-E774-DB7FD0646DDB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

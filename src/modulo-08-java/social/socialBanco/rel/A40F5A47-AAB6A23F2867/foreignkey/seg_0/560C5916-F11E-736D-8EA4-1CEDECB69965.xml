@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="560C5916-F11E-736D-8EA4-1CEDECB69965" containerWithKeyObject="6D42728B-CD41-F5F0-BC35-7E36F7709299" localFKIndex="0EFB249E-8F97-BFC4-A172-09B84EC7AD87" name="PublicacaoLike_Publicacao_FK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>2F41B071-42D8-93A9-101C-F9DE93941A17</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FEC31A9C-872F-73B2-6D10-2F0065C6E2A0</referredTableID>
+<keyObject>80E3F2E0-938E-1A91-6FDD-8FE745A903EC</keyObject>
+<referredKeyID>80E3F2E0-938E-1A91-6FDD-8FE745A903EC</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

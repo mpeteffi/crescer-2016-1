@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BAB44ACC-B8E7-C542-B0E0-0C2E246C51D9" name="PublicacaoLike">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:20:06 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDPublicacaoLike" id="D879078D-CD44-8B7A-B137-71E9AD949CF6">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:20:36 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDPublicacao" id="FDF0291E-7EBF-4707-1882-ED2578FB4718">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:08 UTC</createdTime>
+<generatorID>2F41B071-42D8-93A9-101C-F9DE93941A17</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<referedAttribute>7955FAAA-0DB3-2BAF-B27B-3DD39BFDB694</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="67A4A159-5B94-A54D-A87B-13DB96C36CAB" name="PublicacaoLike PK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:20:47 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D879078D-CD44-8B7A-B137-71E9AD949CF6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

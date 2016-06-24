@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C760C6E3-6FAF-367F-78B4-7E0A1DBD2FDA" name="Perfil">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:13:43 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDPerfil" id="E59A8977-45C2-DC26-01EC-D04B4A2F1A91">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:13:51 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Email" id="B5F36118-9422-B58D-4966-F982314C89FE">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:14:17 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Senha" id="3F5D70F0-6FA8-989D-F1D3-D7B5CFDACF89">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:14:45 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDPessoa" id="DB4F7698-6E72-4703-94E1-9C0C80BBE7A8">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:23:13 UTC</createdTime>
+<generatorID>409CA387-795D-53C1-2948-25B726DDEBEC</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<referedAttribute>42F3A080-1256-A0EE-2B80-20963A5740E1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2ED20C8B-25B7-E6F0-9786-6EC57A60DF9A" name="Perfil PK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:14:01 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E59A8977-45C2-DC26-01EC-D04B4A2F1A91</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

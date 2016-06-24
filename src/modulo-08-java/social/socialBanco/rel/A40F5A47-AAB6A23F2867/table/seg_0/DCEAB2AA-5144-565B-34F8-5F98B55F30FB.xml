@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DCEAB2AA-5144-565B-34F8-5F98B55F30FB" name="PublicacaoConteudo">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:35:17 UTC</createdTime>
+<generatorID>2849E673-65FF-A18D-D4DE-8B352095D158</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_publicacao_conteudo" id="998AF557-C7EC-66A4-9D17-7F3AAD10C826">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:35:17 UTC</createdTime>
+<generatorID>01EBC702-61FC-31ED-1C40-8DDC3989E066</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="conteudo" id="CE30C745-7E04-6582-AA18-A95A9B7F7955">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:35:17 UTC</createdTime>
+<generatorID>786ED5AE-7E7C-F54D-B392-46D7316A8AAF</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>400</dataTypeSize>
+<ownDataTypeParameters>400,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="imagem" id="1C4B738E-73A0-33D5-35E7-1B95C0412F62">
+<createdBy>murillo.peteffi</createdBy>
+<createdTime>2016-06-21 18:41:33 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>400</dataTypeSize>
+<ownDataTypeParameters>400,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_publicacao" id="4AA93617-D892-6294-9072-B71A4E316570">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:35:17 UTC</createdTime>
+<generatorID>B9040BAE-BB1D-FE1D-7665-C30D03E1286C</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9E532E76-381B-B341-49D2-4090EF48CE4C" referredColumn="CB322938-E766-51A4-18D0-CD0ADB05B57D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="74FC69FA-8765-93EB-C3FB-04A5B40DE86F" name="PublicacaoConteudo_PK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:35:17 UTC</createdTime>
+<generatorID>0D60B419-8D37-1E5A-BA3D-818090C87386</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="998AF557-C7EC-66A4-9D17-7F3AAD10C826"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8AF9EF76-C948-C1DD-0D49-552B24EE864F" name="PublicacaoConteudo__IDX">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:35:18 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>7EAE212C-5094-7931-AD5C-CE28D515F1A6</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="4AA93617-D892-6294-9072-B71A4E316570"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="15402664-D0E9-73A0-4FC9-4CF55F76F982" name="Conteudo_Publicacao_FK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:35:18 UTC</createdTime>
+<generatorID>7EAE212C-5094-7931-AD5C-CE28D515F1A6</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4AA93617-D892-6294-9072-B71A4E316570"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

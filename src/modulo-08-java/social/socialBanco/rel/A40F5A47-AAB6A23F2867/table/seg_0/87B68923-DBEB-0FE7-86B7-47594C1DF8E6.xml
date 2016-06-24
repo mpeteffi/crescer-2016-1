@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="87B68923-DBEB-0FE7-86B7-47594C1DF8E6" name="Perfil">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>C760C6E3-6FAF-367F-78B4-7E0A1DBD2FDA</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_perfil" id="45DF4E37-DC95-612B-E6FC-929DDDDE48BB">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>E59A8977-45C2-DC26-01EC-D04B4A2F1A91</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_email" id="5CF5CBAF-B284-7808-EB77-45673C302AB1">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>B5F36118-9422-B58D-4966-F982314C89FE</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_senha" id="8689C68A-28A7-EDCB-EC65-42A986C39323">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>3F5D70F0-6FA8-989D-F1D3-D7B5CFDACF89</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_pessoa" id="32FAAB93-4BC1-465F-FFBA-C60E134AAC82">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>DB4F7698-6E72-4703-94E1-9C0C80BBE7A8</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AE5ED279-99B7-740D-A43A-7BD4B441FA0D" referredColumn="64F7F115-7F07-B9E0-E774-DB7FD0646DDB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A6814D1C-4A22-6C5C-903E-57364534AECE" name="Perfil_PK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>2ED20C8B-25B7-E6F0-9786-6EC57A60DF9A</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="45DF4E37-DC95-612B-E6FC-929DDDDE48BB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1484B747-44FC-9FD8-198B-6775C2BF3932" name="Perfil__IDX">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>409CA387-795D-53C1-2948-25B726DDEBEC</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="32FAAB93-4BC1-465F-FFBA-C60E134AAC82"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D9FEF30-DD2A-B2AB-946E-DC6D475896F2" name="Perfil_Pessoa_FK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:32:28 UTC</createdTime>
+<generatorID>409CA387-795D-53C1-2948-25B726DDEBEC</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="32FAAB93-4BC1-465F-FFBA-C60E134AAC82"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

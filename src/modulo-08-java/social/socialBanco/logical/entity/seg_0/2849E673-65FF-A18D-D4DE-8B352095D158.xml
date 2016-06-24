@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2849E673-65FF-A18D-D4DE-8B352095D158" name="PublicacaoConteudo">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:33:29 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDPublicacaoConteudo" id="01EBC702-61FC-31ED-1C40-8DDC3989E066">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:33:44 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Conteudo" id="786ED5AE-7E7C-F54D-B392-46D7316A8AAF">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:34:07 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDPublicacao" id="B9040BAE-BB1D-FE1D-7665-C30D03E1286C">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:34:45 UTC</createdTime>
+<generatorID>7EAE212C-5094-7931-AD5C-CE28D515F1A6</generatorID>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<referedAttribute>7955FAAA-0DB3-2BAF-B27B-3DD39BFDB694</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0D60B419-8D37-1E5A-BA3D-818090C87386" name="PublicacaoConteudo PK">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:34:01 UTC</createdTime>
+<ownerDesignName>socialBanco</ownerDesignName>
+<engineerTo>
+<item key="A40F5A47-7428-D66C-AF32-AAB6A23F2867" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>01EBC702-61FC-31ED-1C40-8DDC3989E066</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

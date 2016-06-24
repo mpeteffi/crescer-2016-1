@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="refresh" content="3; url=index.html"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>ProjectJ</title>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SocialNetwork</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Link</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Olá, Usuário! <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- <div class="container grid" id="grid"> -->
+  <div class="container waterfall"
+  data-col-min-width="280"
+  data-autoresize="true">
+
+  <div class="item user">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Murillo Peteffi">
+        <h3>Usuario Fulano</h3>
+      </div>
+      <div class="panel-body">
+        <h4>Amigos (58)</h4>
+        <!-- <hr> --><br>
+        <h4>Publicações (409)</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="item pub">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4>Nova Publicação!</h4>
+      </div>
+      <div class="panel-body">
+        <form action="/aula5web" method="get">
+          <textarea name="pessoa.nome" class="form-control" rows="3" placeholder="Digite a mensagem de sua nova publicação." required></textarea>
+          <button class="btn btn-sm btn-primary" type="button">Adicionar Imagem</button><br>
+          <button class="btn btn-sm btn-primary" type="submit">Enviar</button>
+          <button class="btn btn-sm btn-primary" type="reset">Limpar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <img src="http://abeachcottage.com/wp-content/uploads/2012/03/20120331-01-5f837904752e11e19e4a12313813ffc0_7.jpg" alt="Praia">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus sollicitudin egestas.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus sollicitudin egestas.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <img src="http://media02.hongkiat.com/yummy-instagram-accounts/2-food-instagram-accounts.jpg" alt="Praia">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus sollicitudin egestas.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus ipsum quis turpis condimentum auctor. Curabitur fermentum orci.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <img src="http://content.photojojo.com/wp-content/uploads/2010/10/instagram-lg.jpg" alt="Praia">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt tortor non sapien sagittis, ut dictum enim vestibulum. Duis dui neque, viverra ut dignissim.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus sollicitudin egestas.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus sollicitudin egestas.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus ipsum quis turpis condimentum auctor. Curabitur fermentum orci.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <img src="http://67.media.tumblr.com/bca68428a066d6439612dadd730a3fc6/tumblr_inline_nlh6jpy3gu1qm4rc3_500.jpg" alt="Praia">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt tortor non sapien sagittis, ut dictum enim vestibulum. Duis dui neque, viverra ut dignissim.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus sollicitudin egestas.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus sollicitudin egestas.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <img src="http://www.socialmediaexaminer.com/wp-content/uploads/2013/11/td-average-camera-pro-instagram.png" alt="Praia">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus ipsum quis turpis condimentum auctor. Curabitur fermentum orci.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt tortor non sapien sagittis, ut dictum enim vestibulum. Duis dui neque, viverra ut dignissim.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <img src="http://abeachcottage.com/wp-content/uploads/2012/03/20120331-01-5f837904752e11e19e4a12313813ffc0_7.jpg" alt="Praia">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus sollicitudin egestas.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <img src="user.jpg" alt="Usuário">
+        <p>Usuario Fulano</p>
+        <p>19-06-2016</p>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus sollicitudin egestas.</p>
+        <button class="btn btn-xs btn-primary" type="button">Curtir</button><span> 13 Likes</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="dfcreative.js"></script>
+<script src="scriptFeed.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="socialBanco" id="B8571274-F77D-2DE1-9D8D-0A5C789AB822" version="3.5">
+<createdBy>arthur.cabral</createdBy>
+<createdTime>2016-06-21 17:09:30 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>B8571274-F77D-2DE1-9D8D-0A5C789AB822</designId>
+</OSDM_Design>

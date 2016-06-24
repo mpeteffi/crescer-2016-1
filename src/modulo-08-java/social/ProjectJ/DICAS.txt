@@ -1,0 +1,6 @@
+ADCIONAR APÓS A PUB
+$('.pub').after();
+
+
+PARTIAL VIEW DA PUBLICAÇÃO 
+$('<div>').addClass('item').append($('<div>').addClass('panel panel-primary').append($('<div>').addClass('panel-heading').text('TITULO NOVO')).append($('<div>').addClass('panel-body').text('Aqui fica o conteúdo da div appendada.')))

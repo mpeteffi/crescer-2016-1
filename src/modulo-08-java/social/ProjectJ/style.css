@@ -1,0 +1,56 @@
+.container{
+  margin-top: 83px;
+}
+
+.item {
+ padding: 0px 10px;
+ margin: 0px;
+ height: auto;
+ max-width: 350px;
+}
+
+.user, .pub {
+  text-align: center;
+}
+
+.item img {
+  width: 50px;
+  heght: 50px;
+}
+
+.item .panel-heading > p {
+  position: absolute;
+  top: 15px;
+  left: 90px;
+}
+
+.item .panel-heading > p:last-child {
+  top: 35px;
+}
+
+.user img {
+  width: 70%;
+}
+
+.panel-body{
+  position: relative;
+}
+
+.panel-body img {
+  width: 100%;
+}
+
+.panel-body p {
+  margin-top: 15px;
+}
+
+.pub button {
+  margin: auto 2px;
+  margin-top: 10px;
+}
+
+@media (max-width: 750px) {
+  .container {
+    max-width: 350px;
+  }
+}
